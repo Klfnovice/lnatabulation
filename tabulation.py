@@ -35,7 +35,7 @@ st.markdown(
 
 # Define usernames and passwords
 users = {
-    "admin": "password1",
+    "admin": "smartgilaS-7",
     "dmantiado": "hrlcwd2024",
     "user2": "password3"
 }
