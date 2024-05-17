@@ -23,6 +23,14 @@ st.markdown(
     .title {
         text-align: justify;
     }
+    .login-form {
+        border: 1px solid lightgrey;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: white;
+        width: 300px;
+        margin: auto;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -96,20 +104,21 @@ st.title("LCWD Human Resource Section IDP/LNA Tabulation")
 
 # Authentication form if user hasn't logged in
 if st.session_state.username is None:
-    login_form = st.form("login_form")
-    login_form.write("### Login")
-    username = login_form.text_input("Username")
-    password = login_form.text_input("Password", type="password")
-    submit_button = login_form.form_submit_button("Submit")
+    with st.form("login_form"):
+        st.markdown('<div class="login-form">', unsafe_allow_html=True)
+        st.write("### Login")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        submit_button = st.form_submit_button("Submit")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    # Directly authenticate the user
-    if submit_button:
-        if authenticate(username, password):
-            st.session_state.username = username
-            st.success("Login successful!")
-            login_form.empty()  # Clear login form
-        else:
-            st.error("Authentication failed. Please check your username and password.")
+        # Directly authenticate the user
+        if submit_button:
+            if authenticate(username, password):
+                st.session_state.username = username
+                st.success("Login successful!")
+            else:
+                st.error("Authentication failed. Please check your username and password.")
 
 # Logout if requested
 if st.session_state.username is not None:
