@@ -4,14 +4,6 @@ import sqlite3
 import matplotlib.pyplot as plt
 import os
 
-# Include Bootstrap CSS
-st.markdown(
-    """
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    """,
-    unsafe_allow_html=True
-)
-
 # Set background color for the main window and justify the title
 st.markdown(
     """
@@ -27,19 +19,20 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 # Set background color for the sidebar
 st.markdown(
     """
     <style>
     .sidebar .sidebar-content {
         background: #000080;
-        color: blue;
         color: white;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 # Define usernames and passwords
 users = {
     "admin": "smartgilaS-7",
