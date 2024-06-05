@@ -1,0 +1,29 @@
+name: Deploy Streamlit App
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to trigger the workflow
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.3'  # specify the version of Python you are using
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # make sure you have a requirements.txt file in your repo
+
+      - name: Deploy to Streamlit Sharing
+        run: |
+          # Streamlit Sharing automatically updates the app from the main branch
+          echo "Streamlit Sharing will update the app automatically on code changes"
