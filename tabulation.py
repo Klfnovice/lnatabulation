@@ -135,7 +135,7 @@ if st.session_state.username is not None:
         # Display uploaded file content based on selected radio button
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Uploaded Data:")
-            st.write(uploaded_data, index=False)  # Display DataFrame without row numbers
+            st.datarame(uploaded_data)  # use st.dataframe instead of st.write
             # Display uploaded file as column chart
             st.write("Column chart of uploaded data:")
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
