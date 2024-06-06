@@ -6,6 +6,7 @@ import os
 
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/your-username/your-repository/main/path/to/logo.png.jpg"
+
 # Adding the title with a border using HTML and CSS
 st.markdown("""
     <h1 style="border: 2px solid gray; padding: 10px; text-align: center;">
