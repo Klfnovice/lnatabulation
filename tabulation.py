@@ -4,14 +4,19 @@ import sqlite3
 import matplotlib.pyplot as plt
 import os
 
-# URL of the logo image in your GitHub repository
-logo_url = "https://github.com/Klfnovice/lnatabulation/blob/main/logo.png.jpg"
+import streamlit as st
 
-# Adding the title with a border using HTML and CSS
-st.markdown("""
-    <h1 style="border: 2px solid gray; padding: 10px; text-align: center;">
-        LCWD Human Resource Section LNA/IDP Tabulation
-    </h1>
+# URL of the logo image in your GitHub repository
+logo_url = "https://raw.githubusercontent.com/your-username/your-repository/main/images/logo.png"
+
+# Add the logo and title with a border using HTML and CSS
+st.markdown(f"""
+    <div style="text-align: center;">
+        <img src="{logo_url}" width="100" alt="Logo">
+        <h1 style="border: 2px solid gray; padding: 10px; display: inline-block;">
+            LCWD Human Resource Section LNA/IDP Tabulation
+        </h1>
+    </div>
     """, unsafe_allow_html=True)
 
 # Set background color for the sidebar
