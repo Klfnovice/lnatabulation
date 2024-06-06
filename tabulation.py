@@ -75,7 +75,7 @@ if "username" not in st.session_state:
 def load_uploaded_data(competency_type):
     return st.session_state.competency_data[competency_type]
 # Add heading title to login page
-st.title("LCWD Human Resource Section IDP/LNA Tabulation")
+st.title("LCWD Human Resource Section LNA/IDP Tabulation")
 # Authentication form if user hasn't logged in
 if st.session_state.username is None:
     login_form = st.form("login_form")
