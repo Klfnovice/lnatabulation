@@ -79,7 +79,7 @@ if st.session_state.username is None:
     login_form.write("### Login")
     username = login_form.text_input("Username")
     password = login_form.text_input("Password", type="password")
-    submit_button = login_form.form_submit_button("Login")
+    submit_button = login_form.form_submit_button("Submit")
     # Directly authenticate the user
     if submit_button:
         if authenticate(username, password):
