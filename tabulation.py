@@ -6,7 +6,7 @@ import os
 
 # Adding the title with a border using HTML and CSS
 st.markdown("""
-    <h1 style="border: 2px solid blue; padding: 10px; text-align: center;">
+    <h1 style="border: 2px light blue; padding: 10px; text-align: center;">
         LCWD Human Resource Section LNA/IDP Tabulation
     </h1>
     """, unsafe_allow_html=True)
