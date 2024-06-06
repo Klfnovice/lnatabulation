@@ -11,7 +11,7 @@ logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%
 st.markdown(f"""
     <div style="text-align: center;">
         <img src="{logo_url}" width="100" alt="Logo">
-        <h1 style="border: 2px solid gray; padding: 10px; display: inline-block;">
+        <h1>
             LCWD Human Resource Section LNA/IDP Tabulation
         </h1>
     </div>
