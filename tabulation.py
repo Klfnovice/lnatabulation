@@ -4,8 +4,6 @@ import sqlite3
 import matplotlib.pyplot as plt
 import os
 
-# Set background color for the main window and justify the title
-
 # Adding the title with a border using HTML and CSS
 st.markdown("""
     <h1 style="border: 2px solid black; padding: 10px; text-align: center;">
