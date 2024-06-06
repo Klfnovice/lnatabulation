@@ -12,7 +12,7 @@ st.markdown(f"""
     <div style="text-align: center;">
         <img src="{logo_url}" width="100" alt="Logo">
         <h1>
-            LCWD Human Resource Section LNA/IDP Tabulation
+            Human Resource Section LNA/IDP Tabulation
         </h1>
     </div>
     """, unsafe_allow_html=True)
