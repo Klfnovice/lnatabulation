@@ -7,7 +7,7 @@ import os
 import streamlit as st
 
 # URL of the logo image in your GitHub repository
-logo_url = "https://github.com/Klfnovice/lnatabulation/blob/main/logo.png.jpg"
+logo_url = "https://github.com/Klfnovice/lnatabulation/blob/main/logo.png.jpg.png"
 
 # Add the logo and title with a border using HTML and CSS
 st.markdown(f"""
