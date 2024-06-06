@@ -4,8 +4,6 @@ import sqlite3
 import matplotlib.pyplot as plt
 import os
 
-import streamlit as st
-
 # URL of the logo image in your GitHub repository
 logo_url = "https://github.com/Klfnovice/lnatabulation/blob/main/lcwd%20logo.png"
 
