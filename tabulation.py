@@ -5,20 +5,13 @@ import matplotlib.pyplot as plt
 import os
 
 # Set background color for the main window and justify the title
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
-        position: relative;
-    }
-    .title {
-        text-align: justify;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
+# Adding the title with a border using HTML and CSS
+st.markdown("""
+    <h1 style="border: 2px solid black; padding: 10px; text-align: center;">
+        LCWD Human Resource Section LNA/IDP Tabulation
+    </h1>
+    """, unsafe_allow_html=True)
 
 # Set background color for the sidebar
 st.markdown(
