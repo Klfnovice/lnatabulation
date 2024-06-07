@@ -97,19 +97,8 @@ if st.session_state.username is None:
         else:
             st.error("Authentication failed. Please check your username and password.")
 else:
-    # Logout if requested
-    if st.sidebar.button("Logout"):
-        st.session_state.username = None
-        st.session_state.page = None
-        st.session_state.clear()  # Clear session state
-        st.experimental_rerun()  # Rerun the app to reset everything
-
-    st.write(f"Logged in as: {st.session_state.username}")
-    # Check if the user is an admin
-    is_admin = st.session_state.username == "admin"
-
     # Display navigation options for users
-    if not is_admin:
+    if st.session_state.username != "admin":
         competency_type = st.sidebar.radio("Navigation", ["Current_Competencies", "Developmental_Competencies"])
         st.write(f"You are viewing: {competency_type}")
         uploaded_data = retrieve_data_from_database(competency_type)
@@ -160,3 +149,10 @@ else:
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
                 st.bar_chart(selected_data)
+
+    # Logout if requested, move to the bottom
+    if st.sidebar.button("Logout"):
+        st.session_state.username = None
+        st.session_state.page = None
+        st.session_state.clear()  # Clear session state
+        st.experimental_rerun()  # Rerun the app to reset everything
