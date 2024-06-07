@@ -23,7 +23,7 @@ st.markdown(
     <style>
     .sidebar .sidebar-content {
         background: #000080;
-        color: white;
+        color: blue;
     }
     </style>
     """,
