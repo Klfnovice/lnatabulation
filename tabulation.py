@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 
 # URL of the logo image in your GitHub repository
-logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDVZHV6R2YOGZT4IYUSZTBM24Q"
+logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
 
 # Add the logo and title with a border using HTML and CSS
 st.markdown(f"""
