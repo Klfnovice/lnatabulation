@@ -10,7 +10,7 @@ logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%
 # Add the logo and title with a border using HTML and CSS
 st.markdown(f"""
     <div style="text-align: center;">
-        <img src="{logo_url}" width="110" alt="Logo">
+        <img src="{logo_url}" width="100" alt="Logo">
         <h1>
             Human Resource Section LNA/IDP Tabulation
         </h1>
