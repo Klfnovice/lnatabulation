@@ -34,7 +34,7 @@ st.markdown(
 users = {
     "admin": "smartgilaS-7",
     "dmantiado": "hrlcwd2024",
-    "user2": "password3"
+    "user1": "password1"
 }
 
 # Function for user authentication
