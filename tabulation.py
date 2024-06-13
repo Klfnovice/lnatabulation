@@ -22,7 +22,7 @@ st.markdown(
     """
     <style>
     .sidebar .sidebar-content {
-        background: #000080;
+        background: #000100;
         color: blue;
     }
     </style>
