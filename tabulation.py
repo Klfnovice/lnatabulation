@@ -109,7 +109,6 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                selected_data.set_index(uploaded_data.columns[0], inplace=True)  # Set the first column as index
                 st.bar_chart(selected_data)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -149,7 +148,6 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                selected_data.set_index(uploaded_data.columns[0], inplace=True)  # Set the first column as index
                 st.bar_chart(selected_data)
 
     # Logout if requested, move to the bottom
