@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-import matplotlib.pyplot as plt
 import os
 
 # URL of the logo image in your GitHub repository
@@ -65,10 +64,6 @@ def retrieve_data_from_database(table_name):
     conn.close()
     return df
 
-# Function to check file extension
-def check_file_extension(file_name, extension):
-    return os.path.splitext(file_name)[1] == extension
-
 # Initialize session state if not initialized
 if "username" not in st.session_state:
     st.session_state.username = None
@@ -93,7 +88,7 @@ if st.session_state.username is None:
         if authenticate(username, password):
             st.session_state.username = username
             st.success("Login successful!")
-            login_form.empty()  # Clear login form
+            st.experimental_rerun()  # Refresh the app after login to load the authenticated view
         else:
             st.error("Authentication failed. Please check your username and password.")
 else:
