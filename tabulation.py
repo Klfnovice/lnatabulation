@@ -66,7 +66,8 @@ def retrieve_data_from_database(table_name):
     return df
 
 # Initialize session state if not initialized
-if "username" not in st.session_state:
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
     st.session_state.username = None
     st.session_state.page = None  # Initialize page variable
     st.session_state.competency_data = {"Current_Competencies": pd.DataFrame(),
@@ -77,7 +78,7 @@ def load_uploaded_data(competency_type):
     return st.session_state.competency_data[competency_type]
 
 # Authentication form if user hasn't logged in
-if st.session_state.username is None:
+if not st.session_state.logged_in:
     login_form = st.form("login_form")
     login_form.write("### Login")
     username = login_form.text_input("Username")
@@ -87,6 +88,7 @@ if st.session_state.username is None:
     # Directly authenticate the user
     if submit_button:
         if authenticate(username, password):
+            st.session_state.logged_in = True
             st.session_state.username = username
             st.success("Login successful!")
             st.experimental_rerun()  # Refresh the app after login to load the authenticated view
@@ -160,6 +162,7 @@ else:
 
     # Logout if requested, move to the bottom
     if st.sidebar.button("Logout"):
+        st.session_state.logged_in = False
         st.session_state.username = None
         st.session_state.page = None
         st.session_state.clear()  # Clear session state
