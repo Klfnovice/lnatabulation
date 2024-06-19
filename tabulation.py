@@ -3,7 +3,6 @@ import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
 import os
-from streamlit_cookies_manager import EncryptedCookieManager
 
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
@@ -66,31 +65,19 @@ def retrieve_data_from_database(table_name):
     conn.close()
     return df
 
-# Create a cookie manager
-cookie_manager = EncryptedCookieManager(
-    prefix="streamlit-login", 
-    password="some random password used for encryption"
-)
-
-if not cookie_manager.ready():
-    # Wait for the cookie manager to be ready
-    st.stop()
-
 # Initialize session state if not initialized
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
+if "username" not in st.session_state:
     st.session_state.username = None
     st.session_state.page = None  # Initialize page variable
     st.session_state.competency_data = {"Current_Competencies": pd.DataFrame(),
                                         "Developmental_Competencies": pd.DataFrame()}
 
-# Load user login state from cookies
-if "logged_in" in cookie_manager:
-    st.session_state.logged_in = cookie_manager.get("logged_in")
-    st.session_state.username = cookie_manager.get("username")
+# Load uploaded data from file
+def load_uploaded_data(competency_type):
+    return st.session_state.competency_data[competency_type]
 
 # Authentication form if user hasn't logged in
-if not st.session_state.logged_in:
+if st.session_state.username is None:
     login_form = st.form("login_form")
     login_form.write("### Login")
     username = login_form.text_input("Username")
@@ -100,12 +87,7 @@ if not st.session_state.logged_in:
     # Directly authenticate the user
     if submit_button:
         if authenticate(username, password):
-            st.session_state.logged_in = True
             st.session_state.username = username
-            # Store login state in cookies
-            cookie_manager.set("logged_in", True)
-            cookie_manager.set("username", username)
-            cookie_manager.save()
             st.success("Login successful!")
             st.experimental_rerun()  # Refresh the app after login to load the authenticated view
         else:
@@ -178,12 +160,7 @@ else:
 
     # Logout if requested, move to the bottom
     if st.sidebar.button("Logout"):
-        st.session_state.logged_in = False
         st.session_state.username = None
         st.session_state.page = None
         st.session_state.clear()  # Clear session state
-        # Clear login state in cookies
-        cookie_manager.delete("logged_in")
-        cookie_manager.delete("username")
-        cookie_manager.save()
         st.experimental_rerun()  # Rerun the app to reset everything
