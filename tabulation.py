@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
-import os
+import altair as alt
 
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
@@ -105,13 +105,21 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.bar_chart(selected_data)
+                
+                # Create Altair chart
+                melted_data = selected_data.reset_index().melt('index')
+                chart = alt.Chart(melted_data).mark_bar().encode(
+                    x='index:O',
+                    y='value:Q',
+                    color='variable:N',
+                    tooltip=['index', 'variable', 'value']
+                ).properties(
+                    width=600,
+                    height=400
+                )
 
-                # Example of using matplotlib for customized plots
-                if st.button("Show Matplotlib Plot"):
-                    fig, ax = plt.subplots()
-                    selected_data.plot(kind='bar', ax=ax)
-                    st.pyplot(fig)
+                st.altair_chart(chart, use_container_width=True)
+
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
         uploaded_data = st.session_state.competency_data.get(st.session_state.page)
@@ -150,13 +158,20 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.bar_chart(selected_data)
+                
+                # Create Altair chart
+                melted_data = selected_data.reset_index().melt('index')
+                chart = alt.Chart(melted_data).mark_bar().encode(
+                    x='index:O',
+                    y='value:Q',
+                    color='variable:N',
+                    tooltip=['index', 'variable', 'value']
+                ).properties(
+                    width=600,
+                    height=400
+                )
 
-                # Example of using matplotlib for customized plots
-                if st.button("Show Matplotlib Plot"):
-                    fig, ax = plt.subplots()
-                    selected_data.plot(kind='bar', ax=ax)
-                    st.pyplot(fig)
+                st.altair_chart(chart, use_container_width=True)
 
     # Logout if requested, move to the bottom
     if st.sidebar.button("Logout"):
