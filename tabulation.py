@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-import matplotlib.pyplot as plt
 import altair as alt
 
 # URL of the logo image in your GitHub repository
@@ -105,9 +104,10 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                
+
                 # Create Altair chart
                 melted_data = selected_data.reset_index().melt('index')
+                melted_data['index'] = uploaded_data['CompetencyName']  # Replace 'CompetencyName' with your actual column name
                 chart = alt.Chart(melted_data).mark_bar().encode(
                     x='index:O',
                     y='value:Q',
@@ -158,9 +158,10 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                
+
                 # Create Altair chart
                 melted_data = selected_data.reset_index().melt('index')
+                melted_data['index'] = uploaded_data['CompetencyName']  # Replace 'CompetencyName' with your actual column name
                 chart = alt.Chart(melted_data).mark_bar().encode(
                     x='index:O',
                     y='value:Q',
