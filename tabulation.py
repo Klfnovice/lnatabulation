@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-import altair as alt
+import matplotlib.pyplot as plt
+import os
 
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
@@ -100,31 +101,17 @@ else:
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Tabulation Table:")
             st.write(uploaded_data, index=False)  # Display DataFrame without row numbers
-            
-            # Debug: Show column names
-            st.write("Column Names:", uploaded_data.columns.tolist())
-            
             # Display uploaded file as column chart
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
+                st.bar_chart(selected_data)
 
-                # Ensure 'CompetencyName' exists in the DataFrame
-                if 'CompetencyName' in uploaded_data.columns:
-                    melted_data = selected_data.reset_index().melt('index')
-                    melted_data['index'] = uploaded_data['CompetencyName']  # Replace 'CompetencyName' with your actual column name
-                    chart = alt.Chart(melted_data).mark_bar().encode(
-                        x='index:O',
-                        y='value:Q',
-                        color='variable:N',
-                        tooltip=['index', 'variable', 'value']
-                    ).properties(
-                        width=600,
-                        height=400
-                    )
-                    st.altair_chart(chart, use_container_width=True)
-                else:
-                    st.error("'CompetencyName' column not found in the DataFrame. Please check the column names.")
+                # Example of using matplotlib for customized plots
+                if st.button("Show Matplotlib Plot"):
+                    fig, ax = plt.subplots()
+                    selected_data.plot(kind='bar', ax=ax)
+                    st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
         uploaded_data = st.session_state.competency_data.get(st.session_state.page)
@@ -158,32 +145,18 @@ else:
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Uploaded Data:")
             st.dataframe(uploaded_data)  # use st.dataframe instead of st.write
-            
-            # Debug: Show column names
-            st.write("Column Names:", uploaded_data.columns.tolist())
-            
             # Display uploaded file as column chart
             st.write("Column chart of uploaded data:")
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
+                st.bar_chart(selected_data)
 
-                # Ensure 'CompetencyName' exists in the DataFrame
-                if 'CompetencyName' in uploaded_data.columns:
-                    melted_data = selected_data.reset_index().melt('index')
-                    melted_data['index'] = uploaded_data['CompetencyName']  # Replace 'CompetencyName' with your actual column name
-                    chart = alt.Chart(melted_data).mark_bar().encode(
-                        x='index:O',
-                        y='value:Q',
-                        color='variable:N',
-                        tooltip=['index', 'variable', 'value']
-                    ).properties(
-                        width=600,
-                        height=400
-                    )
-                    st.altair_chart(chart, use_container_width=True)
-                else:
-                    st.error("'CompetencyName' column not found in the DataFrame. Please check the column names.")
+                # Example of using matplotlib for customized plots
+                if st.button("Show Matplotlib Plot"):
+                    fig, ax = plt.subplots()
+                    selected_data.plot(kind='bar', ax=ax)
+                    st.pyplot(fig)
 
     # Logout if requested, move to the bottom
     if st.sidebar.button("Logout"):
