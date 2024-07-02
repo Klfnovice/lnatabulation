@@ -108,10 +108,10 @@ else:
                 st.bar_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
-                if st.button("Show Matplotlib Plot"):
-                    fig, ax = plt.subplots()
-                    selected_data.plot(kind='bar', ax=ax)
-                    st.pyplot(fig)
+                # if st.button("Show Matplotlib Plot"):
+                #     fig, ax = plt.subplots()
+                #     selected_data.plot(kind='bar', ax=ax)
+                #     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
         uploaded_data = st.session_state.competency_data.get(st.session_state.page)
@@ -153,10 +153,10 @@ else:
                 st.bar_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
-                if st.button("Show Matplotlib Plot"):
-                    fig, ax = plt.subplots()
-                    selected_data.plot(kind='bar', ax=ax)
-                    st.pyplot(fig)
+                # if st.button("Show Matplotlib Plot"):
+                #     fig, ax = plt.subplots()
+                #     selected_data.plot(kind='bar', ax=ax)
+                #     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
     if st.sidebar.button("Logout"):
