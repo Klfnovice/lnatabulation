@@ -110,7 +110,7 @@ else:
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
-                    selected_data.plot(kind='column', ax=ax)
+                    selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
                         ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
                     st.pyplot(fig)
@@ -152,12 +152,12 @@ else:
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.column_chart(selected_data)
+                st.bar_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
-                    selected_data.plot(kind='column', ax=ax)
+                    selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
                         ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
                     st.pyplot(fig)
