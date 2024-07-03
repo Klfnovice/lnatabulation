@@ -100,7 +100,7 @@ else:
         uploaded_data = retrieve_data_from_database(competency_type)
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Tabulation Table:")
-            st.dataframe(uploaded_data)  # Display DataFrame without row numbers
+            st.DataFrame(uploaded_data)  # Display DataFrame without row numbers
             # Display uploaded file as column chart
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
