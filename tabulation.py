@@ -53,7 +53,7 @@ def store_data_to_csv(df, file_name):
 def create_table_if_not_exists(table_name):
     conn = sqlite3.connect("competencies.db")
     cursor = conn.cursor()
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS [{table_name}] (CURRENT_COMPETENCIES_IDENTIFIED TEXT, Basic INTEGER, Intermediate INTEGER, Advanced INTEGER, Superior INTEGER, Not_yet_Acquired INTEGER)")
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS [{table_name}] (COMPETENCIES_IDENTIFIED TEXT, Basic INTEGER, Intermediate INTEGER, Advanced INTEGER, Superior INTEGER, Not_yet_Acquired INTEGER)")
     conn.commit()
     conn.close()
 
@@ -105,14 +105,14 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.write("column chart of uploaded date:")
+                st.write("Column chart of uploaded data:")
 
                 # Example of using matplotlib for customized plots
-            if st.button("Show Matplotlib Plot"):
-                fig, ax = plt.subplots()
-                selected_data.plot(kind='bar', ax=ax)
-                ax.set_xticklabels(selected_data.index) 
-                st.pyplot(fig)
+                if st.button("Show Matplotlib Plot"):
+                    fig, ax = plt.subplots()
+                    selected_data.plot(kind='bar', ax=ax)
+                    ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
+                    st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
         uploaded_data = st.session_state.competency_data.get(st.session_state.page)
@@ -154,10 +154,11 @@ else:
                 st.bar_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
-                # if st.button("Show Matplotlib Plot"):
-                #     fig, ax = plt.subplots()
-                #     selected_data.plot(kind='bar', ax=ax)
-                #     st.pyplot(fig)
+                if st.button("Show Matplotlib Plot"):
+                    fig, ax = plt.subplots()
+                    selected_data.plot(kind='bar', ax=ax)
+                    ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
+                    st.pyplot(fig)
 
     # Logout if requested, move to the bottom
     if st.sidebar.button("Logout"):
