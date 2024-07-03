@@ -108,7 +108,7 @@ else:
                 st.write("Column chart of uploaded data:")
 
                 # Example of using matplotlib for customized plots
-                if st.button("Show Matplotlib Plot"):
+                if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
@@ -155,7 +155,7 @@ else:
                 st.bar_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
-                if st.button("Show Matplotlib Plot"):
+                if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
