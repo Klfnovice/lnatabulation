@@ -43,11 +43,11 @@ def authenticate(username, password):
 
 # Function to store data in an Excel file
 def store_data_to_excel(df, file_name):
-    df.to_excel(file_name, index=False)
+    df.to_excel(file_name, index=0)
 
 # Function to store data in a CSV file
 def store_data_to_csv(df, file_name):
-    df.to_csv(file_name, index=False)
+    df.to_csv(file_name, index=0)
 
 # Function to create table in SQLite database if it doesn't exist
 def create_table_if_not_exists(table_name):
@@ -100,7 +100,7 @@ else:
         uploaded_data = retrieve_data_from_database(competency_type)
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Tabulation Table:")
-            st.write(uploaded_data, index=False)  # Display DataFrame without row numbers
+            st.write(uploaded_data, index=0)  # Display DataFrame without row numbers
             # Display uploaded file as column chart
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
@@ -137,7 +137,7 @@ else:
 
                     # Store uploaded data in SQLite database
                     conn = sqlite3.connect("competencies.db")
-                    df.to_sql(st.session_state.page, conn, if_exists="replace", index=False)  # Add index=False here
+                    df.to_sql(st.session_state.page, conn, if_exists="replace", index=0)  # Add index=False here
                     conn.close()
 
                     uploaded_data = df  # Update uploaded data for display
