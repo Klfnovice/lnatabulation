@@ -105,7 +105,7 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.write("Column chart of uploaded data:")
+                # st.write("Column chart of uploaded data:")
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
@@ -148,7 +148,7 @@ else:
             st.write("Uploaded Data:")
             st.dataframe(uploaded_data)  # use st.dataframe instead of st.write
             # Display uploaded file as column chart
-            st.write("Column chart of uploaded data:")
+            # st.write("Column chart of uploaded data:")
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
