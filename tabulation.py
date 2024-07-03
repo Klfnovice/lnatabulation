@@ -105,14 +105,13 @@ else:
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                # st.write("Column chart of uploaded data:")
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
-                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
+                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'], rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -148,7 +147,6 @@ else:
             st.write("Uploaded Data:")
             st.dataframe(uploaded_data)  # use st.dataframe instead of st.write
             # Display uploaded file as column chart
-            # st.write("Column chart of uploaded data:")
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
@@ -159,7 +157,7 @@ else:
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
-                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
+                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'], rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
