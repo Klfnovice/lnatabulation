@@ -105,12 +105,13 @@ else:
             selected_columns = st.multiselect("Select columns to display", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.bar_chart(selected_data)
+                st.write("column chart of uploaded date:")
 
                 # Example of using matplotlib for customized plots
                 # if st.button("Show Matplotlib Plot"):
                 #     fig, ax = plt.subplots()
                 #     selected_data.plot(kind='bar', ax=ax)
+                      ax.set_xticklabels(selected_data.index) 
                 #     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
