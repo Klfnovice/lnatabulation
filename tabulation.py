@@ -111,7 +111,8 @@ else:
                 if st.button("Show Matplotlib Plot"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
+                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
+                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -157,7 +158,8 @@ else:
                 if st.button("Show Matplotlib Plot"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
+                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
+                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'])  # Set the x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
