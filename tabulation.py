@@ -152,7 +152,7 @@ else:
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.bar_chart(selected_data)
+                st.column_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
