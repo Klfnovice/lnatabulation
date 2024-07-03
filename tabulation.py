@@ -108,11 +108,11 @@ else:
                 st.write("column chart of uploaded date:")
 
                 # Example of using matplotlib for customized plots
-                # if st.button("Show Matplotlib Plot"):
-                #     fig, ax = plt.subplots()
-                #     selected_data.plot(kind='bar', ax=ax)
-                      ax.set_xticklabels(selected_data.index) 
-                #     st.pyplot(fig)
+                 if st.button("Show Matplotlib Plot"):
+                    fig, ax = plt.subplots()
+                    selected_data.plot(kind='bar', ax=ax)
+                    ax.set_xticklabels(selected_data.index) 
+                    st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
         uploaded_data = st.session_state.competency_data.get(st.session_state.page)
