@@ -46,7 +46,7 @@ def store_data_to_excel(df, file_name):
     df.to_excel(file_name, index=False)
 
 # Function to store data in a CSV file
-def store_data_to_csv(df, file_name):
+def store_data_to_csv(df, file_name):    
     df.to_csv(file_name, index=False)
 
 # Function to create table in SQLite database if it doesn't exist
@@ -100,7 +100,7 @@ else:
         uploaded_data = retrieve_data_from_database(competency_type)
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Tabulation Table:")
-            st.write(uploaded_data, index_col=0)  # Display DataFrame without row numbers
+            st.write(uploaded_data, index_col=1)  # Display DataFrame without row numbers
             # Display uploaded file as column chart
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
