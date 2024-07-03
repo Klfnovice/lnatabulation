@@ -144,7 +144,7 @@ else:
 
         # Display uploaded file content based on selected radio button
         if uploaded_data is not None and not uploaded_data.empty:
-            st.write("Uploaded Data:")
+            #st.write("Uploaded Data:")
             st.dataframe(uploaded_data)  # use st.dataframe instead of st.write
             # Display uploaded file as column chart
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
