@@ -169,7 +169,7 @@ else:
                     title = st.session_state.page.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20)  # Add title above the chart
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=120, ha='right')  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=90, ha='right')  # Rotate and align x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
