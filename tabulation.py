@@ -9,7 +9,7 @@ logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%
 
 # Add the logo and title with a border using HTML and CSS
 st.markdown(f"""
-    <div style="text-align: wide;">
+    <div style="text-align: center;">
         <img src="{logo_url}" width="100" alt="Logo">
         <h1>
             Human Resource Section LNA/IDP Tabulation
@@ -117,7 +117,7 @@ else:
                     title = competency_type.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20)  # Add title above the chart
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right')  # Rotate and align x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -169,7 +169,7 @@ else:
                     title = st.session_state.page.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20)  # Add title above the chart
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right')  # Rotate and align x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
