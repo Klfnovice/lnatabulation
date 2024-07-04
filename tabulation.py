@@ -63,10 +63,10 @@ def retrieve_data_from_database(table_name):
     conn = sqlite3.connect("competencies.db")
     df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn)
     conn.close()
-    if 'CURRENT_COMPETENCIES_IDENTIFIED' in df.columns:
-        df.set_index('CURRENT_COMPETENCIES_IDENTIFIED', inplace=True)
-    elif 'DEVELOPMENTAL_COMPETENCIES_IDENTIFIED' in df.columns:
-        df.set_index('DEVELOPMENTAL_COMPETENCIES_IDENTIFIED', inplace=True)
+    if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
+        df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
+    elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
+        df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
     return df
 
 # Initialize session state if not initialized
@@ -135,10 +135,10 @@ else:
                     df = None
 
                 if df is not None:
-                    if 'CURRENT_COMPETENCIES_IDENTIFIED' in df.columns:
-                        df.set_index('CURRENT_COMPETENCIES_IDENTIFIED', inplace=True)
-                    elif 'DEVELOPMENTAL_COMPETENCIES_IDENTIFIED' in df.columns:
-                        df.set_index('DEVELOPMENTAL_COMPETENCIES_IDENTIFIED', inplace=True)
+                    if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
+                        df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
+                    elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
+                        df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
                     st.session_state.competency_data[st.session_state.page] = df  # Store uploaded data
 
                     # Store uploaded data in SQLite database
