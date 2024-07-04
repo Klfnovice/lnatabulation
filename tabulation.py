@@ -114,9 +114,6 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    ax.set_xlabel("DEVELOPMENTAL COMPETENCIES IDENTIFIED", labelpad=20)
-                    ax.xaxis.set_label_position('top')  # Move the x-axis label to the top
-                    ax.xaxis.tick_top()  # Move the x-axis ticks to the top
                     ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
@@ -166,9 +163,6 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    ax.set_xlabel("DEVELOPMENTAL COMPETENCIES IDENTIFIED", labelpad=20)
-                    ax.xaxis.set_label_position('top')  # Move the x-axis label to the top
-                    ax.xaxis.tick_top()  # Move the x-axis ticks to the top
                     ax.set_xticklabels(selected_data.index, rotation=190)  # Set the x-tick labels
                     st.pyplot(fig)
 
