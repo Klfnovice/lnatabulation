@@ -63,10 +63,10 @@ def retrieve_data_from_database(table_name):
     conn = sqlite3.connect("competencies.db")
     df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn)
     conn.close()
-    if 'CURRENT_COMPETENCIES_IDENTIFIED' in df.columns:
-        df.set_index('CURRENT_COMPETENCIES_IDENTIFIED', inplace=True)
-    elif 'DEVELOPMENTAL_COMPETENCIES_IDENTIFIED' in df.columns:
-        df.set_index('DEVELOPMENTAL_COMPETENCIES_IDENTIFIED', inplace=True)
+    if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
+        df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
+    elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
+        df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
     return df
 
 # Initialize session state if not initialized
@@ -113,8 +113,8 @@ else:
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
-                    selected_data.T.plot(kind='bar', ax=ax)  # Transpose the DataFrame
-                    ax.set_xticklabels(selected_data.columns, rotation=90)  # Set the x-tick labels
+                    selected_data.plot(kind='bar', ax=ax)
+                    ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -135,10 +135,10 @@ else:
                     df = None
 
                 if df is not None:
-                    if 'CURRENT_COMPETENCIES_IDENTIFIED' in df.columns:
-                        df.set_index('CURRENT_COMPETENCIES_IDENTIFIED', inplace=True)
-                    elif 'DEVELOPMENTAL_COMPETENCIES_IDENTIFIED' in df.columns:
-                        df.set_index('DEVELOPMENTAL_COMPETENCIES_IDENTIFIED', inplace=True)
+                    if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
+                        df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
+                    elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
+                        df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
                     st.session_state.competency_data[st.session_state.page] = df  # Store uploaded data
 
                     # Store uploaded data in SQLite database
@@ -157,13 +157,13 @@ else:
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
                 selected_data = uploaded_data[selected_columns]
-                st.bar_chart(selected_data.T)  # Transpose the DataFrame
+                st.bar_chart(selected_data)
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
-                    selected_data.T.plot(kind='bar', ax=ax)  # Transpose the DataFrame
-                    ax.set_xticklabels(selected_data.columns, rotation=90)  # Set the x-tick labels
+                    selected_data.plot(kind='bar', ax=ax)
+                    ax.set_xticklabels(selected_data.index, rotation=360)  # Set the x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
