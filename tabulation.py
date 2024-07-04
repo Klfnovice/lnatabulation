@@ -61,7 +61,7 @@ def create_table_if_not_exists(table_name):
 def retrieve_data_from_database(table_name):
     create_table_if_not_exists(table_name)  # Ensure table exists
     conn = sqlite3.connect("competencies.db")
-    df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn)
+    df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn, index_col='COMPETENCIES_IDENTIFIED')
     conn.close()
     return df
 
@@ -100,7 +100,7 @@ else:
         uploaded_data = retrieve_data_from_database(competency_type)
         if uploaded_data is not None and not uploaded_data.empty:
             st.write("Tabulation Table:")
-            st.dataframe(uploaded_data)  # Display DataFrame without row numbers
+            st.write(uploaded_data)  # Display DataFrame without row numbers
             # Display uploaded file as column chart
             selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
             if selected_columns:
@@ -111,7 +111,7 @@ else:
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
-                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'], rotation=90)  # Set the x-tick labels
+                        ax.set_xticklabels(uploaded_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -124,9 +124,9 @@ else:
             # Process the uploaded file if exists
             if uploaded_file is not None:
                 if uploaded_file.name.endswith('csv'):
-                    df = pd.read_csv(uploaded_file)
+                    df = pd.read_csv(uploaded_file, index_col='COMPETENCIES_IDENTIFIED')
                 elif uploaded_file.name.endswith('xlsx'):
-                    df = pd.read_excel(uploaded_file)
+                    df = pd.read_excel(uploaded_file, index_col='COMPETENCIES_IDENTIFIED')
                 else:
                     st.error("File format not supported. Please upload a CSV or Excel file.")
                     df = None
@@ -136,7 +136,7 @@ else:
 
                     # Store uploaded data in SQLite database
                     conn = sqlite3.connect("competencies.db")
-                    df.to_sql(st.session_state.page, conn, if_exists="replace", index=False)  # Add index=False here
+                    df.to_sql(st.session_state.page, conn, if_exists="replace")  # Remove index=False here
                     conn.close()
 
                     uploaded_data = df  # Update uploaded data for display
@@ -157,7 +157,7 @@ else:
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
-                        ax.set_xticklabels(uploaded_data['COMPETENCIES_IDENTIFIED'], rotation=90)  # Set the x-tick labels
+                        ax.set_xticklabels(uploaded_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
