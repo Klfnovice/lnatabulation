@@ -112,12 +112,13 @@ else:
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
-                    fig, ax = plt.subplots(figsize=(33, 10))  # Adjust the figure size
+                    fig, ax = plt.subplots(figsize=(20, 10))  # Adjust the figure size
                     selected_data.plot(kind='bar', ax=ax)
                     title = competency_type.replace("_", " ").title() + " Identified"  # Dynamically set the title
-                    ax.set_title(title, pad=20, fontsize=24)  # Add title above the chart with specified font size
+                    ax.set_title(title, pad=20, fontsize=16)  # Add title above the chart with specified font size
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=18)  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=12)  # Rotate and align x-tick labels
+                    ax.legend(fontsize=14)  # Adjust the legend font size
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -164,12 +165,13 @@ else:
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
-                    fig, ax = plt.subplots(figsize=(33, 10))  # Adjust the figure size
+                    fig, ax = plt.subplots(figsize=(20, 10))  # Adjust the figure size
                     selected_data.plot(kind='bar', ax=ax)
                     title = st.session_state.page.replace("_", " ").title() + " Identified"  # Dynamically set the title
-                    ax.set_title(title, pad=20, fontsize=24)  # Add title above the chart with specified font size
+                    ax.set_title(title, pad=20, fontsize=16)  # Add title above the chart with specified font size
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=18)  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=12)  # Rotate and align x-tick labels
+                    ax.legend(fontsize=14)  # Adjust the legend font size
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
