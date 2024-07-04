@@ -114,6 +114,8 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
+                    ax.set_title("DEVELOPMENTAL COMPETENCIES IDENTIFIED", pad=20)  # Add title above the chart
+                    ax.set_xlabel("")  # Remove x-axis label from the bottom
                     ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
@@ -163,6 +165,8 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
+                    ax.set_title("DEVELOPMENTAL COMPETENCIES IDENTIFIED", pad=20)  # Add title above the chart
+                    ax.set_xlabel("")  # Remove x-axis label from the bottom
                     ax.set_xticklabels(selected_data.index, rotation=190)  # Set the x-tick labels
                     st.pyplot(fig)
 
