@@ -61,8 +61,10 @@ def create_table_if_not_exists(table_name):
 def retrieve_data_from_database(table_name):
     create_table_if_not_exists(table_name)  # Ensure table exists
     conn = sqlite3.connect("competencies.db")
-    df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn, index_col='COMPETENCIES_IDENTIFIED')
+    df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn)
     conn.close()
+    if 'COMPETENCIES_IDENTIFIED' in df.columns:
+        df.set_index('COMPETENCIES_IDENTIFIED', inplace=True)
     return df
 
 # Initialize session state if not initialized
@@ -110,7 +112,7 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
+                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.index:
                         ax.set_xticklabels(uploaded_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
@@ -124,14 +126,16 @@ else:
             # Process the uploaded file if exists
             if uploaded_file is not None:
                 if uploaded_file.name.endswith('csv'):
-                    df = pd.read_csv(uploaded_file, index_col='COMPETENCIES_IDENTIFIED')
+                    df = pd.read_csv(uploaded_file)
                 elif uploaded_file.name.endswith('xlsx'):
-                    df = pd.read_excel(uploaded_file, index_col='COMPETENCIES_IDENTIFIED')
+                    df = pd.read_excel(uploaded_file)
                 else:
                     st.error("File format not supported. Please upload a CSV or Excel file.")
                     df = None
 
                 if df is not None:
+                    if 'COMPETENCIES_IDENTIFIED' in df.columns:
+                        df.set_index('COMPETENCIES_IDENTIFIED', inplace=True)
                     st.session_state.competency_data[st.session_state.page] = df  # Store uploaded data
 
                     # Store uploaded data in SQLite database
@@ -156,7 +160,7 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.columns:
+                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.index:
                         ax.set_xticklabels(uploaded_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
 
