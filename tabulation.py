@@ -112,12 +112,12 @@ else:
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
-                    fig, ax = plt.subplots(figsize=(40, 20))  # Adjust the figure size
+                    fig, ax = plt.subplots(figsize=(14, 8))  # Adjust the figure size
                     selected_data.plot(kind='bar', ax=ax)
                     title = competency_type.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20)  # Add title above the chart
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=20)  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=10)  # Rotate and align x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -164,12 +164,12 @@ else:
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
-                    fig, ax = plt.subplots(figsize=(40, 20))  # Adjust the figure size
+                    fig, ax = plt.subplots(figsize=(14, 8))  # Adjust the figure size
                     selected_data.plot(kind='bar', ax=ax)
                     title = st.session_state.page.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20)  # Add title above the chart
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=20)  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=10)  # Rotate and align x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
