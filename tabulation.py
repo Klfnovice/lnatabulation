@@ -117,7 +117,7 @@ else:
                     title = competency_type.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20, fontsize=16)  # Add title above the chart with specified font size
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=12)  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=14)  # Rotate and align x-tick labels
                     ax.legend(fontsize=14)  # Adjust the legend font size
                     st.pyplot(fig)
     else:
@@ -170,7 +170,7 @@ else:
                     title = st.session_state.page.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20, fontsize=16)  # Add title above the chart with specified font size
                     ax.set_xlabel("")  # Remove x-axis label from the bottom
-                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=12)  # Rotate and align x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=14)  # Rotate and align x-tick labels
                     ax.legend(fontsize=14)  # Adjust the legend font size
                     st.pyplot(fig)
 
