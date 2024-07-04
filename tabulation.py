@@ -63,8 +63,10 @@ def retrieve_data_from_database(table_name):
     conn = sqlite3.connect("competencies.db")
     df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn)
     conn.close()
-    if 'COMPETENCIES_IDENTIFIED' in df.columns:
-        df.set_index('COMPETENCIES_IDENTIFIED', inplace=True)
+    if 'CURRENT_COMPETENCIES_IDENTIFIED' in df.columns:
+        df.set_index('CURRENT_COMPETENCIES_IDENTIFIED', inplace=True)
+    elif 'DEVELOPMENTAL_COMPETENCIES_IDENTIFIED' in df.columns:
+        df.set_index('DEVELOPMENTAL_COMPETENCIES_IDENTIFIED', inplace=True)
     return df
 
 # Initialize session state if not initialized
@@ -112,8 +114,7 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.index:
-                        ax.set_xticklabels(uploaded_data.index, rotation=90)  # Set the x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -134,8 +135,10 @@ else:
                     df = None
 
                 if df is not None:
-                    if 'COMPETENCIES_IDENTIFIED' in df.columns:
-                        df.set_index('COMPETENCIES_IDENTIFIED', inplace=True)
+                    if 'CURRENT_COMPETENCIES_IDENTIFIED' in df.columns:
+                        df.set_index('CURRENT_COMPETENCIES_IDENTIFIED', inplace=True)
+                    elif 'DEVELOPMENTAL_COMPETENCIES_IDENTIFIED' in df.columns:
+                        df.set_index('DEVELOPMENTAL_COMPETENCIES_IDENTIFIED', inplace=True)
                     st.session_state.competency_data[st.session_state.page] = df  # Store uploaded data
 
                     # Store uploaded data in SQLite database
@@ -160,8 +163,7 @@ else:
                 if st.button("Show Chart"):
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
-                    if 'COMPETENCIES_IDENTIFIED' in uploaded_data.index:
-                        ax.set_xticklabels(uploaded_data.index, rotation=90)  # Set the x-tick labels
+                    ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
