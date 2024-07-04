@@ -115,6 +115,7 @@ else:
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     ax.set_xticklabels(selected_data.index, rotation=90)  # Set the x-tick labels
+                    ax.set_title("Competency Levels", pad=20)  # Add title with padding
                     st.pyplot(fig)
     else:
         st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
@@ -164,6 +165,7 @@ else:
                     fig, ax = plt.subplots()
                     selected_data.plot(kind='bar', ax=ax)
                     ax.set_xticklabels(selected_data.index, rotation=190)  # Set the x-tick labels
+                    ax.set_title("Competency Levels", pad=20)  # Add title with padding
                     st.pyplot(fig)
 
     # Logout if requested, move to the bottom
