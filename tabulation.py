@@ -112,7 +112,7 @@ else:
 
                 # Example of using matplotlib for customized plots
                 if st.button("Show Chart"):
-                    fig, ax = plt.subplots(figsize=(8, 6))  # Adjust the figure size
+                    fig, ax = plt.subplots(figsize=(30, 16))  # Adjust the figure size
                     selected_data.plot(kind='bar', ax=ax)
                     title = competency_type.replace("_", " ").title() + " Identified"  # Dynamically set the title
                     ax.set_title(title, pad=20)  # Add title above the chart
