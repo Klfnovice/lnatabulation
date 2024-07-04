@@ -104,7 +104,7 @@ def display_data_and_chart(uploaded_data, competency_type):
         if selected_columns:
             selected_data = uploaded_data[selected_columns]
             if st.button("Show Chart"):
-                fig, ax = plt.subplots(figsize=(30, 10))
+                fig, ax = plt.subplots(figsize=(26, 10))
                 selected_data.plot(kind='bar', ax=ax)
                 title = competency_type.replace("_", " ").title() + " Identified"
                 ax.set_title(title, pad=20, fontsize=16)
