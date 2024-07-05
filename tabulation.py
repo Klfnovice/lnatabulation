@@ -6,15 +6,6 @@ import matplotlib.pyplot as plt
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
 
-# Display logo and title
-def display_logo_and_title():
-    st.markdown(f"""
-        <div style="text-align: center;">
-            <img src="{logo_url}" width="100" alt="Logo">
-            <h1>Human Resource Section LNA/IDP Tabulation</h1>
-        </div>
-    """, unsafe_allow_html=True)
-
 # Set sidebar background color
 def set_sidebar_style():
     st.markdown("""
@@ -26,15 +17,13 @@ def set_sidebar_style():
         </style>
     """, unsafe_allow_html=True)
 
-# Define usernames and passwords
-users = {
-    "admin": "pass123",
-    "dmantiado": "hrlcwd2024",
-    "user1": "password1"
-}
-
 # User authentication
 def authenticate(username, password):
+    users = {
+        "admin": "pass123",
+        "dmantiado": "hrlcwd2024",
+        "user1": "password1"
+    }
     return username in users and users[username] == password
 
 # Store data to Excel
@@ -82,10 +71,6 @@ def initialize_session_state():
         st.session_state.competency_data = {"Current_Competencies": pd.DataFrame(),
                                             "Developmental_Competencies": pd.DataFrame()}
 
-# Load uploaded data from file
-def load_uploaded_data(competency_type):
-    return st.session_state.competency_data[competency_type]
-
 # Login form
 def login_form():
     with st.form("login_form"):
@@ -94,6 +79,15 @@ def login_form():
         password = st.text_input("Password", type="password")
         submit_button = st.form_submit_button("Submit")
         return username, password, submit_button
+
+# Display logo and title
+def display_logo_and_title():
+    st.markdown(f"""
+        <div style="text-align: center;">
+            <img src="{logo_url}" width="100" alt="Logo">
+            <h1>Human Resource Section LNA/IDP Tabulation</h1>
+        </div>
+    """, unsafe_allow_html=True)
 
 # Display data and chart
 def display_data_and_chart(uploaded_data, competency_type):
