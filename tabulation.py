@@ -31,12 +31,16 @@ def store_data_to_excel(df, file_name):
     df.to_excel(file_name, index=False)
 
 # Store data to CSV
-def store_data_to_csv(df, file_name):    
+def store_data_to_csv(df, file_name):
     df.to_csv(file_name, index=False)
 
-# Create table in SQLite database if it doesn't exist
-def create_table_if_not_exists(table_name):
+# Initialize SQLite database connection
+def initialize_database():
     conn = sqlite3.connect("competencies.db")
+    return conn
+
+# Create table in SQLite database if it doesn't exist
+def create_table_if_not_exists(conn, table_name):
     cursor = conn.cursor()
     cursor.execute(f"""
         CREATE TABLE IF NOT EXISTS [{table_name}] (
@@ -49,14 +53,11 @@ def create_table_if_not_exists(table_name):
         )
     """)
     conn.commit()
-    conn.close()
 
 # Retrieve data from SQLite database
-def retrieve_data_from_database(table_name):
-    create_table_if_not_exists(table_name)
-    conn = sqlite3.connect("competencies.db")
+def retrieve_data_from_database(conn, table_name):
+    create_table_if_not_exists(conn, table_name)
     df = pd.read_sql(f"SELECT * FROM [{table_name}]", conn)
-    conn.close()
     if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
         df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
     elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
@@ -90,22 +91,20 @@ def display_logo_and_title():
     """, unsafe_allow_html=True)
 
 # Display data and chart
-def display_data_and_chart(uploaded_data, competency_type):
-    if uploaded_data is not None and not uploaded_data.empty:
+def display_data_and_chart(data, competency_type):
+    if data is not None and not data.empty:
         st.write("Tabulation Table:")
-        st.write(uploaded_data)
-        selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
-        if selected_columns:
-            selected_data = uploaded_data[selected_columns]
-            if st.button("Show Chart"):
-                fig, ax = plt.subplots(figsize=(26, 10))
-                selected_data.plot(kind='bar', ax=ax)
-                title = competency_type.replace("_", " ").title() + " Identified"
-                ax.set_title(title, pad=20, fontsize=16)
-                ax.set_xlabel("")
-                ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=14)
-                ax.legend(fontsize=14)
-                st.pyplot(fig)
+        st.write(data)
+        selected_columns = st.multiselect("Select level of competency to display in chart", data.columns)
+        if selected_columns and st.button("Show Chart"):
+            fig, ax = plt.subplots(figsize=(26, 10))
+            data[selected_columns].plot(kind='bar', ax=ax)
+            title = competency_type.replace("_", " ").title() + " Identified"
+            ax.set_title(title, pad=20, fontsize=16)
+            ax.set_xlabel("")
+            ax.set_xticklabels(data.index, rotation=45, ha='right', fontsize=14)
+            ax.legend(fontsize=14)
+            st.pyplot(fig)
 
 # Upload file
 def upload_file(page):
@@ -117,18 +116,21 @@ def upload_file(page):
             df = pd.read_excel(uploaded_file)
         else:
             st.error("File format not supported. Please upload a CSV or Excel file.")
-            df = None
-        if df is not None:
-            if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
-                df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
-            elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
-                df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
-            st.session_state.competency_data[page] = df
-            conn = sqlite3.connect("competencies.db")
-            df.to_sql(page, conn, if_exists="replace")
-            conn.close()
-            st.success("File uploaded successfully!")
-            return df
+            return None
+
+        if 'CURRENT COMPETENCIES IDENTIFIED' in df.columns:
+            df.set_index('CURRENT COMPETENCIES IDENTIFIED', inplace=True)
+        elif 'DEVELOPMENTAL COMPETENCIES IDENTIFIED' in df.columns:
+            df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
+
+        conn = initialize_database()
+        df.to_sql(page, conn, if_exists="replace")
+        conn.close()
+
+        st.session_state.competency_data[page] = df
+        st.success("File uploaded successfully!")
+        return df
+
     return None
 
 # Main application logic
@@ -143,27 +145,30 @@ def main():
             if authenticate(username, password):
                 st.session_state.username = username
                 st.success("Login successful!")
-                st.experimental_rerun()
             else:
                 st.error("Authentication failed. Please check your username and password.")
     else:
         if st.session_state.username != "admin":
             competency_type = st.sidebar.radio("Navigation", ["Current_Competencies", "Developmental_Competencies"])
             st.write(f"You are viewing: {competency_type}")
-            uploaded_data = retrieve_data_from_database(competency_type)
+            conn = initialize_database()
+            uploaded_data = retrieve_data_from_database(conn, competency_type)
+            conn.close()
             display_data_and_chart(uploaded_data, competency_type)
         else:
-            st.session_state.page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"])
-            uploaded_data = upload_file(st.session_state.page)
+            page = st.session_state.page
+            page = st.sidebar.radio("For Uploading", ["Current_Competencies", "Developmental_Competencies"], index=0)
+            uploaded_data = upload_file(page)
             if uploaded_data is None:
-                uploaded_data = retrieve_data_from_database(st.session_state.page)
-            display_data_and_chart(uploaded_data, st.session_state.page)
+                conn = initialize_database()
+                uploaded_data = retrieve_data_from_database(conn, page)
+                conn.close()
+            display_data_and_chart(uploaded_data, page)
 
         if st.sidebar.button("Logout"):
             st.session_state.username = None
             st.session_state.page = None
             st.session_state.clear()
-            st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
