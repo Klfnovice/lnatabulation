@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
@@ -105,6 +106,13 @@ def display_data_and_chart(uploaded_data, competency_type):
                 ax.set_xlabel("")
                 ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=14)
                 ax.legend(fontsize=14)
+                
+                # Formatter function to show integer values on y-axis
+                def int_formatter(x, pos):
+                    return f'{int(x)}'
+                
+                ax.yaxis.set_major_formatter(FuncFormatter(int_formatter))
+                
                 st.pyplot(fig)
 
 # Upload file
