@@ -113,6 +113,9 @@ def display_data_and_chart(uploaded_data, competency_type):
                 
                 ax.yaxis.set_major_formatter(FuncFormatter(int_formatter))
                 
+                # Add horizontal gridlines
+                ax.grid(axis='y')
+
                 st.pyplot(fig)
 
 # Upload file
