@@ -139,7 +139,7 @@ def upload_file(page):
                 df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
             st.session_state.competency_data[page] = df
             conn = sqlite3.connect("competencies.db")
-            df.to_sql(page, conn, if_exists="replace")
+            df.to_sql(page, conn, if_exists="replace", index=False)
             conn.close()
             st.success("File uploaded successfully!")
             return df
