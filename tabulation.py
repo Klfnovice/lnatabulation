@@ -23,7 +23,7 @@ def authenticate(username, password):
     users = {
         "admin": "pass123",
         "dmantiado": "hrlcwd2024",
-        "user1": "password1"
+        "kacodorniz": "hrlcwd2024"
     }
     return username in users and users[username] == password
 
