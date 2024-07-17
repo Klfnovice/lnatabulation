@@ -22,6 +22,7 @@ if st.button('Save'):
     st.markdown(f"**Province:** {province}")
     st.markdown(f"**Device Used for e-Learning:** {device}")
     st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
+    st.markdown(f"**Competency:** {Select_Competency}")
     st.success('Information saved successfully!')
 
 if st.button('Reset'):
