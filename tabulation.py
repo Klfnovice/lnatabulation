@@ -14,13 +14,13 @@ learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Fa
 
 # Submit button
 if st.button('Save'):
-    st.write("Full Name:", full_name)
-    st.write("Current Position:", current_position)
-    st.write("Office/Agency:", office_agency)
-    st.write("Position Level:", position_level)
-    st.write("Province:", province)
-    st.write("Device Used for e-Learning:", device)
-    st.write("Preferred Learning Mode:", learning_mode)
+    st.markdown(f"**Full Name:** {full_name}")
+    st.markdown(f"**Current Position:** {current_position}")
+    st.markdown(f"**Office/Agency:** {office_agency}")
+    st.markdown(f"**Position Level:** {position_level}")
+    st.markdown(f"**Province:** {province}")
+    st.markdown(f"**Device Used for e-Learning:** {device}")
+    st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
     st.success('Information saved successfully!')
 
 if st.button('Reset'):
