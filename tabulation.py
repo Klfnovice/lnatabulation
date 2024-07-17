@@ -24,7 +24,7 @@ if st.button('Save'):
     st.markdown(f"**Device Used for e-Learning:** {device}")
     st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
     st.markdown(f"**Competency:** {Select_Competency}")
-    st.markdown(f"**Competency:** {Competency_Level}")
+    st.markdown(f"**My Level for this Competency:** {Competency_Level}")
     st.success('Information saved successfully!')
 
 if st.button('Reset'):
