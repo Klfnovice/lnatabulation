@@ -11,8 +11,8 @@ position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Sup
 province = st.selectbox('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
 device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
 learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
-Select_Competency = st.selectbox('Select Competency', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'])
-Competency_Level = st.selectbox('Select Competency', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'])
+select_competency = st.selectbox('Select Competency', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='select_competency')
+competency_level = st.selectbox('Competency Level', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
 # Submit button
 if st.button('Save'):
@@ -23,8 +23,8 @@ if st.button('Save'):
     st.markdown(f"**Province:** {province}")
     st.markdown(f"**Device Used for e-Learning:** {device}")
     st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
-    st.markdown(f"**Competency:** {Select_Competency}")
-    st.markdown(f"**My Level for this Competency:** {Competency_Level}")
+    st.markdown(f"**Competency:** {select_competency}")
+    st.markdown(f"**My Level for this Competency:** {competency_level}")
     st.success('Information saved successfully!')
 
 if st.button('Reset'):
