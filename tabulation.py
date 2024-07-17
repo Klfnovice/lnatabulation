@@ -11,6 +11,7 @@ position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Sup
 province = st.selectbox('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
 device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
 learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
+Select_Competency = st.selectbox('Select Competency', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'])
 
 # Submit button
 if st.button('Save'):
