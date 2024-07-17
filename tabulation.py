@@ -8,7 +8,7 @@ full_name = st.text_input('Full Name')
 current_position = st.text_input('Current Position (Write in full including parenthetical, if any)')
 office_agency = st.text_input('Office/Agency (Write in full, including Region and Field, if any)')
 position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'])
-province = st.text_input('Province', ['Albay', 'Camarines Sur', Sorsogon'])
+province = st.text_input('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
 device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
 learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
 
