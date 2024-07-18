@@ -110,7 +110,7 @@ competency_descriptions = {
     },
     "Budget Management": {
         "Description": """
-            Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.
+            Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.""",
         "Basic": """
             - Ability to implement and apply, with guidance or supervision, existing processes and policies for programs nd activities.
         """,
