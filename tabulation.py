@@ -99,10 +99,50 @@ competency_descriptions = {
             - Builds and then leverages on collaborative partnerships and networks to deliver or enhance work outcomes.
         """,
     },
+    "Cash Management": {
+        "Description": """
+            The ability to collect and manage assessment and usage of cash flow to ensure the financial stability and solvency of an organization.""",
+        "Basic": """
+            - Prepares the following financial documents:
+                - deposit slips
+                - summary of collections
+                - checks for payment
+                - automatic debit advice
+                - list of checks issued
+                - documents on availability of funds;
+            - Liaises with the bank and other financial institutions with regards to payments of remittances and other transactions.
+        """,
+        "Intermediate": """
+            - Issues receipts for various transactions.
+            - Maintains/updates official check register/official cash book.
+            - Prepares the following financial documents:                     
+                - Statement of Daily Cash Position
+                - Statement of cash accountability
+            - Reviews the following reports: 
+                - Checks Issued
+                - Collection and deposit.
+                - Generates and evaluates data on various aspects of tasks and activities.
+            - Recommends enhancements on the processes within the Division Level.
+        """,
+        "Advanced": """
+            - Prepares and consolidates Monthly Cash Position Reports of all Funds.
+            - Monitors the transfer of funds to CSC Regional Offices.
+            - Verifies and signs checks up to the extent of accountability as authorized by the Commission.
+            - Identifies trends and developments in cash management and recommend enhancements of current procedures, processes and policies.
+        """,
+        "Superior": """
+            - Monitors compliance with generally accepted accounting and auditing principles rules and regulations pertaining to: 
+                - collections, deposits release of payments
+                - preparation and submission of cash position report to the management
+                - handling of cash, official receipts, checkbooks, warrants and other negotiable instruments;
+            - Reviews, verifies and signs checks up to the extent of accountability as authorized by the Commission.
+            - Recommends for the establishment of a comprehensive cash management system for the Organization.
+        """,            
+            
+    },                
     "Procurement Management": {
         "Description": """
-            The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.
-        """,
+            The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.""",
         "Basic": """
             - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
             - Takes charge of logistic concerns such as but not limited to materials, equipment and meals.
