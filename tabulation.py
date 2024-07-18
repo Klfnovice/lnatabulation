@@ -64,9 +64,11 @@ competency_descriptions = {
 # Display competency descriptions
 if select_competency in competency_descriptions:
     st.markdown(f"### {select_competency} Competency Descriptions")
-    for level, description in competency_descriptions[select_competency].items():
-        st.markdown(f"**{level}**")
-        st.markdown(description)
+    cols = st.columns(4)
+    levels = ["Basic", "Intermediate", "Advanced", "Superior"]
+    for i, level in enumerate(levels):
+        cols[i].markdown(f"**{level}**")
+        cols[i].markdown(competency_descriptions[select_competency][level])
 
 competency_level = st.selectbox('Competency Level', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
