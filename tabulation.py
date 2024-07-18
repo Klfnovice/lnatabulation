@@ -54,14 +54,14 @@ competency_descriptions = {
             - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to procurement.
         """,
         "Intermediate": """
-            - Prepares agenda folder/documents/materials and takes minutes of BAC meetings.
+            - Prepares agenda folder/ documents/materials and takes minutes of BAC meetings.
             - Prepares the following reports:
                 - APP
                 - APCPI
                 - PMR
             - Posts specifications of requests in the Philippine Government Electronic Procurement System (PhilGEPS) and conducts pre-bid and clarification for bid.
             - Procures goods as scheduled and in compliance with the existing laws and regulations (RA9184, COA, DBM).
-            - Prepares replies to queries on procurement of supplies and equipment.
+            - Prepares replies to queries on procurement of supplies and properties.
         """,
         "Advanced": """
             - Reviews and validates various reports:
