@@ -82,7 +82,23 @@ competency_descriptions = {
         "Superior": """
             - Ability to formulate advance policies and strategies on budget management.
         """
-      },
+    },
+    "Building Collaborative, Inclusive Working Relationships": {
+        "Description": """
+            The ability to build and maintain a network of reciprocal, high trust, synergistic working relationships within the organization nd across government and relevant sectors. This involves the ability to successfully leverage and maximize opportunities for strategic influencing within the organization and with external stakeholders.""",
+        "Basic": """
+            - Maximizes existing partnerships and networks and capitalizes son these to deliver or enhance work outcomes.
+        """,
+        "Intermediate": """
+            - Builds partnerships and networks to deliver or enhance work outcomes.
+        """,
+        "Advanced": """
+            - Strengthens and deepens partnerships and networks to deliver or enhance work outcomes.
+        """'
+        "Superior": """
+            - Builds and then leverages on collaborative partnerships and networks to deliver or enhance work outcomes.
+        """'
+    },
     "Procurement Management": {
         "Description": """
             The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.
