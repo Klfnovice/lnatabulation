@@ -3,6 +3,9 @@ import streamlit as st
 # Competency descriptions from the provided Excel file
 competency_descriptions = {
     "Accounting": {
+        "Description": """
+            The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.
+        """,
         "Basic": """
             - Receives and records all claims for processing, evaluation and certification of the unit.
             - Checks completeness of documents/attachments needed for the transaction and validates accuracy of computation.
@@ -36,6 +39,9 @@ competency_descriptions = {
         """
     },
     "Procurement Management": {
+        "Description": """
+            The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.
+        """,
         "Basic": """
             - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
             - Takes charge of logistic concerns such as but not limited to materials, equipment and meals.
@@ -92,6 +98,7 @@ select_competency = st.selectbox('Select Competency', list(competency_descriptio
 # Display competency descriptions
 if select_competency in competency_descriptions:
     st.markdown(f"### {select_competency} Competency Descriptions")
+    st.markdown(competency_descriptions[select_competency]["Description"])
     cols = st.columns(4)
     levels = ["Basic", "Intermediate", "Advanced", "Superior"]
     for i, level in enumerate(levels):
