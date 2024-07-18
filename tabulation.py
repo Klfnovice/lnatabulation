@@ -83,40 +83,29 @@ competency_descriptions = {
         "Description": """
             The ability to develop, implement, evaluate and enhance policies and programs on benefits, compensation, rewards, incentives, health and wellness to improve employee welfare.""",
         "Basic": """
-            - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
-            - Takes charge of logistic concerns such as but not limited to materials, equipment and meals.
-            - Files document for procurement such as but not limited to the following:
-                - Annual Procurement Plan (APP)
-                - Agency Procurement Compliance and Performance Rating (APCPI)
-                - Procurement Monitoring Report (PMR)
-            - Receives procurement requests and checks completeness of requirements.
+            - Collates data/materials from the conduct and evaluation of organization-wide programs (i.e. health and wellness programs, information campaigns, sports activities, anniversary and Christmas programs, etc.).
+            - Maintains and updates employee records (HRMIS, leave, absences and tardiness, medical, service records, etc.).
+            - Prepares certifications such as but not limited to compensation, service records, leave balance, attendance and other employee welfare transactions of employees.
+            - Writes simple pro-forma communications relative to benefits, compensation and welfare of employees.
             - Maintains and updates procurement records in database/filing system.
-            - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to procurement.
         """,
         "Intermediate": """
-            - Prepares agenda folder/ documents/materials and takes minutes of BAC meetings.
-            - Prepares the following reports:
-                - APP
-                - APCPI
-                - PMR
-            - Posts specifications of requests in the Philippine Government Electronic Procurement System (PhilGEPS) and conducts pre-bid and clarification for bid.
-            - Procures goods as scheduled and in compliance with the existing laws and regulations (RA9184, COA, DBM).
-            - Prepares replies to queries on procurement of supplies and properties.
+            - Computes leave, salaries, salary adjustments, loans, medical reimbursements/ entitlements of employees and prepares vouchers.
+            - Monitors and reviews office reports to ensure compliance with existing policies, processes and systems of benefits, compensation, rewards & incentives, health and wellness mechanism of the organization.
+            - Coordinates with central and regional office representatives in the implementation and evaluation of programs.
+            - Prepares replies to queries on benefits, compensation and welfare management.
         """,
         "Advanced": """
-            - Reviews and validates various reports:
-                - APP
-                - APCPI
-                - PMR
-            - Develops and enhances internal policies and procedures on procurement such as but not limited to cost-cutting and internal control measures.
-            - Consolidates the Project Procurement Management Plans (PMP) of offices/units into APP.
-            - Reviews requests and recommends approval for the procurement of supplies and equipment.
+            - Conducts information awareness on benefits, compensation, health and wellness programs to employees.
+            - Conducts survey, FGD, research, policy studies, benchmarking studies on benefits, compensation and welfare of employees.
+            - Prepares organization-wide reports on policy implementation and program administration.
+            - Evaluates existing policies, processes and systems on benefits, compensation, wellness mechanisms and proposes enhancements.
         """,
         "Superior": """
-            - Convenes the BAC meetings as the Chair of the BAC Secretariat.
-            - Endorses APCPI & PMR for approval by the management and submission to the Government Procurement Policy Board - Technical Support Office (GPPB TSO).
-            - Develops communication plan and procurement plan in accordance with the approved office budget.
-            - Monitors the implementation of policies, programs and activities on procurement.
+            - Establishes and develops a comprehensive employee benefits, compensation and welfare programs for the CSC.
+            - Reviews and recommends proposals for enhancements and changes of existing processes and systems of benefits, compensation, and welfare mechanism of the organization.
+            - Formulates operational policies and guidelines on the benefits, compensation, and welfare of employees.
+            - Develops communication and implementation plan on the benefits and compensation system, and employees welfare programs of the organization.
         """
     }
 }
