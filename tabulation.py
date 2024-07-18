@@ -123,7 +123,7 @@ competency_descriptions = {
             - Develops communication plan and procurement plan in accordance with the approved office budget.
             - Monitors the implementation of policies, programs and activities on procurement.
         """
-
+ 
     }                                                                                                           
 }
 
