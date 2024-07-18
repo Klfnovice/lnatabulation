@@ -97,7 +97,7 @@ competency_descriptions = {
         """,
         "Superior": """
             - Builds and then leverages on collaborative partnerships and networks to deliver or enhance work outcomes.
-        """'
+        """,
     },
     "Procurement Management": {
         "Description": """
