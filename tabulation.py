@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Page Title
-st.title('Learning Needs Analysis - eLearning Preferences')
+st.title('LCWD HR LNA-IDP (Learning Preferences)')
 
 # Input fields
 full_name = st.text_input('Full Name')
