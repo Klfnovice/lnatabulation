@@ -107,7 +107,22 @@ competency_descriptions = {
             - Formulates operational policies and guidelines on the benefits, compensation, and welfare of employees.
             - Develops communication and implementation plan on the benefits and compensation system, and employees welfare programs of the organization.
         """
-    }
+    },
+    "Budget Management": {
+        "Description": """
+            Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.
+        "Basic": """
+            - Ability to implement and apply, with guidance or supervision, existing processes and policies for programs nd activities.
+        """,
+        "Intermediate": """
+            - Ability to ensure adherence to procedures, processes and policies in the performance of activities relative to budget management.
+        """,
+        "Advance": """
+            - Ability to monitor and review data and recommend enhancements and/or changes in procedures, processes and policies relative to budget management.
+        """,
+        "Superior": """
+            - Ability to formulate advance policies and strategies on budget management.
+    }                                                                                                           
 }
 
 # Page Title
