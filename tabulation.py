@@ -137,9 +137,24 @@ competency_descriptions = {
                 - handling of cash, official receipts, checkbooks, warrants and other negotiable instruments;
             - Reviews, verifies and signs checks up to the extent of accountability as authorized by the Commission.
             - Recommends for the establishment of a comprehensive cash management system for the Organization.
-        """,            
-            
-    },                
+        """,
+    },
+    "Championing and Applying Innovation": {
+        "Description": """
+            The ability to increase productivity and efficiency at work by applying new ideas and creative solutions to existing processes, methods and services. """,
+        "Basic": """
+            - Demonstrates an awareness of basic principles of innovation            
+        """,
+        "Intermediate": """
+            - Contributes new ideas, approaches and solutions
+        """,
+        "Advanced": """
+            - Produces novel, out-of-the-box ideas to improve or replace existing practices and procedures
+        """,
+        "Superior": """
+            - Promotes a culture and discipline of challenging the status quo and seeking for and applying improvements.
+        """,
+    },
     "Procurement Management": {
         "Description": """
             The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.""",
