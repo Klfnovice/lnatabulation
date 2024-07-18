@@ -117,7 +117,7 @@ competency_descriptions = {
         "Intermediate": """
             - Ability to ensure adherence to procedures, processes and policies in the performance of activities relative to budget management.
         """,
-        "Advance": """
+        "Advanced": """
             - Ability to monitor and review data and recommend enhancements and/or changes in procedures, processes and policies relative to budget management.
         """,
         "Superior": """
