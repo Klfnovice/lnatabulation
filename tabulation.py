@@ -94,7 +94,7 @@ competency_descriptions = {
         """,
         "Advanced": """
             - Strengthens and deepens partnerships and networks to deliver or enhance work outcomes.
-        """'
+        """,
         "Superior": """
             - Builds and then leverages on collaborative partnerships and networks to deliver or enhance work outcomes.
         """'
