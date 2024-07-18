@@ -37,48 +37,7 @@ competency_descriptions = {
             - Reviews and recommends policies, guidelines and processes on accounting and auditing procedures.
             - Prepares financial report for management and recommends appropriate financial internal control measures for the allocation and sourcing of funds.
         """
-    },
-    "Procurement Management": {
-        "Description": """
-            The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.
-        """,
-        "Basic": """
-            - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
-            - Takes charge of logistic concerns such as but not limited to materials, equipment and meals.
-            - Files document for procurement such as but not limited to the following:
-                - Annual Procurement Plan (APP)
-                - Agency Procurement Compliance and Performance Rating (APCPI)
-                - Procurement Monitoring Report (PMR)
-            - Receives procurement requests and checks completeness of requirements.
-            - Maintains and updates procurement records in database/filing system.
-            - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to procurement.
-        """,
-        "Intermediate": """
-            - Prepares agenda folder/ documents/materials and takes minutes of BAC meetings.
-            - Prepares the following reports:
-                - APP
-                - APCPI
-                - PMR
-            - Posts specifications of requests in the Philippine Government Electronic Procurement System (PhilGEPS) and conducts pre-bid and clarification for bid.
-            - Procures goods as scheduled and in compliance with the existing laws and regulations (RA9184, COA, DBM).
-            - Prepares replies to queries on procurement of supplies and properties.
-        """,
-        "Advanced": """
-            - Reviews and validates various reports:
-                - APP
-                - APCPI
-                - PMR
-            - Develops and enhances internal policies and procedures on procurement such as but not limited to cost-cutting and internal control measures.
-            - Consolidates the Project Procurement Management Plans (PMP) of offices/units into APP.
-            - Reviews requests and recommends approval for the procurement of supplies and equipment.
-        """,
-        "Superior": """
-            - Convenes the BAC meetings as the Chair of the BAC Secretariat.
-            - Endorses APCPI & PMR for approval by the management and submission to the Government Procurement Policy Board - Technical Support Office (GPPB TSO).
-            - Develops communication plan and procurement plan in accordance with the approved office budget.
-            - Monitors the implementation of policies, programs and activities on procurement.
-        """
-    },
+        },
     "Benefits, Compensation and Welfare Management": {
         "Description": """
             The ability to develop, implement, evaluate and enhance policies and programs on benefits, compensation, rewards, incentives, health and wellness to improve employee welfare.""",
@@ -123,6 +82,48 @@ competency_descriptions = {
         "Superior": """
             - Ability to formulate advance policies and strategies on budget management.
         """
+      },
+    "Procurement Management": {
+        "Description": """
+            The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.
+        """,
+        "Basic": """
+            - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
+            - Takes charge of logistic concerns such as but not limited to materials, equipment and meals.
+            - Files document for procurement such as but not limited to the following:
+                - Annual Procurement Plan (APP)
+                - Agency Procurement Compliance and Performance Rating (APCPI)
+                - Procurement Monitoring Report (PMR)
+            - Receives procurement requests and checks completeness of requirements.
+            - Maintains and updates procurement records in database/filing system.
+            - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to procurement.
+        """,
+        "Intermediate": """
+            - Prepares agenda folder/ documents/materials and takes minutes of BAC meetings.
+            - Prepares the following reports:
+                - APP
+                - APCPI
+                - PMR
+            - Posts specifications of requests in the Philippine Government Electronic Procurement System (PhilGEPS) and conducts pre-bid and clarification for bid.
+            - Procures goods as scheduled and in compliance with the existing laws and regulations (RA9184, COA, DBM).
+            - Prepares replies to queries on procurement of supplies and properties.
+        """,
+        "Advanced": """
+            - Reviews and validates various reports:
+                - APP
+                - APCPI
+                - PMR
+            - Develops and enhances internal policies and procedures on procurement such as but not limited to cost-cutting and internal control measures.
+            - Consolidates the Project Procurement Management Plans (PMP) of offices/units into APP.
+            - Reviews requests and recommends approval for the procurement of supplies and equipment.
+        """,
+        "Superior": """
+            - Convenes the BAC meetings as the Chair of the BAC Secretariat.
+            - Endorses APCPI & PMR for approval by the management and submission to the Government Procurement Policy Board - Technical Support Office (GPPB TSO).
+            - Develops communication plan and procurement plan in accordance with the approved office budget.
+            - Monitors the implementation of policies, programs and activities on procurement.
+        """
+
     }                                                                                                           
 }
 
