@@ -12,8 +12,6 @@ province = st.selectbox('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
 device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
 learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
 select_competency = st.selectbox('Select Competency', ['Procurement Management', 'Another Competency'], key='select_competency')
-competency_level = st.selectbox('Competency Level', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
-
 # Competency descriptions
 competency_descriptions = {
     "Procurement Management": {
@@ -61,6 +59,9 @@ competency_descriptions = {
         "Superior": "Description for Superior level of Another Competency"
     }
 }
+
+competency_level = st.selectbox('Competency Level', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
+
 
 if select_competency in competency_descriptions and competency_level in competency_descriptions[select_competency]:
     st.markdown(f"### {select_competency} - {competency_level} Level")
