@@ -4,28 +4,35 @@ import streamlit as st
 competency_descriptions = {
     "Accounting": {
         "Basic": """
-            - Receives and records all claims for processing.
-            - Checks completeness of documents/attachments necessary for claims processing.
-            - Prepares certification or statement of employee compensation benefits.
-            - Maintains index of records of compensation, benefits, and deductions.
+            - Receives and records all claims for processing, evaluation and certification of the unit.
+            - Checks completeness of documents/attachments needed for the transaction and validates accuracy of computation.
+            - Prepares certification or statement of employees' contributions and remittances.
+            - Maintains index of records of compensation, benefits, allowances, mandatory deductions and remittances.
+            - Prepares journal entries and certificates of taxes withheld.
+            - Writes simple pro-forma communications on accounting transactions.
         """,
         "Intermediate": """
             - Validates and records journal entries of financial transactions.
-            - Records financial transactions in the book of accounts.
-            - Prepares certificate of remittances, schedule of accounts payable, and trial balance.
-            - Updates records of receipts and expenditures for monthly reconciliation.
+            - Records financial transactions in the book of accounts and maintains files of financial reports/documents.
+            - Prepares certificate of remittances, schedule of remittances and all other requirements for remittances.
+            - Updates records of receipts and expenditures funds to monitor balance of funds and verifies records of funds availability.
+            - Reconciles general and subsidiary ledgers of accounts.
+            - Prepares replies to queries on accounting transactions.
         """,
         "Advanced": """
-            - Reviews monthly deductions and remittances to various agencies.
-            - Reviews ledger, general ledger accounts, and schedules of accounts.
-            - Validates and reconciles reciprocal accounts for accuracy.
-            - Prepares financial reports, schedules, and all other accounting-related reports.
+            - Reviews monthly deductions and remittances to national government agencies.
+            - Reviews ledger, general ledger accounts and schedules of the financial reports.
+            - Validates and reconciles reciprocal accounts for the central/regional offices.
+            - Prepares financial reports, schedules and all other reports of all funds as required by the regulatory agencies and the Commission.
+            - Approves journal entries.
+            - Develops or enhances existing policies, guidelines and processes on accounting and auditing procedures.
         """,
         "Superior": """
-            - Certifies funds availability of disbursements.
-            - Identifies trends and developments in accounting and finance.
-            - Develops communication plan and policies, guidelines for financial transactions.
-            - Reviews and recommends policies, guidelines, and standards on accounting and financial management.
+            - Certifies funds availability of disbursements, supporting documents are complete and proper and the necessary deductions are effected and monitors timely remittance of all deductions and payments made.
+            - Identifies trends and developments in accounting and auditing and recommends enhancement of policies, procedures, systems and processes.
+            - Develops communication plan and policies, guidelines and issuances on accounting rules and regulations.
+            - Reviews and recommends policies, guidelines and processes on accounting and auditing procedures.
+            - Prepares financial report for management and recommends appropriate financial internal control measures for the allocation and sourcing of funds.
         """
     },
     "Procurement Management": {
