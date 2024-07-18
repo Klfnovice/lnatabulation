@@ -1,20 +1,33 @@
 import streamlit as st
 
-# Page Title
-st.title('LCWD HR LNA-IDP (Learning Preferences)')
-
-# Input fields
-full_name = st.text_input('Full Name')
-current_position = st.text_input('Current Position (Write in full including parenthetical, if any)')
-office_agency = st.text_input('Office/Agency (Write in full, including Region and Field, if any)')
-position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'])
-province = st.selectbox('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
-device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
-learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
-select_competency = st.selectbox('Select Competency', ['Procurement Management', 'Another Competency'], key='select_competency')
-
-# Competency descriptions
+# Competency descriptions from the provided Excel file
 competency_descriptions = {
+    "Accounting": {
+        "Basic": """
+            - Receives and records all claims for processing.
+            - Checks completeness of documents/attachments necessary for claims processing.
+            - Prepares certification or statement of employee compensation benefits.
+            - Maintains index of records of compensation, benefits, and deductions.
+        """,
+        "Intermediate": """
+            - Validates and records journal entries of financial transactions.
+            - Records financial transactions in the book of accounts.
+            - Prepares certificate of remittances, schedule of accounts payable, and trial balance.
+            - Updates records of receipts and expenditures for monthly reconciliation.
+        """,
+        "Advanced": """
+            - Reviews monthly deductions and remittances to various agencies.
+            - Reviews ledger, general ledger accounts, and schedules of accounts.
+            - Validates and reconciles reciprocal accounts for accuracy.
+            - Prepares financial reports, schedules, and all other accounting-related reports.
+        """,
+        "Superior": """
+            - Certifies funds availability of disbursements.
+            - Identifies trends and developments in accounting and finance.
+            - Develops communication plan and policies, guidelines for financial transactions.
+            - Reviews and recommends policies, guidelines, and standards on accounting and financial management.
+        """
+    },
     "Procurement Management": {
         "Basic": """
             - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
@@ -52,14 +65,22 @@ competency_descriptions = {
             - Develops communication plan and procurement plan in accordance with the approved office budget.
             - Monitors the implementation of policies, programs and activities on procurement.
         """
-    },
-    "Another Competency": {
-        "Basic": "Description for Basic level of Another Competency",
-        "Intermediate": "Description for Intermediate level of Another Competency",
-        "Advanced": "Description for Advanced level of Another Competency",
-        "Superior": "Description for Superior level of Another Competency"
     }
+    # Add other competencies as needed
 }
+
+# Page Title
+st.title('Learning Needs Analysis - eLearning Preferences')
+
+# Input fields
+full_name = st.text_input('Full Name')
+current_position = st.text_input('Current Position (Write in full including parenthetical, if any)')
+office_agency = st.text_input('Office/Agency (Write in full, including Region and Field, if any)')
+position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'])
+province = st.selectbox('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
+device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
+learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
+select_competency = st.selectbox('Select Competency', list(competency_descriptions.keys()), key='select_competency')
 
 # Display competency descriptions
 if select_competency in competency_descriptions:
