@@ -122,6 +122,7 @@ competency_descriptions = {
         """,
         "Superior": """
             - Ability to formulate advance policies and strategies on budget management.
+        """
     }                                                                                                           
 }
 
