@@ -381,6 +381,21 @@ competency_descriptions = {
         - Completes the new hires' employment related paperwork.
         - Prepares replies to queries on recruitment, selection and placement.
     """,
+    "Advanced":
+    """
+        - Conducts assessment center for Division Chief to Director positions and prepares corresponding assessment reports.
+        - Reviews/evaluates all appointments issued by CSCROs.
+        - Develops and enhances assessment tools/forms.
+        - Interviews applicants/candidates to vacant positions.
+        - Conducts exit interviews to identify HR strengths and areas for improvement and prepares report.
+    """
+    "Superior":
+    """
+        - Evaluate accuracy of assessment results.
+        - Recommends talent pool requirements of the Commission by reviewing strategic objectives and scorecards of the organization.
+        - Reviews and recommends improvements in recruitment and selection policies and processes.
+        - Develops communication and implementation plan on the recruitment, selection, and placement policies of the Commission.
+    """,
     },
     "Research and Development Planning": {
     "Description":
