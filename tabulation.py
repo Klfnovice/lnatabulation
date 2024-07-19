@@ -418,6 +418,41 @@ competency_descriptions = {
     """
         - Reviews research results and organizes such into useful information (socio-economic, information, demographic, program/project feasibility, situationer, impact analysis, etc.) in provincial development planning
     """,
+    },
+    "Rewards and Recognition": {
+    "Description":
+    """The ability to identify, develop and implement programs for the organization/bureaucracy to reward and recognize outstanding performance and behavior.""",
+    "Basic":
+    """
+        - Coordinates schedule of meetings and availability of committee members.
+        - Takes charge of logistic concerns such as but not limited to the venue, emails and equipment for use during meetings.
+        - Receives nomination folders and checks competencies of requirements.
+        - Prepares profile of nominees for presentation to the committee.
+        - Maintains and updates database of the type of awards, nominees and awardees.
+        - Writes simple pro-forma communication such as but not limited to acknowledgement and transmittal letters relative to rewards and recognition.
+    """,
+    "Intermediate":
+    """
+        - Conducts information campaign activities relative to the rewards and recognition programs.
+        - Evaluates documentary requirements of nominees and the appropriate category of awards that may be considered.
+        - Prepares agenda folder and takes minutes of committee meetings.
+        - Coordinates with validators for the conduct of background investigation and submission of reports.
+        - Verifies and consolidates feedback on the candidates received from clients and stakeholders.
+        - Coordinates the productions/reproduction of awards paraphernalia.
+        - Replies to queries on rewards and recognition.
+    """,
+    "Advanced":
+    """
+        - Identifies and recommends awards committee composition.
+        - Collaborates with the search committee/performance management team in proactively identifying possible nominees.
+        - Prepares the assessment reports and recommendation of the committee to the approving body.
+        - Conceptualized program collaterals in collaborating with graphic designers or suppliers.
+        - Facilitates conduct of the awards rites and prepares post activity report.
+        - Conducts comparative studies on the organization's rewards and recognition program vis-à-vis the best practices of organizations from the private and public sector, both local and international.
+        - Develops policies or enhances procedures on rewards and recognition.
+        - Determines and recommends kind of monetary and non-monetary rewards based on existing policies.
+    """,
+        
     
     
         
