@@ -2,18 +2,10 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter, MultipleLocator
 
 # URL of the logo image in your GitHub repository
 logo_url = "https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA"
-
-# Display logo and title
-def display_logo_and_title():
-    st.markdown(f"""
-        <div style="text-align: center;">
-            <img src="{logo_url}" width="100" alt="Logo">
-            <h1>Human Resource Section LNA/IDP Tabulation</h1>
-        </div>
-    """, unsafe_allow_html=True)
 
 # Set sidebar background color
 def set_sidebar_style():
@@ -26,15 +18,13 @@ def set_sidebar_style():
         </style>
     """, unsafe_allow_html=True)
 
-# Define usernames and passwords
-users = {
-    "admin": "pass123",
-    "dmantiado": "hrlcwd2024",
-    "user1": "password1"
-}
-
 # User authentication
 def authenticate(username, password):
+    users = {
+        "admin": "pass123",
+        "dmantiado": "hrlcwd2024",
+        "kacodorniz": "hrlcwd2024"
+    }
     return username in users and users[username] == password
 
 # Store data to Excel
@@ -82,10 +72,6 @@ def initialize_session_state():
         st.session_state.competency_data = {"Current_Competencies": pd.DataFrame(),
                                             "Developmental_Competencies": pd.DataFrame()}
 
-# Load uploaded data from file
-def load_uploaded_data(competency_type):
-    return st.session_state.competency_data[competency_type]
-
 # Login form
 def login_form():
     with st.form("login_form"):
@@ -95,12 +81,21 @@ def login_form():
         submit_button = st.form_submit_button("Submit")
         return username, password, submit_button
 
+# Display logo and title
+def display_logo_and_title():
+    st.markdown(f"""
+        <div style="text-align: center;">
+            <img src="{logo_url}" width="100" alt="Logo">
+            <h1>Human Resource Section LNA/IDP Tabulation</h1>
+        </div>
+    """, unsafe_allow_html=True)
+
 # Display data and chart
 def display_data_and_chart(uploaded_data, competency_type):
     if uploaded_data is not None and not uploaded_data.empty:
         st.write("Tabulation Table:")
         st.write(uploaded_data)
-        selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
+        selected_columns = st.multiselect("Select the level of competency to display in chart", uploaded_data.columns)
         if selected_columns:
             selected_data = uploaded_data[selected_columns]
             if st.button("Show Chart"):
@@ -111,6 +106,19 @@ def display_data_and_chart(uploaded_data, competency_type):
                 ax.set_xlabel("")
                 ax.set_xticklabels(selected_data.index, rotation=45, ha='right', fontsize=14)
                 ax.legend(fontsize=14)
+                
+                # Formatter function to show integer values on the y-axis
+                def int_formatter(x, pos):
+                    return f'{int(x)}'
+                
+                ax.yaxis.set_major_formatter(FuncFormatter(int_formatter))
+                
+                # Set the y-axis major locator to have ticks at every 1 unit
+                ax.yaxis.set_major_locator(MultipleLocator(1))
+                
+                # Add horizontal gridlines
+                ax.grid(axis='y')
+
                 st.pyplot(fig)
 
 # Upload file
@@ -131,7 +139,7 @@ def upload_file(page):
                 df.set_index('DEVELOPMENTAL COMPETENCIES IDENTIFIED', inplace=True)
             st.session_state.competency_data[page] = df
             conn = sqlite3.connect("competencies.db")
-            df.to_sql(page, conn, if_exists="replace")
+            df.to_sql(page, conn, if_exists="replace", index=False)
             conn.close()
             st.success("File uploaded successfully!")
             return df
