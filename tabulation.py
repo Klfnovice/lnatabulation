@@ -762,13 +762,27 @@ def bold_label(label):
 # Inputs with bold labels
 st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
 full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
-current_position = st.text_input('Current Position (Write in full including parenthetical, if any)')
-office_agency = st.text_input('Office/Agency (Write in full, including Region and Field, if any)')
-position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'])
-province = st.selectbox('Province', ['Albay', 'Camarines Sur', 'Sorsogon'])
-device = st.selectbox('Device Used for e-Learning', ['Computer/Laptop', 'Tablet', 'Smartphone'])
-learning_mode = st.selectbox('Preferred Learning Mode', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'])
-select_competency = st.selectbox('Select Competency', list(competency_descriptions.keys()), key='select_competency')
+
+st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
+current_position = st.text_input(' ', key='current_position')
+
+st.markdown(bold_label('Office/Agency (Write in full, including Region and Field, if any)'), unsafe_allow_html=True)
+office_agency = st.text_input(' ', key='office_agency')
+
+st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
+position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
+
+st.markdown(bold_label('Province'), unsafe_allow_html=True)
+province = st.selectbox(' ', ['Albay', 'Camarines Sur', 'Sorsogon'], key='province')
+
+st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
+device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
+
+st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
+learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
+
+st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
+select_competency = st.selectbox(' ', list(competency_descriptions.keys()), key='select_competency')
 
 # Display competency descriptions
 if select_competency in competency_descriptions:
