@@ -773,7 +773,7 @@ competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Supe
 # Arrange Save and Reset buttons horizontally with no space between them
 col1, col2 = st.columns([1, 1])
 # Submit button
-with = col1:
+with col1:
 if st.button('Save'):
     st.markdown(f"**Full Name:** {full_name}")
     st.markdown(f"**Current Position:** {current_position}")
@@ -785,7 +785,7 @@ if st.button('Save'):
     st.markdown(f"**Competency:** {select_competency}")
     st.markdown(f"**My Level for this Competency:** {competency_level}")
     st.success('Information saved successfully!')
-with = col2:
+with col2:
 if st.button('Reset'):
     st.caching.clear_cache()
     st.experimental_rerun()
