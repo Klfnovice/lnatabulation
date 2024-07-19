@@ -399,7 +399,7 @@ competency_descriptions = {
     """
         - Performs necessary quantitative and/or qualitative data analysis to generate the information needed, and organizes the same for presentation purposes.
     """,
-    "Superior"
+    "Superior":
     """
         - Reviews research results and organizes such into useful information (socio-economic, information, demographic, program/project feasibility, situationer, impact analysis, etc.) in provincial development planning
     """,
