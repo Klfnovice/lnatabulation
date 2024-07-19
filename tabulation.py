@@ -249,7 +249,7 @@ competency_descriptions = {
             - Addresses exceptional participant/training concerns and issues.
             - Approves Training Reports and ensures that all recommendations are properly implemented.
         """,
-    },
+    
     
     
 
