@@ -793,8 +793,9 @@ if select_competency in competency_descriptions:
     for i, level in enumerate(levels):
         cols[i].markdown(f"**{level}**")
         cols[i].markdown(competency_descriptions[select_competency][level])
-
-competency_level = st.selectbox('Competency Level', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
+        
+st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
+competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
 # Submit button
 if st.button('Save'):
