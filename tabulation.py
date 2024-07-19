@@ -726,7 +726,7 @@ competency_descriptions = {
         - Writes white papers on key agency objectives for use by high-level officials.
         - Reviews and critiques the writing of others in a constructive and substantive manner.
     """,
-    },
+    
         
         
     
