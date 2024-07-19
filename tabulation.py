@@ -452,6 +452,14 @@ competency_descriptions = {
         - Develops policies or enhances procedures on rewards and recognition.
         - Determines and recommends kind of monetary and non-monetary rewards based on existing policies.
     """,
+    "Superior":
+    """
+        - Reviews and recommends enhancements to existing policies, guidelines, procedure relative to the reward and recognition programs.
+        - Develops communication and implementation plan on the policies, guidelines and issuances on rewards and recognition program.
+        - Monitors and evaluates the conduct of the awarding rites.
+        - Monitors and evaluates the implementation of the rewards and recognition program.
+        - Conducts studies on the impact of the program to the performance of the organization/unit.
+    """,
         
     
     
