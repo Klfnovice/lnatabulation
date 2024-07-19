@@ -765,8 +765,10 @@ st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
 learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
 
 competency_descriptions = {
-    'Competency 1': 'Description 1',
-    'Competency 2': 'Description 2',
+    'Competency 1': 'Basic',
+    'Competency 2': 'Intermediate',
+    'Competency 2': 'Advanced',
+    'Competency 2': 'Superior',
     # Add other competencies as needed
 }
 st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
