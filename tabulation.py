@@ -388,7 +388,7 @@ competency_descriptions = {
         - Develops and enhances assessment tools/forms.
         - Interviews applicants/candidates to vacant positions.
         - Conducts exit interviews to identify HR strengths and areas for improvement and prepares report.
-    """
+    """,
     "Superior":
     """
         - Evaluate accuracy of assessment results.
