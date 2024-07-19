@@ -39,7 +39,7 @@ competency_descriptions = {
             - Develops communication plan and policies, guidelines and issuances on accounting rules and regulations.
             - Reviews and recommends policies, guidelines and processes on accounting and auditing procedures.
             - Prepares financial report for management and recommends appropriate financial internal control measures for the allocation and sourcing of funds.
-        """
+        """,
         },
     "Benefits, Compensation and Welfare Management": {
         "Description": 
@@ -70,36 +70,43 @@ competency_descriptions = {
             - Reviews and recommends proposals for enhancements and changes of existing processes and systems of benefits, compensation, and welfare mechanism of the organization.
             - Formulates operational policies and guidelines on the benefits, compensation, and welfare of employees.
             - Develops communication and implementation plan on the benefits and compensation system, and employees welfare programs of the organization.
-        """
+        """,
     },
     "Budget Management": {
         "Description": 
         """Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.""",
-        "Basic": """
+        "Basic": 
+        """
             - Ability to implement and apply, with guidance or supervision, existing processes and policies for programs nd activities.""",
         "Intermediate": """
             - Ability to ensure adherence to procedures, processes and policies in the performance of activities relative to budget management.
         """,
-        "Advanced": """
+        "Advanced": 
+        """
             - Ability to monitor and review data and recommend enhancements and/or changes in procedures, processes and policies relative to budget management.
         """,
-        "Superior": """
-            - Ability to formulate advance policies and strategies on budget management.
+        "Superior": 
         """
+            - Ability to formulate advance policies and strategies on budget management.
+        """,
     },
     "Building Collaborative, Inclusive Working Relationships": {
         "Description": 
         """The ability to build and maintain a network of reciprocal, high trust, synergistic working relationships within the organization nd across government and relevant sectors. This involves the ability to successfully leverage and maximize opportunities for strategic influencing within the organization and with external stakeholders.""",
-        "Basic": """
+        "Basic": 
+        """
             - Maximizes existing partnerships and networks and capitalizes son these to deliver or enhance work outcomes.
         """,
-        "Intermediate": """
+        "Intermediate": 
+        """
             - Builds partnerships and networks to deliver or enhance work outcomes.
         """,
-        "Advanced": """
+        "Advanced": 
+        """
             - Strengthens and deepens partnerships and networks to deliver or enhance work outcomes.
         """,
-        "Superior": """
+        "Superior": 
+        """
             - Builds and then leverages on collaborative partnerships and networks to deliver or enhance work outcomes.
         """,
     },
@@ -249,9 +256,166 @@ competency_descriptions = {
             - Addresses exceptional participant/training concerns and issues.
             - Approves Training Reports and ensures that all recommendations are properly implemented.
         """,
+    },
+    "Program/Course Design and Development": {
+        "Description":
+        """The ability to apply research skills towards identifying and developing learning objectives, sourcing, selecting and sequencing content, designing training/learning methodologies and activities and developing training/learning materials.""",
+        "Basic":
+        """
+            - Prepares and selects energizers and ice breakers.
+        """,
+        "Intermediate":
+        """
+            - Reviews and determines appropriateness of Course Briefs and Training Activity Plans/Training Design Matrix submitted by external Learning Service Providers.
+            - Reviews and determines appropriateness of Course Briefs and Training Activity Plans/Training Design Matrix submitted by external Learning Service Providers.
+            - Sources, selects and sequences content in accordance with the specified learning objectives.
+            - Develops PowerPoint slides and other learning materials given the content and other specifications.
+            - Documents and prepares own Course Briefs, Training Activity Plan/Training Design Matrix.
+        """,
+        "Advanced":
+        """
+            - Develops learning objectives (with performance, conditions and criteria) using the SMART format and Bloom's taxonomy.
+            - Designs training/learning methodologies and activities.
+            - Develops Participant's Manuals, Facilitator's Guide and Evaluation Plan and other training/learning materials.
+        """,
+        "Superior":
+        """
+            - Reviews and approves Course Brief, Training Activity Plan/ Training Design Matrix, Participant's Manual, Facilitator's Guide and Evaluation Plan, in accordance with the identified needs as specified in Training/Learning Needs/Competency Assessment Reports and Annual Training/Learning and Development Plan.
+            - Identifies and allocates resource requirements to ensure proper design and development of learning interventions.
+        """,
+    },
+    "Public Relations Management": {
+        "Description":
+        """The ability to build, maintain and manage engagement and goodwill between the organization and the public through the installation of assistance and complaint mechanisms and the implementation of special programs.""",
+        "Basic":
+        """
+            - Responds to simple inquiries and requests.
+            - Refers simple requests/complaints from agencies or clients to concerned offices/units/agencies.
+            - Maintains and updates databases of reports received, queries, complaints, commendation and suggestions.
+            - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to public relations.
+        """,
+        "Intermediate":
+        """
+            - Coordinates with concerned offices/units/agencies on reports received for action.
+            - Prepares periodic statistical reports on complaints, requests and queries received from clients.
+            - Coordinates with concerned offices/units/agencies for the conduct of validation for the recipients of special programs (e.g. Pamanang Lingkod Bayan).
+            - Conducts validation for the recipients of special programs (e.g. Pamanang Lingkod Bayan).
+            - Prepares replies to queries on the implementation of special programs and public assistance and complaint center.
+        """,
+        "Advanced":
+        """
+            - Collaborates with regulatory agencies and or media relative to complaints and commendations about public officials and employees.
+            - Prepares periodic reports and recommendations to management on the operation and services of the public assistance and complaint center.
+            - Develops feedback mechanism to assess the services of the public assistance and complaint center.
+            - Develops or enhances strategies on how to sustain or improve existing programs.
+            - Conducts studies/analysis on the complaints, requests and queries of clients and agencies.
+            - Develops or enhances policies and procedures on the implementation of special programs.
+        """,
+        "Superior":
+        """
+            - Reviews and recommends enhancements to existing policies, guidelines and procedures relative to public relations.
+            - Reviews existing assistance and complaint mechanisms and special programs and recommends enhancements.
+            - Monitors and evaluates the implementation of the special programs and the public assistance and complaint center.
+        """,    
+    },
+    "Records Management": {
+    "Description":
+    """The ability to apply and adapt records management standards related to the cycle of records in an agency/institution which are conducted to achieve adequate and proper documentation of government policies, transactions and effective management of at he agency/institution operations.""",
+    "Basic":
+    """
+        - Develops communication plan on policies, guidelines and issuances on the administration of examination.
+        - Conducts training for examination representatives/test administrators/examiners and supervisors.
+        - Reviews and recommends manual on test administration.
+        - Maintains personal records in a methodical and organized manner using own initiative to facilitate easy retrieval.
+        - Quickly retrieves employees' records upon request and willingly and immediately respond to clients.
+        - Applies knowledge of records management software applications and their use.
+        - Checks accuracy of the details of all transactions and record keeping.
+    """,
+    "Intermediate":
+    """
+        - Keeps updated with current records management technology and practices to continuously improve existing systems and practices for efficiency and effectiveness in records management functions.
+        - Applies and adapt record management standards and best practices effectively.
+        - Support others in the development and introduction of new record keeping practices and procedures.
+        - Displays proactive approach to improving record keeping practices.
+    """,
+    "Advanced":
+    """
+        - Develops procedures for quick classification, better storage, protection and disposition of records to provide integrity, reliability, efficiency and effectiveness in records management functions and to respond to internal and external clients' needs and expectations.
+        - Interprets best practice standards.
+        - Applies locally and provide accurate and effective advice and guidance to colleagues.
+        - Assesses current record keeping systems and provides feedback on their strengths and areas for improvement.
+        - Recognizes potential issues in relation to records management and communicates these to the relevant staff.
+    """,
+    "Superior":
+    """
+        - Shares expertise, lessons learned and ideas with others for improvement of the records management system for the organization's productivity, efficiency and effectiveness.
+        - Develops and implements record management policies, procedure and guidance, and provides advice on record keeping issues.
+        - Critically assesses current procedures and provides workable solutions for continuous improvement.
+    """,
+    },
+    "Recruitment, Selection and Placement": {
+    "Description":
+    """The ability to search, attract, and assess job candidates and to guide the appointing authority in choosing the best fit for the job at the right time, in accordance with legal requirements in order to achieve organizational goals.""",
+    "Basic":
+    """
+        - Prepares annual list of projected turnover due to retirement for recruitment planning.
+        - Maintains and updates database of vacancies, applicants, and personnel actions.
+        - Facilitates publication and posting of vacancies.
+        - Coordinates with personnel selection boards (PSBs) and heads of offices/divisions on their availability for meetings and interviews.
+        - Checks the veracity and authenticity of the CSC eligibility of the candidates by verifying with the IRMO/EAD.
+        - Provides new appointees with the list of pre-employment requirements and endorses them to the heads of offices/divisions.
+        - Writes simple pro-forma communications relative to recruitment, selection and placement.
+    """,
+    "Intermediate":
+    """
+        - Sources internal and external talents through the use of various recruitment strategies.
+        - Checks the completeness of application documents and reviews paper qualifications of applicants vis-a-vis the qualification standards.
+        - Communicates/informs applicants of the results of the screening and assessment schedules.
+        - Administers assessment instruments and prepares assessment results.
+        - Facilitates the interview and prepares reports.
+        - Prepares reports based on background investigation results.
+        - Takes minutes of meetings during PSB meetings/ deliberations.
+        - Prepares assessment folders and a draft recommendation memo for review and approval by the PSB.
+        - Prepares resolutions and appointments for signature by the Commission/Regional Director.
+        - Conducts mini orientation to new appointees about CSC, basic policies on work hours, benefits, etc.
+        - Completes the new hires' employment related paperwork.
+        - Prepares replies to queries on recruitment, selection and placement.
+    """,
+    },
+    "Research and Development Planning": {
+    "Description":
+    """Systematically gathering and analyzing information useful in identifying, implementing and evaluating development programs supportive of the development thrusts and priorities.""",
+    "Basic":
+    """
+        - Observes guidelines and checks for completeness of required information when determining the scope and limitation of research work
+        - Applies appropriate data gathering tools and recognizes and accesses correct information sources
+    """,
+    "Intermediate":
+    """
+        - Recognizes and adopts the appropriate research methodologies and resources needed based on the identified needs and issues that must be addressed by the research
+        - Identifies primary and alternate sources of data, applies data reconstruction techniques and data gathering methodologies to complete required data
+    """,
+    "Advanced":
+    """
+        - Performs necessary quantitative and/or qualitative data analysis to generate the information needed, and organizes the same for presentation purposes.
+    """,
+    "Superior"
+    """
+        - Reviews research results and organizes such into useful information (socio-economic, information, demographic, program/project feasibility, situationer, impact analysis, etc.) in provincial development planning
+    """,
     
     
+        
     
+    
+
+
+
+
+
+
+
+
 
     
     }                                                                                                           
