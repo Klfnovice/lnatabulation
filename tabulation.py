@@ -3,10 +3,10 @@ import streamlit as st
 # Competency descriptions from the provided Excel file
 competency_descriptions = {
     "Accounting": {
-        "Description": """
-            The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.
-        """,
-        "Basic": """
+        "Description": 
+        """The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.""",
+        "Basic": 
+        """
             - Receives and records all claims for processing, evaluation and certification of the unit.
             - Checks completeness of documents/attachments needed for the transaction and validates accuracy of computation.
             - Prepares certification or statement of employees' contributions and remittances.
@@ -14,7 +14,8 @@ competency_descriptions = {
             - Prepares journal entries and certificates of taxes withheld.
             - Writes simple pro-forma communications on accounting transactions.
         """,
-        "Intermediate": """
+        "Intermediate": 
+        """
             - Validates and records journal entries of financial transactions.
             - Records financial transactions in the book of accounts and maintains files of financial reports/documents.
             - Prepares certificate of remittances, schedule of remittances and all other requirements for remittances.
@@ -22,7 +23,8 @@ competency_descriptions = {
             - Reconciles general and subsidiary ledgers of accounts.
             - Prepares replies to queries on accounting transactions.
         """,
-        "Advanced": """
+        "Advanced": 
+        """
             - Reviews monthly deductions and remittances to national government agencies.
             - Reviews ledger, general ledger accounts and schedules of the financial reports.
             - Validates and reconciles reciprocal accounts for the central/regional offices.
@@ -30,7 +32,8 @@ competency_descriptions = {
             - Approves journal entries.
             - Develops or enhances existing policies, guidelines and processes on accounting and auditing procedures.
         """,
-        "Superior": """
+        "Superior": 
+        """
             - Certifies funds availability of disbursements, supporting documents are complete and proper and the necessary deductions are effected and monitors timely remittance of all deductions and payments made.
             - Identifies trends and developments in accounting and auditing and recommends enhancement of policies, procedures, systems and processes.
             - Develops communication plan and policies, guidelines and issuances on accounting rules and regulations.
@@ -39,8 +42,8 @@ competency_descriptions = {
         """
         },
     "Benefits, Compensation and Welfare Management": {
-        "Description": """
-            The ability to develop, implement, evaluate and enhance policies and programs on benefits, compensation, rewards, incentives, health and wellness to improve employee welfare.""",
+        "Description": 
+        """The ability to develop, implement, evaluate and enhance policies and programs on benefits, compensation, rewards, incentives, health and wellness to improve employee welfare.""",
         "Basic": """
             - Collates data/materials from the conduct and evaluation of organization-wide programs (i.e. health and wellness programs, information campaigns, sports activities, anniversary and Christmas programs, etc.).
             - Maintains and updates employee records (HRMIS, leave, absences and tardiness, medical, service records, etc.).
@@ -48,7 +51,8 @@ competency_descriptions = {
             - Writes simple pro-forma communications relative to benefits, compensation and welfare of employees.
             - Maintains and updates procurement records in database/filing system.
         """,
-        "Intermediate": """
+        "Intermediate": 
+        """
             - Computes leave, salaries, salary adjustments, loans, medical reimbursements/ entitlements of employees and prepares vouchers.
             - Monitors and reviews office reports to ensure compliance with existing policies, processes and systems of benefits, compensation, rewards & incentives, health and wellness mechanism of the organization.
             - Coordinates with central and regional office representatives in the implementation and evaluation of programs.
@@ -60,7 +64,8 @@ competency_descriptions = {
             - Prepares organization-wide reports on policy implementation and program administration.
             - Evaluates existing policies, processes and systems on benefits, compensation, wellness mechanisms and proposes enhancements.
         """,
-        "Superior": """
+        "Superior": 
+        """
             - Establishes and develops a comprehensive employee benefits, compensation and welfare programs for the CSC.
             - Reviews and recommends proposals for enhancements and changes of existing processes and systems of benefits, compensation, and welfare mechanism of the organization.
             - Formulates operational policies and guidelines on the benefits, compensation, and welfare of employees.
@@ -68,11 +73,10 @@ competency_descriptions = {
         """
     },
     "Budget Management": {
-        "Description": """
-            Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.""",
+        "Description": 
+        """Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.""",
         "Basic": """
-            - Ability to implement and apply, with guidance or supervision, existing processes and policies for programs nd activities.
-        """,
+            - Ability to implement and apply, with guidance or supervision, existing processes and policies for programs nd activities.""",
         "Intermediate": """
             - Ability to ensure adherence to procedures, processes and policies in the performance of activities relative to budget management.
         """,
@@ -84,8 +88,8 @@ competency_descriptions = {
         """
     },
     "Building Collaborative, Inclusive Working Relationships": {
-        "Description": """
-            The ability to build and maintain a network of reciprocal, high trust, synergistic working relationships within the organization nd across government and relevant sectors. This involves the ability to successfully leverage and maximize opportunities for strategic influencing within the organization and with external stakeholders.""",
+        "Description": 
+        """The ability to build and maintain a network of reciprocal, high trust, synergistic working relationships within the organization nd across government and relevant sectors. This involves the ability to successfully leverage and maximize opportunities for strategic influencing within the organization and with external stakeholders.""",
         "Basic": """
             - Maximizes existing partnerships and networks and capitalizes son these to deliver or enhance work outcomes.
         """,
@@ -100,9 +104,10 @@ competency_descriptions = {
         """,
     },
     "Cash Management": {
-        "Description": """
-            The ability to collect and manage assessment and usage of cash flow to ensure the financial stability and solvency of an organization.""",
-        "Basic": """
+        "Description": 
+        """The ability to collect and manage assessment and usage of cash flow to ensure the financial stability and solvency of an organization.""",
+        "Basic": 
+        """
             - Prepares the following financial documents:
                 - deposit slips
                 - summary of collections
@@ -112,7 +117,8 @@ competency_descriptions = {
                 - documents on availability of funds;
             - Liaises with the bank and other financial institutions with regards to payments of remittances and other transactions.
         """,
-        "Intermediate": """
+        "Intermediate": 
+        """
             - Issues receipts for various transactions.
             - Maintains/updates official check register/official cash book.
             - Prepares the following financial documents:                     
@@ -124,13 +130,15 @@ competency_descriptions = {
                 - Generates and evaluates data on various aspects of tasks and activities.
             - Recommends enhancements on the processes within the Division Level.
         """,
-        "Advanced": """
+        "Advanced": 
+        """
             - Prepares and consolidates Monthly Cash Position Reports of all Funds.
             - Monitors the transfer of funds to CSC Regional Offices.
             - Verifies and signs checks up to the extent of accountability as authorized by the Commission.
             - Identifies trends and developments in cash management and recommend enhancements of current procedures, processes and policies.
         """,
-        "Superior": """
+        "Superior": 
+        """
             - Monitors compliance with generally accepted accounting and auditing principles rules and regulations pertaining to: 
                 - collections, deposits release of payments
                 - preparation and submission of cash position report to the management
@@ -140,25 +148,30 @@ competency_descriptions = {
         """,
     },
     "Championing and Applying Innovation": {
-        "Description": """
-            The ability to increase productivity and efficiency at work by applying new ideas and creative solutions to existing processes, methods and services. """,
-        "Basic": """
+        "Description": 
+        """The ability to increase productivity and efficiency at work by applying new ideas and creative solutions to existing processes, methods and services. """,
+        "Basic": 
+        """
             - Demonstrates an awareness of basic principles of innovation            
         """,
-        "Intermediate": """
+        "Intermediate": 
+        """
             - Contributes new ideas, approaches and solutions
         """,
-        "Advanced": """
+        "Advanced": 
+        """
             - Produces novel, out-of-the-box ideas to improve or replace existing practices and procedures
         """,
-        "Superior": """
+        "Superior": 
+        """
             - Promotes a culture and discipline of challenging the status quo and seeking for and applying improvements.
         """,
     },
     "Procurement Management": {
-        "Description": """
-            The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.""",
-        "Basic": """
+        "Description": 
+        """The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.""",
+        "Basic": 
+        """
             - Coordinates schedules and attendance of committee members to Bids and Awards Committee (BAC) meetings.
             - Takes charge of logistic concerns such as but not limited to materials, equipment and meals.
             - Files document for procurement such as but not limited to the following:
@@ -169,7 +182,8 @@ competency_descriptions = {
             - Maintains and updates procurement records in database/filing system.
             - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to procurement.
         """,
-        "Intermediate": """
+        "Intermediate": 
+        """
             - Prepares agenda folder/ documents/materials and takes minutes of BAC meetings.
             - Prepares the following reports:
                 - APP
@@ -179,8 +193,9 @@ competency_descriptions = {
             - Procures goods as scheduled and in compliance with the existing laws and regulations (RA9184, COA, DBM).
             - Prepares replies to queries on procurement of supplies and properties.
         """,
-        "Advanced": """
-            - Reviews and validates various reports:
+        "Advanced": 
+        """
+                - Reviews and validates various reports:
                 - APP
                 - APCPI
                 - PMR
@@ -188,13 +203,26 @@ competency_descriptions = {
             - Consolidates the Project Procurement Management Plans (PMP) of offices/units into APP.
             - Reviews requests and recommends approval for the procurement of supplies and equipment.
         """,
-        "Superior": """
+        "Superior": 
+        """ 
             - Convenes the BAC meetings as the Chair of the BAC Secretariat.
             - Endorses APCPI & PMR for approval by the management and submission to the Government Procurement Policy Board - Technical Support Office (GPPB TSO).
             - Develops communication plan and procurement plan in accordance with the approved office budget.
             - Monitors the implementation of policies, programs and activities on procurement.
+        """,
+    }, 
+    "Program/Course Delivery and Administration": {
+        "Description": 
+        """The ability to plan, execute and report the implementation of training/learning interventions, courses and programs.""",
+        "Basic": 
         """
- 
+            - Checks and confirms registration of participants, accepts payments and/or facilitates issuance of OR/AR.
+            - Issues complete training kit (IDs, notebooks, hand-outs, etc.) to registered participants.
+            - Prepares and issues training paraphernalia (such as: Attendance Sheet, Participants Directory, Certificates of Completion and Appearance, etc.) and other training and office materials and supplies.
+            - Reproduces and packages training/learning materials as specified in the Training Activity Plan/ Training Design Matrix.
+            - Gathers and preserves workshop outputs as required by the training administrator.
+            - Prepares status of payments of participants. 
+        """,
     }                                                                                                           
 }
 
