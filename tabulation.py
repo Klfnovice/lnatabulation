@@ -757,7 +757,7 @@ def bold_label(label):
 
 # Function to create bold labels without extra space
 def bold_label(label):
-    return f"<div style='font-weight: bold; margin-bottom: -10px;'>{label}</div>"
+    return f"<div style='font-weight: bold; margin-bottom: -5px;'>{label}</div>"
 
 # Inputs with bold labels
 st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
