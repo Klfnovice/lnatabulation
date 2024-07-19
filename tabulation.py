@@ -737,62 +737,50 @@ st.title('Learning Needs Analysis - eLearning Preferences')
 # Function to create bold labels
 def bold_label(label):
     return f"**{label}**"
-
 # Function to create bold labels without extra space
 def bold_label(label):
-    return f"<div style='font-weight: bold; margin-bottom: -5px;'>{label}</div>"
-
+    return f"<div style='font-weight: bold; margin-bottom: -100px;'>{label}</div>"
 # Inputs with bold labels
 st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
-full_name = st.text_input(' ', key='full_name')
-
+full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
 st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
 current_position = st.text_input(' ', key='current_position')
-
 st.markdown(bold_label('Office/Agency (Write in full, including Region and Field, if any)'), unsafe_allow_html=True)
 office_agency = st.text_input(' ', key='office_agency')
-
 st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
 position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
-
 st.markdown(bold_label('Province'), unsafe_allow_html=True)
 province = st.selectbox(' ', ['Albay', 'Camarines Sur', 'Sorsogon'], key='province')
-
 st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
 device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
-
 st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
 learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
-
-competency_descriptions = {
-    'Competency 1': 'Basic',
-    'Competency 2': 'Intermediate',
-    'Competency 2': 'Advanced',
-    'Competency 2': 'Superior',
-    # Add other competencies as needed
-}
 st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
 select_competency = st.selectbox(' ', list(competency_descriptions.keys()), key='select_competency')
-
-competency_level = st.selectbox(' ', ['Beginner', 'Intermediate', 'Advanced'], key='competency_level')
-
-# Arrange Save and Reset buttons horizontally with no space between them
-col1, col2 = st.columns([1, 1])
-
-with col1:
-    if st.button('Save'):
-        st.markdown(f"**Full Name:** {full_name}")
-        st.markdown(f"**Current Position:** {current_position}")
-        st.markdown(f"**Office/Agency:** {office_agency}")
-        st.markdown(f"**Position Level:** {position_level}")
-        st.markdown(f"**Province:** {province}")
-        st.markdown(f"**Device Used for e-Learning:** {device}")
-        st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
-        st.markdown(f"**Competency:** {select_competency}")
-        st.markdown(f"**My Level for this Competency:** {competency_level}")
-        st.success('Information saved successfully!')
-
-with col2:
-    if st.button('Reset'):
-        st.caching.clear_cache()
-        st.experimental_rerun()
+# Display competency descriptions
+if select_competency in competency_descriptions:
+    st.markdown(f"### {select_competency} Competency Descriptions")
+    st.markdown(competency_descriptions[select_competency]["Description"])
+    cols = st.columns(4)
+    levels = ["Basic", "Intermediate", "Advanced", "Superior"]
+    for i, level in enumerate(levels):
+        cols[i].markdown(f"**{level}**")
+        cols[i].markdown(competency_descriptions[select_competency][level])
+        
+st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
+competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
+# Submit button
+if st.button('Save'):
+    st.markdown(f"**Full Name:** {full_name}")
+    st.markdown(f"**Current Position:** {current_position}")
+    st.markdown(f"**Office/Agency:** {office_agency}")
+    st.markdown(f"**Position Level:** {position_level}")
+    st.markdown(f"**Province:** {province}")
+    st.markdown(f"**Device Used for e-Learning:** {device}")
+    st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
+    st.markdown(f"**Competency:** {select_competency}")
+    st.markdown(f"**My Level for this Competency:** {competency_level}")
+    st.success('Information saved successfully!')
+if st.button('Reset'):
+    st.caching.clear_cache()
+    st.experimental_rerun()
