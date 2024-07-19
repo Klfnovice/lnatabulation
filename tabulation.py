@@ -780,19 +780,23 @@ if select_competency in competency_descriptions:
 st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
 competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
-# Submit button
-if st.button('Save'):
-    st.markdown(f"**Full Name:** {full_name}")
-    st.markdown(f"**Current Position:** {current_position}")
-    st.markdown(f"**Office/Agency:** {office_agency}")
-    st.markdown(f"**Position Level:** {position_level}")
-    st.markdown(f"**Province:** {province}")
-    st.markdown(f"**Device Used for e-Learning:** {device}")
-    st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
-    st.markdown(f"**Competency:** {select_competency}")
-    st.markdown(f"**My Level for this Competency:** {competency_level}")
-    st.success('Information saved successfully!')
+# Arrange Save and Reset buttons horizontally
+col1, col2 = st.columns(2)
 
-if st.button('Reset'):
-    st.caching.clear_cache()
-    st.experimental_rerun()
+with col1:
+    if st.button('Save'):
+        st.markdown(f"**Full Name:** {full_name}")
+        st.markdown(f"**Current Position:** {current_position}")
+        st.markdown(f"**Office/Agency:** {office_agency}")
+        st.markdown(f"**Position Level:** {position_level}")
+        st.markdown(f"**Province:** {province}")
+        st.markdown(f"**Device Used for e-Learning:** {device}")
+        st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
+        st.markdown(f"**Competency:** {select_competency}")
+        st.markdown(f"**My Level for this Competency:** {competency_level}")
+        st.success('Information saved successfully!')
+
+with col2:
+    if st.button('Reset'):
+        st.caching.clear_cache()
+        st.experimental_rerun()
