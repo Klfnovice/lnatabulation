@@ -619,7 +619,7 @@ competency_descriptions = {
         - Writes simple pro-forma communications such as but not limited to acknowledgment and transmittal letters relative to test administration.
         - Prepares requirements on the liquidation/reimbursement of examination related expenses (such as but not limited to Office Order, Itinerary of travel, vouchers, PR/RIS, liquidation/ reimbursement report, etc.).
     """,
-    "Intermediate"
+    "Intermediate":
     """
         - Prepares examination announcements/advisory.
         - Coordinates with partner agencies on examination related activities.
