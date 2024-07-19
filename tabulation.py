@@ -460,7 +460,26 @@ competency_descriptions = {
         - Monitors and evaluates the implementation of the rewards and recognition program.
         - Conducts studies on the impact of the program to the performance of the organization/unit.
     """,
-        
+    },
+    "Solving Problems and Making Decisions": {
+    "Description":
+    """The ability to resolve deviations and exercise good judgement by using fact-based analysis and generating and selecting appropriate courses of action to produce positive results.""",
+    "Basic"
+    """
+        - Provides timely solutions to problems and decision dilemmas that have clear-cut options and/or choices and whose solutions are available and can be accessed from a database or gleaned from an existing policy or process.
+    """,
+    "Intermediate":
+    """
+        - Provides timely solutions to problems and decision dilemmas that do not have clear-cut options and resolutions may require some analysis or creativity.
+    """,
+    "Advanced":
+    """
+        - Provides timely solutions to problems and decision dilemmas that do not have clear-cut options and assumptions are partial or minimal and need to be identified.
+    """,
+    "Superior":
+    """
+        - Provides timely solutions to problems even without available data and comes up with appropriate and sound alternatives to resolve a decision dilemma.
+    """,
     
     
         
