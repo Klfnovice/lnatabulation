@@ -780,8 +780,8 @@ if select_competency in competency_descriptions:
 st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
 competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
-# Arrange Save and Reset buttons horizontally
-col1, col2 = st.columns(2)
+# Arrange Save and Reset buttons horizontally with no space between them
+col1, col2 = st.columns([1, 1])
 
 with col1:
     if st.button('Save'):
