@@ -223,6 +223,37 @@ competency_descriptions = {
             - Gathers and preserves workshop outputs as required by the training administrator.
             - Prepares status of payments of participants. 
         """,
+        "Intermediate":
+        """
+            - Prepares and executes Learning and Development/ Program/Course Implementation Checklists using pre-designed template.
+            - Procures miscellaneous materials and processes petty cash vouchers.
+            - Selects, recommends and coordinates with subject matter experts (SMEs).
+            - Processes standard Service Level Agreements (SLAs)/Memorandum of Agreement (MOAs).
+            - Checks if venue arrangement is in accordance with the specifications provided for in the Training Activity Plan/Training Design Matrix (TDM) or as requested by the Facilitator or SME.
+            - Administers Level 1 and 2 Evaluation Instruments as specified in the Evaluation Plan.
+            - Prepares Training Report in accordance with the ISO 9001 template/Competency-Based Learning and Development Management System (CBLDMS).
+            - Ensures the completeness of the Implementation Folder as required in the ISO 9001 Program/Course Implementation Process/CBLDMS.
+        """,
+        "Advanced":
+        """
+            - Sources and recommends new SMEs.
+            - Formulates non-standard Service Level Agreements (SLAs)/Memorandum of Agreement (MOAs) subject to the review of the Office of Legal Affairs (OLA)/Legal Service Division (LSD).
+            - Determines special learning and non-learning needs of stakeholders such as agencies/other CSC units.
+            - Prepares comprehensive Training/Learning and Development Report for In-House Programs or customized training/L&D programs.
+        """,
+        "Superior":
+        """
+            - Reviews, approves and monitors L&D/Program/Course Implementation Checklists.
+            - Identifies and allocates resource requirements to ensure proper delivery and administration of training/learning interventions.
+            - Approves SMEs as recommended by the Training Administrator.
+            - Addresses exceptional participant/training concerns and issues.
+            - Approves Training Reports and ensures that all recommendations are properly implemented.
+        """,
+    },
+    
+    
+
+    
     }                                                                                                           
 }
 
