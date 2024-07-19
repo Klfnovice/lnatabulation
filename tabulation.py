@@ -755,9 +755,13 @@ st.title('Learning Needs Analysis - eLearning Preferences')
 def bold_label(label):
     return f"**{label}**"
 
-# Input fields
-st.markdown(bold_label('Full Name'))
-full_name = st.text_input('')
+# Function to create bold labels without extra space
+def bold_label(label):
+    return f"<div style='font-weight: bold; margin-bottom: -10px;'>{label}</div>"
+
+# Inputs with bold labels
+st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
+full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
 current_position = st.text_input('Current Position (Write in full including parenthetical, if any)')
 office_agency = st.text_input('Office/Agency (Write in full, including Region and Field, if any)')
 position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'])
