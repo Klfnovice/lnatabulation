@@ -725,28 +725,11 @@ competency_descriptions = {
         - Writes, reviews, and publishes advanced research findings and guidelines to be made available to other group and agencies.
         - Writes white papers on key agency objectives for use by high-level officials.
         - Reviews and critiques the writing of others in a constructive and substantive manner.
-    """,
-    
-        
-        
-    
-    
-    
-        
-    
-    
-
-
-
-
-
-
-
-
-
-    
+    """,    
     }                                                                                                           
 }
+
+
 
 # Page Title
 st.title('Learning Needs Analysis - eLearning Preferences')
