@@ -751,8 +751,13 @@ competency_descriptions = {
 # Page Title
 st.title('Learning Needs Analysis - eLearning Preferences')
 
+# Function to create bold labels
+def bold_label(label):
+    return f"**{label}**"
+
 # Input fields
-full_name = st.text_input('Full Name')
+st.markdown(bold_label('Full Name'))
+full_name = st.text_input('')
 current_position = st.text_input('Current Position (Write in full including parenthetical, if any)')
 office_agency = st.text_input('Office/Agency (Write in full, including Region and Field, if any)')
 position_level = st.selectbox('Position Level', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'])
