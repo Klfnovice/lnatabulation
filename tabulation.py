@@ -740,11 +740,11 @@ def bold_label(label):
 
 # Function to create bold labels without extra space
 def bold_label(label):
-    return f"<div style='font-weight: bold; margin-bottom: -100px;'>{label}</div>"
+    return f"<div style='font-weight: bold; margin-bottom: -5px;'>{label}</div>"
 
 # Inputs with bold labels
 st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
-full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
+full_name = st.text_input(' ', key='full_name')
 
 st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
 current_position = st.text_input(' ', key='current_position')
@@ -764,21 +764,15 @@ device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='dev
 st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
 learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
 
+competency_descriptions = {
+    'Competency 1': 'Description 1',
+    'Competency 2': 'Description 2',
+    # Add other competencies as needed
+}
 st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
 select_competency = st.selectbox(' ', list(competency_descriptions.keys()), key='select_competency')
 
-# Display competency descriptions
-if select_competency in competency_descriptions:
-    st.markdown(f"### {select_competency} Competency Descriptions")
-    st.markdown(competency_descriptions[select_competency]["Description"])
-    cols = st.columns(4)
-    levels = ["Basic", "Intermediate", "Advanced", "Superior"]
-    for i, level in enumerate(levels):
-        cols[i].markdown(f"**{level}**")
-        cols[i].markdown(competency_descriptions[select_competency][level])
-        
-st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
-competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
+competency_level = st.selectbox(' ', ['Beginner', 'Intermediate', 'Advanced'], key='competency_level')
 
 # Arrange Save and Reset buttons horizontally with no space between them
 col1, col2 = st.columns([1, 1])
