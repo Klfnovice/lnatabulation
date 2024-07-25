@@ -181,6 +181,68 @@ users = {
     'user2': 'user2'
 }
 
+# Login functionality
+st.sidebar.title('Login')
+
+if 'logged_in' not in st.session_state:
+    st.session_state.logged_in = False
+
+if not st.session_state.logged_in:
+    username = st.sidebar.text_input('Username', key='login_username')
+    password = st.sidebar.text_input('Password', type='password', key='login_password')
+    login_button = st.sidebar.button('Login', key='login_button')
+    
+    if login_button:
+        if username in users and users[username] == password:
+            st.session_state.logged_in = True
+            st.session_state.username = username
+            st.experimental_rerun()
+        else:
+            st.sidebar.error('Invalid username or password')
+else:
+    st.sidebar.success(f'Logged in as {st.session_state.username}')
+    if st.sidebar.button('Logout'):
+        st.session_state.logged_in = False
+        st.session_state.username = ''
+        st.experimental_rerun()
+
+if st.session_state.logged_in:
+    if st.session_state.username == 'admin':
+        st.title('Admin Dashboard')
+
+        st.markdown("## Stored Data")
+        c.execute('SELECT * FROM elearning_preferences')
+        rows = c.fetchall()
+        df = pd.DataFrame(rows, columns=["ID", "Full Name", "Current Position", "Position Level", "Device", "Learning Mode", "Competency", "Competency Level"])
+        st.dataframe(df)
+        
+        if st.button('Generate PDF Report for All Data'):
+            pdf_path = generate_pdf(rows, "all_elearning_preferences.pdf")
+            webbrowser.open(f"file://{pdf_path}")
+            st.success(f"PDF Report generated: {pdf_path}")
+
+        selected_user = st.selectbox('Select a user to generate marksheet', df['Full Name'])
+        if st.button('Generate Marksheet for Selected User'):
+            user_data = df[df['Full Name'] == selected_user].values[0]
+            pdf_path = generate_marksheet(user_data)
+            webbrowser.open(f"file://{pdf_path}")
+            st.success(f"Marksheet PDF generated for {selected_user}: {pdf_path}")
+        
+        st.sidebar.title('Admin Actions')
+        st.sidebar.markdown("## Delete User Data")
+        user_to_delete = st.sidebar.selectbox('Select a user to delete', df['Full Name'])
+        if st.sidebar.button('Delete User'):
+            delete_data(user_to_delete)
+            st.experimental_rerun()
+            st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
+    else:
+        st.title('')
+
+
+
+
+
+
 # Function to create bold labels without extra space
 def bold_label(label):
     return f"<div style='font-weight: bold;'>{label}</div>"
@@ -250,62 +312,6 @@ def delete_data(full_name):
         c.execute('DELETE FROM elearning_preferences WHERE full_name = ?', (full_name,))
         conn.commit()
 
-# Login functionality
-st.sidebar.title('Login')
-
-if 'logged_in' not in st.session_state:
-    st.session_state.logged_in = False
-
-if not st.session_state.logged_in:
-    username = st.sidebar.text_input('Username', key='login_username')
-    password = st.sidebar.text_input('Password', type='password', key='login_password')
-    login_button = st.sidebar.button('Login', key='login_button')
-    
-    if login_button:
-        if username in users and users[username] == password:
-            st.session_state.logged_in = True
-            st.session_state.username = username
-            st.experimental_rerun()
-        else:
-            st.sidebar.error('Invalid username or password')
-else:
-    st.sidebar.success(f'Logged in as {st.session_state.username}')
-    if st.sidebar.button('Logout'):
-        st.session_state.logged_in = False
-        st.session_state.username = ''
-        st.experimental_rerun()
-
-if st.session_state.logged_in:
-    if st.session_state.username == 'admin':
-        st.title('Admin Dashboard')
-
-        st.markdown("## Stored Data")
-        c.execute('SELECT * FROM elearning_preferences')
-        rows = c.fetchall()
-        df = pd.DataFrame(rows, columns=["ID", "Full Name", "Current Position", "Position Level", "Device", "Learning Mode", "Competency", "Competency Level"])
-        st.dataframe(df)
-        
-        if st.button('Generate PDF Report for All Data'):
-            pdf_path = generate_pdf(rows, "all_elearning_preferences.pdf")
-            webbrowser.open(f"file://{pdf_path}")
-            st.success(f"PDF Report generated: {pdf_path}")
-
-        selected_user = st.selectbox('Select a user to generate marksheet', df['Full Name'])
-        if st.button('Generate Marksheet for Selected User'):
-            user_data = df[df['Full Name'] == selected_user].values[0]
-            pdf_path = generate_marksheet(user_data)
-            webbrowser.open(f"file://{pdf_path}")
-            st.success(f"Marksheet PDF generated for {selected_user}: {pdf_path}")
-        
-        st.sidebar.title('Admin Actions')
-        st.sidebar.markdown("## Delete User Data")
-        user_to_delete = st.sidebar.selectbox('Select a user to delete', df['Full Name'])
-        if st.sidebar.button('Delete User'):
-            delete_data(user_to_delete)
-            st.experimental_rerun()
-            st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
-    else:
-        st.title('')
 
         # Add "Start LNA Survey" button to the sidebar for non-admin users
         if st.sidebar.button('Start LNA Survey') and not st.session_state.agreed:
