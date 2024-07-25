@@ -309,10 +309,15 @@ if st.session_state.logged_in:
             st.session_state.survey_started = True
 
         # Display the modal if it is open
-        if modal.is_open() and not st.session_state.agreed:
-            with modal.container():
-                show_modal()
+        
+        
+        
+        #if modal.is_open() and not st.session_state.agreed:
+            #with modal.container():
+                #show_modal()
 
+        
+        
         # Handle the agreement
         if st.session_state.agreed:
             st.write("You have agreed to the Terms of Service and Privacy Policy. Proceed with the survey.")
