@@ -447,7 +447,7 @@ def delete_data(user):
     conn.commit()
 
 # Login functionality
-#st.sidebar.image("/mnt/data/LCWD Logo - Copy.png", use_column_width=True)
+#st.sidebar.image("https://raw.githubusercontent.com/Klfnovice/lnatabulation/main/lcwd%20logo.png?token=GHSAT0AAAAAACTIRZDV7W6H5NX7VZGDEZ44ZTCKAOA", use_column_width=True)
 st.sidebar.title('Login')
 
 if 'logged_in' not in st.session_state:
