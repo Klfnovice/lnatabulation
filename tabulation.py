@@ -383,8 +383,48 @@ user_display_names = {
     's.brillo': 'Serdan Brillo',
     'e.buag': 'Ernani Buag',
     'nme.bulawan': 'Nezzie Marie Eloiza Bulawan',
-    'a.abiera': 'Arthur Abiera',
-    'a.abiera': 'Arthur Abiera',
+    'f.cajerel': 'Floro Cajerel',
+    'j.calixtro': 'John Calixtro',
+    'a.caña': 'Archie Caña',
+    'ni.caparas': 'Neil Ian Caparas',
+    'g.cardel': 'Gutchil Cardel',
+    'm.casulla': 'Marlon Casulla',
+    'r.casulla': 'Rex Casulla',
+    'j.cerdeña': 'Joven Cerdeña',
+    'r.cerdeña': 'Rodolfo Cerdeña Jr.',
+    'ka.codorniz': 'Karla Ann Codorniz',
+    'h.dagsil': 'Hilde Dagsil',
+    'r.dalma': 'Ricky Dalma',
+    'k.dantes': 'Karen Dantes',
+    'j.del ayre': 'Joseph Del Ayre',
+    'ad.delovino': 'Anna Dominique Delovino',
+    'd.delovino': 'Dominguito Delovino Jr.',
+    'j.domens': 'Jhonie Domens',
+    's.ebio': 'Santiago Ebio',
+    'mj.espartinez': 'Mark John Espartinez',
+    'e.espejo': 'Elvie Espejo',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    'j.calixtro': 'John Calixtro',
+    
     
     
 }
@@ -407,6 +447,7 @@ def delete_data(user):
     conn.commit()
 
 # Login functionality
+st.sidebar.image("/mnt/data/LCWD Logo - Copy.png", use_column_width=True)
 st.sidebar.title('Login')
 
 if 'logged_in' not in st.session_state:
