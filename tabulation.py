@@ -182,7 +182,7 @@ import sqlite3
 user_passwords = {
     'admin': 'admin',
     'a.abad': 'empid1',
-    'a.abellano': 'empid2',
+    'm.abellano': 'empid2',
     'a.abiera': 'empid3',
     'a.abrique': 'empid4',
     'f.aguilar': 'empid5',
