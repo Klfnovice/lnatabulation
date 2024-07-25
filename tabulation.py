@@ -239,6 +239,8 @@ if st.session_state.logged_in:
         st.title('')
 
 
+else:
+    st.warning('Please login to start survey')
 
 
 
@@ -394,5 +396,3 @@ def delete_data(full_name):
             with col2:
                 if st.button('Reset'):
                     st.experimental_rerun()
-else:
-    st.warning('Please login to start survey')
