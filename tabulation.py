@@ -6,7 +6,7 @@ import streamlit as st
 #import webbrowser
 #from streamlit_modal import Modal
 
-# Competency descriptions from the provided Excel file
+# Competency descriptions from dropdown list
 competency_descriptions = {
     "Accounting": {
         "Description": """The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.""",
@@ -459,23 +459,31 @@ user_display_names = {
     'kd.pasano': 'Kate Darla Pasano',
     'r.pasibe': 'Rochelle Pasibe',
     'v.paular': 'Vhenjie Paular',
-    'ms.palattao': 'Ma. Suzette Palattao',
-    'ms.palattao': 'Ma. Suzette Palattao',
-    'ms.palattao': 'Ma. Suzette Palattao',
-    'ms.palattao': 'Ma. Suzette Palattao',
-    'ms.palattao': 'Ma. Suzette Palattao',
-    
-    
-    
-    
-    
+    'j.perez': 'Jay Perez',
+    'f.pornelosa': 'Francisco Pornelosa',
+    'rs.prieto': 'Ralph Sheirwin Prieto',
+    'e.pura': 'Emy pura',
+    'il.de leoz': 'Ivy-Lynn Raguindin-De Leoz',
+    'e.reales': 'Enah Reales',
+    'a.red': 'Aguinaldo Red',
+    'r.red': 'Rosell Red',
+    'sj.rodis': 'Shere Jane Rodis',
+    'sa.roldan': 'Shaira Antonieta Roldan',
+    'da.rosal': 'Darryl Andrie Rosal',
+    'j.sagales': 'Justino Sagales',
+    'aa.samaniego': 'Arman Ador Samaniego',
+    'd.santidad': 'Diane Santidad',
+    'e.sapanta': 'Elaine Sapanta',
+    'ms.valencia': 'Ma. Shanice Valencia',
+    'v.villar': 'Veronica Villar',
+    'r.villareal': 'Raul Villareal',
 }
 
-# Database connection (assuming you have a SQLite database)
+# Database connection to SQLite database
 conn = sqlite3.connect('your_database.db')
 c = conn.cursor()
 
-# Function to generate PDF (assuming these functions are defined elsewhere)
+# Function to generate PDF
 def generate_pdf(data, filename):
     # Placeholder function
     pass
