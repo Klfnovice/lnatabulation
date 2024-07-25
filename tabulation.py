@@ -153,7 +153,7 @@ def show_modal():
     )
 
 # Create a modal instance
-modal = Modal(title="Terms of Service and Privacy Policy", key="terms_modal")
+#modal = Modal(title="Terms of Service and Privacy Policy", key="terms_modal")
 
 # Create database connection
 conn = sqlite3.connect('elearning_preferences.db')
