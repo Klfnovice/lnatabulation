@@ -210,8 +210,8 @@ def generate_pdf(data, filename):
         pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
         pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
         pdf.cell(200, 10, txt=f"Learning Mode: {row[5]}", ln=True)
-        pdf.cell(200, 10, txt(f"Competency: {row[6]}", ln=True)
-        pdf.cell(200, 10, txt(f"Competency Level: {row[7]}", ln=True)
+        pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
+        pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
         pdf.ln(10)
 
     pdf_output_path = os.path.join(os.getcwd(), filename)
@@ -229,11 +229,11 @@ def generate_marksheet(user_data):
     
     pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
     pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
-    pdf.cell(200, 10, txt(f"Position Level: {user_data[3]}", ln=True)
-    pdf.cell(200, 10, txt(f"Device: {user_data[4]}", ln=True)
-    pdf.cell(200, 10, txt(f"Learning Mode: {user_data[5]}", ln=True)
-    pdf.cell(200, 10, txt(f"Competency: {user_data[6]}", ln=True)
-    pdf.cell(200, 10, txt(f"Competency Level: {user_data[7]}", ln=True)
+    pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
+    pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
+    pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln=True)
+    pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
+    pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
     pdf.ln(10)
 
     pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
