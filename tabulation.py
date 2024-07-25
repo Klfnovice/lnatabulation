@@ -2,9 +2,9 @@ import os
 import pandas as pd
 import sqlite3
 import streamlit as st
-from fpdf import FPDF
-import webbrowser
-from streamlit_modal import Modal
+#from fpdf import FPDF
+#import webbrowser
+#from streamlit_modal import Modal
 
 # Competency descriptions from the provided Excel file
 competency_descriptions = {
