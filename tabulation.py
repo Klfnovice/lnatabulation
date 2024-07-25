@@ -174,12 +174,33 @@ CREATE TABLE IF NOT EXISTS elearning_preferences (
 ''')
 conn.commit()
 
+import streamlit as st
+import pandas as pd
+import sqlite3
+
 # Sample users dictionary
 users = {
     'admin': 'admin',
-    'user1': 'user1',
+    'user1': 'Alessandro Abad',
     'user2': 'user2'
 }
+
+# Database connection (assuming you have a SQLite database)
+conn = sqlite3.connect('your_database.db')
+c = conn.cursor()
+
+# Function to generate PDF (assuming these functions are defined elsewhere)
+def generate_pdf(data, filename):
+    # Placeholder function
+    pass
+
+def generate_marksheet(data):
+    # Placeholder function
+    pass
+
+def delete_data(user):
+    c.execute('DELETE FROM elearning_preferences WHERE "Full Name" = ?', (user,))
+    conn.commit()
 
 # Login functionality
 st.sidebar.title('Login')
@@ -200,7 +221,7 @@ if not st.session_state.logged_in:
         else:
             st.sidebar.error('Invalid username or password')
 else:
-    st.sidebar.success(f'Logged in as {st.session_state.username}')
+    st.sidebar.success(f'Logged in as {users[st.session_state.username]}')
     if st.sidebar.button('Logout'):
         st.session_state.logged_in = False
         st.session_state.username = ''
@@ -236,11 +257,11 @@ if st.session_state.logged_in:
             st.experimental_rerun()
             st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
     else:
-        st.title('')
-
-
+        st.title('User Dashboard')
+        st.write(f"Welcome, {users[st.session_state.username]}!")
 else:
     st.warning('Please login to start survey')
+
 
 
 
