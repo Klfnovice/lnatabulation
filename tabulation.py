@@ -464,7 +464,7 @@ if st.session_state.logged_in:
         st.title('User Dashboard')
         st.write(f"Welcome, {user_display_names[st.session_state.username]}!")
 else:
-    st.warning('this site is currently under construction, \"please stanby\"')
+    st.warning('this site is currently under construction, \"please stand by\"')
 
 
 
