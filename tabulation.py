@@ -179,10 +179,16 @@ import pandas as pd
 import sqlite3
 
 # Sample users dictionary
-users = {
+user_passwords = {
     'admin': 'admin',
-    'user1': 'Alessandro Abad',
+    'user1': 'empid1',
     'user2': 'user2'
+}
+
+user_display_names = {
+    'admin': 'Admin',
+    'user1': 'Alessandro Abad',
+    'user2': 'User Two'
 }
 
 # Database connection (assuming you have a SQLite database)
@@ -214,14 +220,14 @@ if not st.session_state.logged_in:
     login_button = st.sidebar.button('Login', key='login_button')
     
     if login_button:
-        if username in users and users[username] == password:
+        if username in user_passwords and user_passwords[username] == password:
             st.session_state.logged_in = True
             st.session_state.username = username
             st.experimental_rerun()
         else:
             st.sidebar.error('Invalid username or password')
 else:
-    st.sidebar.success(f'Logged in as {users[st.session_state.username]}')
+    st.sidebar.success(f'Logged in as {user_display_names[st.session_state.username]}')
     if st.sidebar.button('Logout'):
         st.session_state.logged_in = False
         st.session_state.username = ''
@@ -258,9 +264,10 @@ if st.session_state.logged_in:
             st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
     else:
         st.title('User Dashboard')
-        st.write(f"Welcome, {users[st.session_state.username]}!")
+        st.write(f"Welcome, {user_display_names[st.session_state.username]}!")
 else:
     st.warning('Please login to start survey')
+
 
 
 
