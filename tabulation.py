@@ -201,9 +201,13 @@ def generate_pdf(data, filename):
     pdf.add_page()
     pdf.set_font("Arial", size=12)
 
-    pdf.cell(200, 10, txt="Learning Needs Analysis - eLearning Preferences", ln=True, align='C')
+    
+    
+    pdf.cell(200, 10, txt="", ln=True, align='C')
     pdf.ln(10)
 
+    
+    
     for row in data:
         pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
         pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
@@ -301,7 +305,7 @@ if st.session_state.logged_in:
             st.experimental_rerun()
             st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
     else:
-        st.title('Learning Needs Analysis - eLearning Preferences')
+        st.title('')
 
         # Add "Start LNA Survey" button to the sidebar for non-admin users
         if st.sidebar.button('Start LNA Survey') and not st.session_state.agreed:
