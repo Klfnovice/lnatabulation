@@ -87,12 +87,6 @@ competency_descriptions = {
     # Add other competencies here...
 }
 
-# Initialize session state
-if 'agreed' not in st.session_state:
-    st.session_state.agreed = False
-
-if 'survey_started' not in st.session_state:
-    st.session_state.survey_started = False
 
 # Create database connection
 conn = sqlite3.connect('elearning_preferences.db')
