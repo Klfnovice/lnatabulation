@@ -2,72 +2,74 @@ import os
 import pandas as pd
 import sqlite3
 import streamlit as st
-# from fpdf import FPDF
-# import webbrowser
+import matplotlib.pyplot as plt
+import webbrowser
+from fpdf import FPDF
 
 # Function to make labels bold
-# def bold_label(label):
-#     return f"<div style='font-weight: bold;'>{label}</div>"
+def bold_label(label):
+    return f"<div style='font-weight: bold;'>{label}</div>"
 
 # Function to save data to the database
-def save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level):
+def save_data(user_id, full_name, current_position, position_level, device, learning_mode, competencies):
     with conn:
-        c.execute('''
-        INSERT INTO elearning_preferences (
-            full_name, current_position, position_level, device, learning_mode, select_competency, competency_level
-        ) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
-        (full_name, current_position, position_level, device, learning_mode, select_competency, competency_level))
+        for competency in competencies:
+            c.execute('''
+            INSERT INTO elearning_preferences (
+                user_id, full_name, current_position, position_level, device, learning_mode, select_competency, competency_level
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)''', 
+            (user_id, full_name, current_position, position_level, device, learning_mode, competency['name'], competency['level']))
         conn.commit()
 
 # Function to generate PDF report
-# def generate_pdf(data, filename):
-#     pdf = FPDF()
-#     pdf.add_page()
-#     pdf.set_font("Arial", size=12)
+def generate_pdf(data, filename):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
 
-#     pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
-#     pdf.ln(10)
+    pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
+    pdf.ln(10)
 
-#     for row in data:
-#         pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
-#         pdf.cell(200, 10, txt(f"Learning Mode: {row[5]}"), ln=True)
-#         pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
-#         pdf.ln(10)
+    for row in data:
+        pdf.cell(200, 10, txt=f"Full Name: {row[2]}", ln=True)
+        pdf.cell(200, 10, txt=f"Current Position: {row[3]}", ln=True)
+        pdf.cell(200, 10, txt=f"Position Level: {row[4]}", ln=True)
+        pdf.cell(200, 10, txt=f"Device: {row[5]}", ln=True)
+        pdf.cell(200, 10, txt=f"Learning Mode: {row[6]}", ln=True)
+        pdf.cell(200, 10, txt=f"Competency: {row[7]}", ln=True)
+        pdf.cell(200, 10, txt=f"Competency Level: {row[8]}", ln=True)
+        pdf.ln(10)
 
-#     pdf_output_path = os.path.join(os.getcwd(), filename)
-#     pdf.output(pdf_output_path)
-#     return pdf_output_path
+    pdf_output_path = os.path.join(os.getcwd(), filename)
+    pdf.output(pdf_output_path)
+    return pdf_output_path
 
-# # Function to generate a marksheet PDF for a specific user
-# def generate_marksheet(user_data):
-#     pdf = FPDF()
-#     pdf.add_page()
-#     pdf.set_font("Arial", size=12)
+# Function to generate a marksheet PDF for a specific user
+def generate_marksheet(user_data):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
     
-#     pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
-#     pdf.ln(10)
+    pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
+    pdf.ln(10)
     
-#     pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln(True)
-#     pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
-#     pdf.ln(10)
+    pdf.cell(200, 10, txt=f"Full Name: {user_data[2]}", ln=True)
+    pdf.cell(200, 10, txt=f"Current Position: {user_data[3]}", ln(True)
+    pdf.cell(200, 10, txt=f"Position Level: {user_data[4]}", ln=True)
+    pdf.cell(200, 10, txt=f"Device: {user_data[5]}", ln=True)
+    pdf.cell(200, 10, txt=f"Learning Mode: {user_data[6]}", ln=True)
+    pdf.cell(200, 10, txt=f"Competency: {user_data[7]}", ln=True)
+    pdf.cell(200, 10, txt=f"Competency Level: {user_data[8]}", ln=True)
+    pdf.ln(10)
 
-#     pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
-#     pdf.output(pdf_output_path)
-#     return pdf_output_path
+    pdf_output_path = os.path.join(os.getcwd(), f"{user_data[2]}_marksheet.pdf")
+    pdf.output(pdf_output_path)
+    return pdf_output_path
 
 # Function to delete data from the database
-def delete_data(full_name):
+def delete_data(user_id):
     with conn:
-        c.execute('DELETE FROM elearning_preferences WHERE full_name = ?', (full_name,))
+        c.execute('DELETE FROM elearning_preferences WHERE user_id = ?', (user_id,))
         conn.commit()
 
 # Competency descriptions
@@ -117,13 +119,15 @@ c = conn.cursor()
 c.execute('''
 CREATE TABLE IF NOT EXISTS elearning_preferences (
     id INTEGER PRIMARY KEY,
+    user_id INTEGER,
     full_name TEXT,
     current_position TEXT,
     position_level TEXT,
     device TEXT,
     learning_mode TEXT,
     select_competency TEXT,
-    competency_level TEXT
+    competency_level TEXT,
+    FOREIGN KEY(user_id) REFERENCES users(id)
 )
 ''')
 
@@ -133,9 +137,7 @@ CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
     username TEXT UNIQUE,
     full_name TEXT,
-    password TEXT,
-    designation TEXT,
-    department TEXT
+    password TEXT
 )
 ''')
 conn.commit()
@@ -161,6 +163,7 @@ if not st.session_state.logged_in:
         user = authenticate_user(username, password)
         if user:
             st.session_state.logged_in = True
+            st.session_state.user_id = user[0]  # Assuming the user ID is the first column in the users table
             st.session_state.username = username
             st.session_state.full_name = user[2]  # Assuming the full name is the third column in the users table
             st.experimental_rerun()
@@ -180,9 +183,9 @@ if st.session_state.logged_in:
         st.markdown("## Stored Data")
         c.execute('SELECT * FROM elearning_preferences')
         rows = c.fetchall()
-        df = pd.DataFrame(rows, columns=["ID", "Full Name", "Current Position", "Position Level", "Device", "Learning Mode", "Competency", "Competency Level"])
+        df = pd.DataFrame(rows, columns=["ID", "User ID", "Full Name", "Current Position", "Position Level", "Device", "Learning Mode", "Competency", "Competency Level"])
         st.dataframe(df)
-        
+
         if st.button('Generate PDF Report for All Data'):
             pdf_path = generate_pdf(rows, "all_elearning_preferences.pdf")
             webbrowser.open(f"file://{pdf_path}")
@@ -194,21 +197,50 @@ if st.session_state.logged_in:
             pdf_path = generate_marksheet(user_data)
             webbrowser.open(f"file://{pdf_path}")
             st.success(f"Marksheet PDF generated for {selected_user}: {pdf_path}")
-        
+
+        st.markdown("## Display Charts")
+        chart_type = st.selectbox('Select Chart Type', ['Individual User', 'All Users'])
+
+        if chart_type == 'Individual User':
+            selected_user_for_chart = st.selectbox('Select a user', df['Full Name'])
+            if st.button('Generate Chart for User'):
+                user_data = df[df['Full Name'] == selected_user_for_chart]
+                if not user_data.empty:
+                    user_chart_data = user_data['Competency Level'].value_counts()
+                    fig, ax = plt.subplots()
+                    user_chart_data.plot(kind='bar', ax=ax)
+                    ax.set_title(f"Competency Levels for {selected_user_for_chart}")
+                    ax.set_xlabel("Competency Level")
+                    ax.set_ylabel("Count")
+                    st.pyplot(fig)
+
+        if chart_type == 'All Users':
+            if st.button('Generate Chart for All Users'):
+                all_users_chart_data = df['Competency Level'].value_counts()
+                fig, ax = plt.subplots()
+                all_users_chart_data.plot(kind='bar', ax=ax)
+                ax.set_title("Competency Levels for All Users")
+                ax.set_xlabel("Competency Level")
+                ax.set_ylabel("Count")
+                st.pyplot(fig)
+
         st.sidebar.title('Admin Actions')
         st.sidebar.markdown("## Delete User Data")
         user_to_delete = st.sidebar.selectbox('Select a user to delete', df['Full Name'])
         if st.sidebar.button('Delete User'):
-            delete_data(user_to_delete)
+            user_id_to_delete = df[df['Full Name'] == user_to_delete]['User ID'].values[0]
+            delete_data(user_id_to_delete)
             st.experimental_rerun()
             st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
     else:
         st.title('User Dashboard')
         st.write(f"Welcome, {st.session_state.full_name}!")
-        
-        # Initialize session state for the survey_started variable
+
+        # Initialize session state for the survey_started and competencies variables
         if 'survey_started' not in st.session_state:
             st.session_state.survey_started = False
+        if 'competencies' not in st.session_state:
+            st.session_state.competencies = []
 
         if not st.session_state.survey_started:
             if st.button('Start LNA Survey'):
@@ -217,38 +249,43 @@ if st.session_state.logged_in:
 
         if st.session_state.survey_started:
             # Inputs with bold labels
-            st.markdown(('Full Name'), unsafe_allow_html=True)
+            st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
             full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
-            st.markdown(('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
+            st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
             current_position = st.text_input(' ', key='current_position')
-            st.markdown(('Position Level'), unsafe_allow_html=True)
+            st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
             position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
-            st.markdown(('Device Used for e-Learning'), unsafe_allow_html=True)
+            st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
             device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
-            st.markdown(('Preferred Learning Mode'), unsafe_allow_html=True)
+            st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
             learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
-            st.markdown(('Select Competency'), unsafe_allow_html=True)
+            st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
             select_competency = st.selectbox(' ', ['Select Competency'] + list(competency_descriptions.keys()), key='select_competency')
             
-            st.markdown(('My Level for this Competency'), unsafe_allow_html=True)
+            st.markdown(bold_label('My Level for this Competency'), unsafe_allow_html=True)
             competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
+
+            if st.button('Add Competency'):
+                st.session_state.competencies.append({'name': select_competency, 'level': competency_level})
+                st.experimental_rerun()
+
+            if st.session_state.competencies:
+                st.markdown("## Added Competencies")
+                competencies_df = pd.DataFrame(st.session_state.competencies)
+                st.dataframe(competencies_df)
 
             col1, col2 = st.columns([1, 1])
 
             with col1:
-                if st.button('Save'):
-                    save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level)
-                    st.markdown(f"**Full Name:** {full_name}")
-                    st.markdown(f"**Current Position:** {current_position}")
-                    st.markdown(f"**Position Level:** {position_level}") 
-                    st.markdown(f"**Device Used for e-Learning:** {device}")
-                    st.markdown(f"**Preferred Learning Mode:** {learning_mode}")
-                    st.markdown(f"**Competency:** {select_competency}")
-                    st.markdown(f"**My Level for this Competency:** {competency_level}")
+                if st.button('Save All'):
+                    save_data(st.session_state.user_id, full_name, current_position, position_level, device, learning_mode, st.session_state.competencies)
                     st.success('Information saved successfully!')
+                    st.session_state.competencies = []  # Clear the competencies list after saving
+                    st.experimental_rerun()
 
             with col2:
                 if st.button('Reset'):
+                    st.session_state.competencies = []
                     st.experimental_rerun()
 
 else:
