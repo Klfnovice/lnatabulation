@@ -75,7 +75,7 @@ competency_descriptions = {
         "Intermediate": [],
         "Advanced": [],
         "Superior": []
-        }
+        },
     
     "Accounting Reconciliation": 
         {
@@ -102,7 +102,7 @@ competency_descriptions = {
         "Intermediate": [],
         "Advanced": [],
         "Superior":
-        }
+        },
     
     "AutoCAD":
         {
