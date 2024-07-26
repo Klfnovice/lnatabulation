@@ -151,20 +151,20 @@ if st.session_state.logged_in:
 
         if st.session_state.survey_started:
             # Inputs with bold labels
-            st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
+            st.markdown(('Full Name'), unsafe_allow_html=True)
             full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
-            st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
+            st.markdown(('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
             current_position = st.text_input(' ', key='current_position')
-            st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
+            st.markdown(('Position Level'), unsafe_allow_html=True)
             position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
-            st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
+            st.markdown(('Device Used for e-Learning'), unsafe_allow_html=True)
             device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
-            st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
+            st.markdown(('Preferred Learning Mode'), unsafe_allow_html=True)
             learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
-            st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
+            st.markdown(('Select Competency'), unsafe_allow_html=True)
             select_competency = st.selectbox(' ', ['Select Competency'] + list(competency_descriptions.keys()), key='select_competency')
             
-            st.markdown(bold_label('My Level for this Competency'), unsafe_allow_html=True)
+            st.markdown(('My Level for this Competency'), unsafe_allow_html=True)
             competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
             col1, col2 = st.columns([1, 1])
@@ -189,8 +189,8 @@ else:
     st.warning('This site is currently under construction, please stand by.')
 
 # Function to make labels bold
-def bold_label(label):
-    return f"<div style='font-weight: bold;'>{label}</div>"
+# def bold_label(label):
+#     return f"<div style='font-weight: bold;'>{label}</div>"
 
 # Function to save data to the database
 def save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level):
