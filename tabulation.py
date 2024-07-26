@@ -368,7 +368,7 @@ competency_descriptions = {
 
     "Management of Accounts Receivable":
         {
-        "Description": "Ensuring the monitoring of timely payment of receivables and provide strategic initiatives for the improvement and more efficient accounts receivable management system.',
+        "Description": "Ensuring the monitoring of timely payment of receivables and provide strategic initiatives for the improvement and more efficient accounts receivable management system.",
         "Basic": {},
         "Intermediate": {},
         "Advanced": {},
