@@ -566,31 +566,44 @@ def delete_data(full_name):
 
 
         
-        # Display the survey form if the survey has been started and agreed
-        if st.session_state.survey_started:
-            # Inputs with bold labels
-            st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
-            full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
-            st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
-            current_position = st.text_input(' ', key='current_position')
-            st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
-            position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
-            st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
-            device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
-            st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
-            learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
-            st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
-            select_competency = st.selectbox(' ', ['Select Competency'] + list(competency_descriptions.keys()), key='select_competency')
+        import streamlit as st
 
-            # Display competency descriptions
-            if select_competency in competency_descriptions:
-                st.markdown(f"### {select_competency} Competency Descriptions")
-                st.markdown(competency_descriptions[select_competency]["Description"])
-                cols = st.columns(4)
-                levels = ["Basic", "Intermediate", "Advanced", "Superior"]
-                for i, level in enumerate(levels):
-                    cols[i].markdown(f"**{level}**")
-                    cols[i].markdown(competency_descriptions[select_competency][level])
+# Function to make labels bold
+def bold_label(label):
+    return f"**{label}**"
+
+# Initialize session state for the survey_started variable
+if 'survey_started' not in st.session_state:
+    st.session_state.survey_started = False
+
+# Sample dictionary for competency descriptions (replace with your actual data)
+competency_descriptions = {
+    'Competency 1': 'Description 1',
+    'Competency 2': 'Description 2',
+    'Competency 3': 'Description 3'
+}
+
+# Display the survey form if the survey has been started and agreed
+if st.session_state.survey_started:
+    # Inputs with bold labels
+    st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
+    full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
+    st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
+    current_position = st.text_input(' ', key='current_position')
+    st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
+    position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
+    st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
+    device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
+    st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
+    learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
+    st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
+    select_competency = st.selectbox(' ', ['Select Competency'] + list(competency_descriptions.keys()), key='select_competency')
+else:
+    st.write("Survey has not been started or agreed upon yet.")
+    # Optionally add a button to start the survey
+    if st.button('Start Survey'):
+        st.session_state.survey_started = True
+
             
             st.markdown(bold_label('My Level for this Competency'), unsafe_allow_html=True)
             competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
