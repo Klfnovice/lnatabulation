@@ -182,17 +182,17 @@ if st.session_state.logged_in:
         df = pd.DataFrame(rows, columns=["ID", "Full Name", "Current Position", "Position Level", "Device", "Learning Mode", "Competency", "Competency Level"])
         st.dataframe(df)
         
-        if st.button('Generate PDF Report for All Data'):
-            pdf_path = generate_pdf(rows, "all_elearning_preferences.pdf")
-            webbrowser.open(f"file://{pdf_path}")
-            st.success(f"PDF Report generated: {pdf_path}")
+        # if st.button('Generate PDF Report for All Data'):
+        #     pdf_path = generate_pdf(rows, "all_elearning_preferences.pdf")
+        #     webbrowser.open(f"file://{pdf_path}")
+        #     st.success(f"PDF Report generated: {pdf_path}")
 
-        selected_user = st.selectbox('Select a user to generate marksheet', df['Full Name'])
-        if st.button('Generate Marksheet for Selected User'):
-            user_data = df[df['Full Name'] == selected_user].values[0]
-            pdf_path = generate_marksheet(user_data)
-            webbrowser.open(f"file://{pdf_path}")
-            st.success(f"Marksheet PDF generated for {selected_user}: {pdf_path}")
+        # selected_user = st.selectbox('Select a user to generate marksheet', df['Full Name'])
+        # if st.button('Generate Marksheet for Selected User'):
+        #     user_data = df[df['Full Name'] == selected_user].values[0]
+        #     pdf_path = generate_marksheet(user_data)
+        #     webbrowser.open(f"file://{pdf_path}")
+        #     st.success(f"Marksheet PDF generated for {selected_user}: {pdf_path}")
         
         st.sidebar.title('Admin Actions')
         st.sidebar.markdown("## Delete User Data")
