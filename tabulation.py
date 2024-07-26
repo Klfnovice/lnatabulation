@@ -257,7 +257,7 @@ competency_descriptions = {
         "Superior": {}
         },
         
-    "Electrical Installation"
+    "Electrical Installation":
         {
         "Description": "Has the capability to install and maintain electrical wiring, lighting and related equipment and systems where the voltage does not exceed the required voltage in building establishment.",
         "Basic": {},
