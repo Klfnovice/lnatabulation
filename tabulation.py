@@ -2,8 +2,8 @@ import os
 import pandas as pd
 import sqlite3
 import streamlit as st
-#from fpdf import FPDF
-#import webbrowser
+from fpdf import FPDF
+import webbrowser
 
 # Competency descriptions
 competency_descriptions = {
@@ -181,7 +181,7 @@ if st.session_state.logged_in:
                 if st.button('Reset'):
                     st.experimental_rerun()
         else:
-            st.write("please click to start survey.")
+            st.write("Survey has not been started or agreed upon yet.")
             # Optionally add a button to start the survey
             if st.button('Start Survey'):
                 st.session_state.survey_started = True
