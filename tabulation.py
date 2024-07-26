@@ -204,7 +204,7 @@ def save_data(full_name, current_position, position_level, device, learning_mode
         conn.commit()
 
 # Function to generate PDF report
-def generate_pdf(data, filename):
+#def generate_pdf(data, filename):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
@@ -227,7 +227,7 @@ def generate_pdf(data, filename):
     return pdf_output_path
 
 # Function to generate a marksheet PDF for a specific user
-def generate_marksheet(user_data):
+#def generate_marksheet(user_data):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
