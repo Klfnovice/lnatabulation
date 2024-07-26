@@ -189,7 +189,7 @@ competency_descriptions = {
         {
         "Desription": "Has the ability to use proper channels to deal with customer complaints effectively to improve customer retention.",
         "Basic": {},
-        "Intermediate", {},
+        "Intermediate":, {},
         "Advanced": {},
         "Superior": {}
         },
