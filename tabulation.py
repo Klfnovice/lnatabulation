@@ -2,8 +2,8 @@ import os
 import pandas as pd
 import sqlite3
 import streamlit as st
-#from fpdf import FPDF
-#import webbrowser
+# from fpdf import FPDF
+# import webbrowser
 
 # Competency descriptions
 competency_descriptions = {
@@ -144,7 +144,11 @@ if st.session_state.logged_in:
         if 'survey_started' not in st.session_state:
             st.session_state.survey_started = False
 
-        # Display the survey form if the survey has been started and agreed
+        if not st.session_state.survey_started:
+            if st.button('Start Survey'):
+                st.session_state.survey_started = True
+                st.experimental_rerun()
+
         if st.session_state.survey_started:
             # Inputs with bold labels
             st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
@@ -180,11 +184,6 @@ if st.session_state.logged_in:
             with col2:
                 if st.button('Reset'):
                     st.experimental_rerun()
-        else:
-            st.write("Survey has not been started or agreed upon yet.")
-            # Optionally add a button to start the survey
-            if st.button('Start Survey'):
-                st.session_state.survey_started = True
 
 else:
     st.warning('This site is currently under construction, please stand by.')
@@ -204,49 +203,49 @@ def save_data(full_name, current_position, position_level, device, learning_mode
         conn.commit()
 
 # Function to generate PDF report
-#def generate_pdf(data, filename):
-    # pdf = FPDF()
-    # pdf.add_page()
-    # pdf.set_font("Arial", size=12)
+# def generate_pdf(data, filename):
+#     pdf = FPDF()
+#     pdf.add_page()
+#     pdf.set_font("Arial", size=12)
 
-    # pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
-    # pdf.ln(10)
+#     pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
+#     pdf.ln(10)
 
-    # for row in data:
-    #     pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Learning Mode: {row[5]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
-    #     pdf.ln(10)
+#     for row in data:
+#         pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Learning Mode: {row[5]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
+#         pdf.ln(10)
 
-    pdf_output_path = os.path.join(os.getcwd(), filename)
-    pdf.output(pdf_output_path)
-    return pdf_output_path
+#     pdf_output_path = os.path.join(os.getcwd(), filename)
+#     pdf.output(pdf_output_path)
+#     return pdf_output_path
 
 # Function to generate a marksheet PDF for a specific user
-#def generate_marksheet(user_data):
-    # pdf = FPDF()
-    # pdf.add_page()
-    # pdf.set_font("Arial", size=12)
+# def generate_marksheet(user_data):
+#     pdf = FPDF()
+#     pdf.add_page()
+#     pdf.set_font("Arial", size=12)
     
-    # pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
-    # pdf.ln(10)
+#     pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
+#     pdf.ln(10)
     
-    # pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
-    # pdf.ln(10)
+#     pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
+#     pdf.ln(10)
 
-    # pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
-    # pdf.output(pdf_output_path)
-    # return pdf_output_path
+#     pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
+#     pdf.output(pdf_output_path)
+#     return pdf_output_path
 
 # Function to delete data from the database
 def delete_data(full_name):
