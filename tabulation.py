@@ -71,10 +71,10 @@ competency_descriptions = {
     "Accounting": 
         {
         "Description": """The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.""",
-        "Basic":,
-        "Intermediate":,
-        "Advanced":,
-        "Superior":,
+        "Basic":
+        "Intermediate":
+        "Advanced":
+        "Superior":
         },
     
     "Accounting Reconciliation": 
