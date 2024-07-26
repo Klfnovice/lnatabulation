@@ -133,7 +133,9 @@ CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
     username TEXT UNIQUE,
     full_name TEXT,
-    password TEXT
+    password TEXT,
+    designation TEXT,
+    department TEXT
 )
 ''')
 conn.commit()
