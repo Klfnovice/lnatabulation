@@ -699,8 +699,8 @@ CREATE TABLE IF NOT EXISTS users (
     full_name TEXT,
     password TEXT,
     designation TEXT,
-    position_level TEXT
     department TEXT
+    position_level TEXT
 )
 ''')
 conn.commit()
