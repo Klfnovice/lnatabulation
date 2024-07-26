@@ -71,45 +71,45 @@ competency_descriptions = {
     "Accounting": 
         {
         "Description": """The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.""",
-        "Basic":
-        "Intermediate":
-        "Advanced":
-        "Superior":
+        "Basic"
+        "Intermediate"
+        "Advanced"
+        "Superior"
         },
     
     "Accounting Reconciliation": 
         {
         "Description": """The ability to carry out timely and accurate reconciliation of accounting control statements, including bank reconciliations, control accounts, revenue reconciliations, advances, and deposits.""",
-        "Basic":
-        "Intermediate":
-        "Advanced":
-        "Superior":
+        "Basic"
+        "Intermediate"
+        "Advanced"
+        "Superior"
         },
     
     "Air-Conditioning Servicing":
         {
         "Description": """Explain basic principles of electrical and mechanical aspects of the Air-Conditioning Unit to safely install, commission, service and maintain air conditioning system.""",
-        "Basic":
-        "Intermediate":
-        "Advanced":
-        "Superior":
+        "Basic"
+        "Intermediate"
+        "Advanced"
+        "Superior"
         },
 
     "Applying Internal Control Functions":
         {
         "Has the ability to integrate effective design and develop financial management system that address issues related to financial management and operations to safeguard government assets, check the accuracy and reliability of accounting data, adhere to management policies, comply with laws and regulations and ensure efficient, ethical and economical operations.""",
-        "Basic":
-        "Intermediate":
-        "Advanced":
-        "Superior":
+        "Basic"
+        "Intermediate"
+        "Advanced"
+        "Superior"
         },
     
     "AutoCAD":
         {
         "The ability to operate software programs to create technical two-dimensional (2D) and three-dimensional (3D) designs.""",
-        "Basic":
-        "Intermediate":
-        "Advanced":
+        "Basic"
+        "Intermediate"
+        "Advanced"
         "Superior"
         },
 }
