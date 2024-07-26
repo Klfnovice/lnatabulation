@@ -68,41 +68,46 @@ def delete_data(user_id):
 
 # Competency descriptions
 competency_descriptions = {
-    "Accounting": {
+    "Accounting": 
+        {
         "Description": """The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.""",
-        "Basic": """
-            - Receives and records all claims for processing, evaluation and certification of the unit.
-            - Checks completeness of documents/attachments needed for the transaction and validates accuracy of computation.
-            - Prepares certification or statement of employees' contributions and remittances.
-            - Maintains index of records of compensation, benefits, allowances, mandatory deductions and remittances.
-            - Prepares journal entries and certificates of taxes withheld.
-            - Writes simple pro-forma communications on accounting transactions.
-        """,
-        "Intermediate": """
-            - Validates and records journal entries of financial transactions.
-            - Records financial transactions in the book of accounts and maintains files of financial reports/documents.
-            - Prepares certificate of remittances, schedule of remittances and all other requirements for remittances.
-            - Updates records of receipts and expenditures funds to monitor balance of funds and verifies records of funds availability.
-            - Reconciles general and subsidiary ledgers of accounts.
-            - Prepares replies to queries on accounting transactions.
-        """,
-        "Advanced": """
-            - Reviews monthly deductions and remittances to national government agencies.
-            - Reviews ledger, general ledger accounts and schedules of the financial reports.
-            - Validates and reconciles reciprocal accounts for the central/regional offices.
-            - Prepares financial reports, schedules and all other reports of all funds as required by the regulatory agencies and the Commission.
-            - Approves journal entries.
-            - Develops or enhances existing policies, guidelines and processes on accounting and auditing procedures.
-        """,
-        "Superior": """
-            - Certifies funds availability of disbursements, supporting documents are complete and proper and the necessary deductions are effected and monitors timely remittance of all deductions and payments made.
-            - Identifies trends and developments in accounting and auditing and recommends enhancement of policies, procedures, systems and processes.
-            - Develops communication plan and policies, guidelines and issuances on accounting rules and regulations.
-            - Reviews and recommends policies, guidelines and processes on accounting and auditing procedures.
-            - Prepares financial report for management and recommends appropriate financial internal control measures for the allocation and sourcing of funds.
-        """,
+        "Basic":
+        "Intermediate":
+        "Advanced":
+        "Superior":
+        },
+    
+    "Accounting Reconciliation": 
+        {
+        "Description": """The ability to carry out timely and accurate reconciliation of accounting control statements, including bank reconciliations, control accounts, revenue reconciliations, advances, and deposits.""",
+        "Basic":
+        "Intermediate":
+        "Advanced":
+        "Superior":
+        },
+    
+    "Air-Conditioning Servicing":
+        {
+        "Description": """Explain basic principles of electrical and mechanical aspects of the Air-Conditioning Unit to safely install, commission, service and maintain air conditioning system.""",
+        "Basic":
+        "Intermediate":
+        "Advanced":
+        "Superior":
+        },
+
+    "Applying Internal Control Functions":
+        {
+        "Has the ability to integrate effective design and develop financial management system that address issues related to financial management and operations to safeguard government assets, check the accuracy and reliability of accounting data, adhere to management policies, comply with laws and regulations and ensure efficient, ethical and economical operations.""",
+        "Basic":
+        "Intermediate":
+        "Advanced":
+        "Superior":
+        },
+    
+    "AutoCAD":
+        {
+    
     },
-    # Add other competencies here...
 }
 
 # Database connection
