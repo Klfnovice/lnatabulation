@@ -181,7 +181,7 @@ if st.session_state.logged_in:
                 if st.button('Reset'):
                     st.experimental_rerun()
         else:
-            st.write("Survey has not been started or agreed upon yet.")
+            st.write("please click to start survey.")
             # Optionally add a button to start the survey
             if st.button('Start Survey'):
                 st.session_state.survey_started = True
