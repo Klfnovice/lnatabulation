@@ -366,17 +366,312 @@ competency_descriptions = {
         "Superior": {}
         },
 
+    "Management of Accounts Receivable":
+        {
+        "Description": "Ensuring the monitoring of timely payment of receivables and provide strategic initiatives for the improvement and more efficient accounts receivable management system.',
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
 
+    "Market Analysis":
+        {
+        "Description": "Has the ability to gather and analyze data related to potential target consumers that will help generate revenues in the agency.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
 
+    "Masonry":
+        {
+        "Description": "Has the ability to perform construction of brick and concrete block structure, installation of pre-cast balluster/handrail and plastering of concrete wall surface.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+            
+    "Meter Maintenance / Calibration":
+        {
+        "Description": "Has the knowledge of calibration procedures and the ability to troubleshoot water meters within the prescribed standards.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Metal Arc Welding":
+        {
+        "Description": "Has the ability to perform weld carbon steel plate and pipe components as specified by layout, blueprints, diagrams, work order, welding procedure or oral instructions using shielded metal arc welding equipment.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+            
+    "Negotiation Skills":
+        {
+        "Description": "Has the ability to adopt appropriate techniques for negotiating resistance and objections in order to negotiate to a desired outcome.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },        
+            
+    "Non-Revenue Water Management":
+        {
+        "Description": "Has the ability to identify leakages and provide strategic initiatives to address the reduction of non-revenue water.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Occupational Safety and Health":
+        {
+        "Description": "Has the awareness to practice, evaluate, lead, establish and manage Occupational Safety and Health programs in the workplace.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+        
+    "Oral Communication":
+        {
+        "Description": "Makes clear and convincing oral presentations to individual or groups; listens effectively and clarifies information as needed.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },    
+
+    "Pipe-Fitting":
+        {
+        "Description": "Has the ability to cut, bevel, and / or thread pipes, and install overhead and underground piping system.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Planning and Delivering":
+        {
+        "Description": "The ability to prioritize and identify scope and allocate resources to meet individual, team, or organization targets and objectives.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Plumbing - Service Connection":
+        {
+        "Description": "Has the capability of installing multiple units of plumbing system with multi-point hot-and-cold-water lines which also includes plumbing repair and maintenance works.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Plumbing - Distribution System":
+        {
+        "Description": "Has the capability of installing and connecting network pipes in the water distribution system which also includes distribution and mainline repair.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+        
+    "Policy Evaluation":    
+        {
+        "Description": "The ability to measure and assess the appropriateness, effectiveness and efficiency of human resource policies, contributing to policy improvements and innovation.",        
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Preparation of Expenditure Program":
+        {
+        "Description": "The production of the monthly expenditure program (monthly flow), forecast by object allotment class (Personnel Services, MOOE and Capital Expenditure) using all relevant and available historical data to the highest degree of accuracy possible.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+        
+    "Preparation of Revenue Program":
+        {
+        "Description": "Forecasting the monthly revenue program using all relevant and available historical data with the highest degree of accuracy possible.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },   
+
+    "Pressure Management":
+        {
+        "Description": "The ability to effectively regulate water pressure within water networks in ensuring the efficient and sustainable distribution of water supply.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Procurement Management":
+        {
+        "Description": "The ability to plan and implement measures to acquire supplies and properties at the best possible cost; that meets the quality, quantity and timeliness requirement of the organization; and are compliant to procurement policies.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Procurement Planning":
+        {
+        "Description": "The ability to effectively undertake procurement planning according to the approved Annual Procurement Plan in order to facilitate the achievement of the agency’s program of work, goals and targets.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Program / Course Delivery and Administration":
+        {
+        "Description": "The ability to plan, execute and report the implementation of training/learning interventions, courses and programs.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Project / Program Management":
+        {
+        "Description": "The ability to monitor and coordinate the implementation of plans, policies, tasks and activities of programs and projects being undertaken by the stakeholder, and taking action to meet quality and performance goals.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Public Relation Management":
+        {
+        "Description": "The ability to build, maintain and manage engagement and goodwill between the organization and the public through the installation of assistance and complaint mechanisms and the implementation of special programs.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Pump Operation":
+        {
+        "Description": "The ability to monitor and maintain the pumping equipment and facilities in order to ensure maximum efficiency of its operations.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+        
+    "Quality Management and Assurance":
+        {
+        "Description": "Performs tasks in ensuring that products or services consistently meet the prescribed government standards or within the prescribed contract agreement by other private institution.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Records Management":
+        {
+        "Description": "The ability to apply and adapt records management standards related to the cycle of records in an agency/institution which are conducted to achieve adequate and proper documentation of government policies, transactions and effective management of the agency’s operations.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Recruitment, Selection and Placement":
+        {
+        "Description": "The ability to search, attract, and assess job candidates and to guide the appointing authority in choosing the best fit for the job at the right time, in accordance with legal requirements in order to achieve organizational goals.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Rewards and Recognition":
+        {
+        "Description": "The ability to identify, develop and implement programs for the organization/bureaucracy to reward and recognize outstanding performance and behavior.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Supervisory Control and Data Qcquisition (SCADA) Operation":
+        {
+        "Description": "The ability to develop a SCADA application and to use SCADA systems in the agency’s operation.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Strategic Planning":
+        {
+        "Description": "The ability to influence, realign the organization's strategic goals and directions; monitor and review data from various aspects of strategic and corporate planning and recommend enhancements.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Stress Management":
+        {
+        "Description": "The ability to apply techniques to cope with or lessen the physical and emotional effects of everyday life pressure in the workplace.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Supplier Management and Contract Agreement":
+        {
+        "Description": "Has the ability to manage suppliers in order to ensure continuing provision of goods and services. Manage contract implementation and ensure fair, open and transparent dealings with existing and potential suppliers.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Supplies and Property Management":
+        {
+        "Description": "The ability to plan and implement measures to efficiently allocate, utilize, maintain and dispose supplies and properties of the organization.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Taxation":
+        {
+        "Description": "Has the ability to interpret, understand and manage various aspects of Philippine Tax laws.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Writing Effectively":
+        {
+        "Description": "The ability to write in clear, concise and coherent manner using different tools to convey information or express ideas effectively.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
 }
-
-
-
-
-
-
-
-
 
 
 # Database connection
