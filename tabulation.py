@@ -2,8 +2,73 @@ import os
 import pandas as pd
 import sqlite3
 import streamlit as st
-#from fpdf import FPDF
-#import webbrowser
+# from fpdf import FPDF
+# import webbrowser
+
+# Function to make labels bold
+# def bold_label(label):
+#     return f"<div style='font-weight: bold;'>{label}</div>"
+
+# Function to save data to the database
+def save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level):
+    with conn:
+        c.execute('''
+        INSERT INTO elearning_preferences (
+            full_name, current_position, position_level, device, learning_mode, select_competency, competency_level
+        ) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
+        (full_name, current_position, position_level, device, learning_mode, select_competency, competency_level))
+        conn.commit()
+
+# Function to generate PDF report
+# def generate_pdf(data, filename):
+#     pdf = FPDF()
+#     pdf.add_page()
+#     pdf.set_font("Arial", size=12)
+
+#     pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
+#     pdf.ln(10)
+
+#     for row in data:
+#         pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
+#         pdf.cell(200, 10, txt(f"Learning Mode: {row[5]}"), ln=True)
+#         pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
+#         pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
+#         pdf.ln(10)
+
+#     pdf_output_path = os.path.join(os.getcwd(), filename)
+#     pdf.output(pdf_output_path)
+#     return pdf_output_path
+
+# # Function to generate a marksheet PDF for a specific user
+# def generate_marksheet(user_data):
+#     pdf = FPDF()
+#     pdf.add_page()
+#     pdf.set_font("Arial", size=12)
+    
+#     pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
+#     pdf.ln(10)
+    
+#     pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln(True)
+#     pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
+#     pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
+#     pdf.ln(10)
+
+#     pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
+#     pdf.output(pdf_output_path)
+#     return pdf_output_path
+
+# Function to delete data from the database
+def delete_data(full_name):
+    with conn:
+        c.execute('DELETE FROM elearning_preferences WHERE full_name = ?', (full_name,))
+        conn.commit()
 
 # Competency descriptions
 competency_descriptions = {
@@ -61,26 +126,23 @@ CREATE TABLE IF NOT EXISTS elearning_preferences (
     competency_level TEXT
 )
 ''')
+
+# Create users table if it doesn't exist
+c.execute('''
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    username TEXT UNIQUE,
+    full_name TEXT,
+    password TEXT
+)
+''')
 conn.commit()
 
-# Users dictionary
-user_passwords = {
-    'admin': 'admin',
-    'a.abad': 'empid1',
-    'm.abellano': 'empid2',
-    'a.abiera': 'empid3',
-    'a.abrique': 'empid4',
-    # Add more users here...
-}
-
-user_display_names = {
-    'admin': 'Admin',
-    'a.abad': 'Alessandro Abad',
-    'm.abellano': 'Mark Abellano',
-    'a.abiera': 'Arthur Abiera',
-    'a.abrique': 'Anthony Abrique',
-    # Add more user display names here...
-}
+# Function to authenticate users
+def authenticate_user(username, password):
+    c.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password))
+    user = c.fetchone()
+    return user
 
 # Login functionality
 st.sidebar.title('Login')
@@ -94,14 +156,16 @@ if not st.session_state.logged_in:
     login_button = st.sidebar.button('Login', key='login_button')
     
     if login_button:
-        if username in user_passwords and user_passwords[username] == password:
+        user = authenticate_user(username, password)
+        if user:
             st.session_state.logged_in = True
             st.session_state.username = username
+            st.session_state.full_name = user[2]  # Assuming the full name is the third column in the users table
             st.experimental_rerun()
         else:
             st.sidebar.error('Invalid username or password')
 else:
-    st.sidebar.success(f'Logged in as {user_display_names[st.session_state.username]}')
+    st.sidebar.success(f'Logged in as {st.session_state.full_name}')
     if st.sidebar.button('Logout'):
         st.session_state.logged_in = False
         st.session_state.username = ''
@@ -138,29 +202,33 @@ if st.session_state.logged_in:
             st.sidebar.success(f"Data for {user_to_delete} has been deleted.")
     else:
         st.title('User Dashboard')
-        st.write(f"Welcome, {user_display_names[st.session_state.username]}!")
+        st.write(f"Welcome, {st.session_state.full_name}!")
         
         # Initialize session state for the survey_started variable
         if 'survey_started' not in st.session_state:
             st.session_state.survey_started = False
 
-        # Display the survey form if the survey has been started and agreed
+        if not st.session_state.survey_started:
+            if st.button('Start LNA Survey'):
+                st.session_state.survey_started = True
+                st.experimental_rerun()
+
         if st.session_state.survey_started:
             # Inputs with bold labels
-            st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
+            st.markdown(('Full Name'), unsafe_allow_html=True)
             full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
-            st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
+            st.markdown(('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
             current_position = st.text_input(' ', key='current_position')
-            st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
+            st.markdown(('Position Level'), unsafe_allow_html=True)
             position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
-            st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
+            st.markdown(('Device Used for e-Learning'), unsafe_allow_html=True)
             device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
-            st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
+            st.markdown(('Preferred Learning Mode'), unsafe_allow_html=True)
             learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
-            st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
+            st.markdown(('Select Competency'), unsafe_allow_html=True)
             select_competency = st.selectbox(' ', ['Select Competency'] + list(competency_descriptions.keys()), key='select_competency')
             
-            st.markdown(bold_label('My Level for this Competency'), unsafe_allow_html=True)
+            st.markdown(('My Level for this Competency'), unsafe_allow_html=True)
             competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
             col1, col2 = st.columns([1, 1])
@@ -180,76 +248,6 @@ if st.session_state.logged_in:
             with col2:
                 if st.button('Reset'):
                     st.experimental_rerun()
-        else:
-            st.write("Kindly provide time to accomplish and complete this survey form as accurately and honestly as possible. It is important in creating our learning and development plan and assists you to achieve success in your current job role. The information that will be gathered will also help the HR in identifying training priorities in providing the best training that specifically meets your specific needs and develop targeted competencies to support organizational goals. It is recommended that supervisors and staff members only choose a maximum of ten job-related competencies that are vital in achieving your current duties to set limits in the budget appropriation for the training expense.")
-            # Optionally add a button to start the survey
-            if st.button('Start Survey'):
-                st.session_state.survey_started = True
 
 else:
     st.warning('This site is currently under construction, please stand by.')
-
-# Function to make labels bold
-def bold_label(label):
-    return f"<div style='font-weight: bold;'>{label}</div>"
-
-# Function to save data to the database
-def save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level):
-    with conn:
-        c.execute('''
-        INSERT INTO elearning_preferences (
-            full_name, current_position, position_level, device, learning_mode, select_competency, competency_level
-        ) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
-        (full_name, current_position, position_level, device, learning_mode, select_competency, competency_level))
-        conn.commit()
-
-# Function to generate PDF report
-#def generate_pdf(data, filename):
-    # pdf = FPDF()
-    # pdf.add_page()
-    # pdf.set_font("Arial", size=12)
-
-    # pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
-    # pdf.ln(10)
-
-    # for row in data:
-    #     pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Learning Mode: {row[5]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
-    #     pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
-    #     pdf.ln(10)
-
-    pdf_output_path = os.path.join(os.getcwd(), filename)
-    pdf.output(pdf_output_path)
-    return pdf_output_path
-
-# Function to generate a marksheet PDF for a specific user
-#def generate_marksheet(user_data):
-    # pdf = FPDF()
-    # pdf.add_page()
-    # pdf.set_font("Arial", size=12)
-    
-    # pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
-    # pdf.ln(10)
-    
-    # pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
-    # pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
-    # pdf.ln(10)
-
-    # pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
-    # pdf.output(pdf_output_path)
-    # return pdf_output_path
-
-# Function to delete data from the database
-def delete_data(full_name):
-    with conn:
-        c.execute('DELETE FROM elearning_preferences WHERE full_name = ?', (full_name,))
-        conn.commit()
