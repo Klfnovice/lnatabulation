@@ -209,9 +209,12 @@ if st.session_state.logged_in:
         if 'survey_started' not in st.session_state:
             st.session_state.survey_started = False
 
-        if st.session_state.survey_started or st.button('Start LNA'):
-            st.session_state.survey_started = True
-            
+        if not st.session_state.survey_started:
+            if st.button('Start LNA Survey'):
+                st.session_state.survey_started = True
+                st.experimental_rerun()
+
+        if st.session_state.survey_started:
             # Inputs with bold labels
             st.markdown(('Full Name'), unsafe_allow_html=True)
             full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
