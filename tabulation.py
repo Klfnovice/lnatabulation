@@ -94,67 +94,6 @@ if 'agreed' not in st.session_state:
 if 'survey_started' not in st.session_state:
     st.session_state.survey_started = False
 
-# Function to display modal content
-def show_modal():
-    st.markdown(
-        """
-        <style>
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 30px;
-            border: 1px solid #888;
-            width: 80%;
-            height: 80vh;
-            overflow-y: auto;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-    
-    st.markdown(
-        """
-        <div class="modal-content">
-            <h3 align="center"><b>Terms of Service and Privacy Policy</b></h3>
-            <p>Dear <b>Respondent</b>:</p>
-            <p>
-                We are currently identifying the learning and development needs of employees in Region V.
-                The result of this survey will be critical in identifying learning and development interventions
-                that are responsive to your competency needs and the goals of your agency.
-            </p>
-            <p>
-                Your responses are significant to the success of this endeavor and will be treated with utmost confidentiality
-                and will be solely used for developmental purposes. Please answer the questions to the best of your knowledge
-                and understanding.
-            </p>
-            <p>
-                By choosing “I agree” below you agree to Civil Service Commission Region V’s Terms of Service.
-            </p>
-            <p>
-                You also agree to our Privacy Policy, which describes how we process your information, on the following key points:
-            </p>
-            <ul>
-                <li>When you accomplish and submit the Personal Information portion on LNA form, we store the information you give us.</li>
-                <li>When you access the LNA webpage, we process information about that activity – including information like the device you used, IP addresses, cookie data, and location.</li>
-                <li>When you accomplish and submit the Survey portion of the LNA form, we store information you give us for analysis.</li>
-            </ul>
-            <p><b>We process this data to:</b></p>
-            <ul>
-                <li>Help our services deliver more useful, customized training programs to address your needs;</li>
-                <li>Improve the quality of our trainings and develop new ones; and</li>
-                <li>Conduct analytics and measurements to address possible needs or concerns that may arise in the future.</li>
-            </ul>
-            <p>Lastly, you will be able to generate your Individual Development Plan which may be a basis of your agency's Learning and Development Plan for the succeeding year.</p>
-            <a href="#"><button class="w3-btn w3-blue" id="agree-button">I Agree to the Terms of Service and Privacy Policy</button></a>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-# Create a modal instance
-#modal = Modal(title="Terms of Service and Privacy Policy", key="terms_modal")
-
 # Create database connection
 conn = sqlite3.connect('elearning_preferences.db')
 c = conn.cursor()
@@ -632,43 +571,9 @@ def delete_data(full_name):
         conn.commit()
 
 
-        # Add "Start LNA Survey" button to the sidebar for non-admin users
-        if st.sidebar.button('Start LNA Survey') and not st.session_state.agreed:
-            modal.open()
-            st.session_state.survey_started = True
-
-        # Display the modal if it is open
         
-        
-        
-        #if modal.is_open() and not st.session_state.agreed:
-            #with modal.container():
-                #show_modal()
-
-        
-        
-        # Handle the agreement
-        if st.session_state.agreed:
-            st.write("You have agreed to the Terms of Service and Privacy Policy. Proceed with the survey.")
-
-        # JavaScript to trigger the agreement button click
-        st.markdown(
-            """
-            <script>
-            document.getElementById("agree-button").onclick = function() {
-                fetch('/agree', {method: 'POST'});
-            }
-            </script>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        # Handle the agreement on the backend
-        if st.query_params.get("agree"):
-            st.session_state.agreed = True
-
         # Display the survey form if the survey has been started and agreed
-        if st.session_state.survey_started and st.session_state.agreed:
+        if st.session_state.survey_started:
             # Inputs with bold labels
             st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
             full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
