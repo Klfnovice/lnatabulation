@@ -182,7 +182,7 @@ if st.session_state.logged_in:
                     st.experimental_rerun()
         else:
             st.write("Kindly provide time to accomplish and complete this survey form as accurately and honestly as possible. It is important in creating our learning and development plan and assists you to achieve success in your current job role. The information that will be gathered will also help the HR in identifying training priorities in providing the best training that specifically meets your specific needs and develop targeted competencies to support organizational goals. It is recommended that supervisors and staff members only choose a maximum of ten job-related competencies that are vital in achieving your current duties to set limits in the budget appropriation for the training expense.
-The results of this entire survey are confidential and will only be shared with HR personnel that will be solely used for developmental purposes. Thank you.
+The results of this entire survey are confidential and will only be shared with HR personnel that will be solely used for developmental purposes. Thank you.:
 ")
             # Optionally add a button to start the survey
             if st.button('Start Survey'):
