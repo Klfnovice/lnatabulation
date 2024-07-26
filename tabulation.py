@@ -137,7 +137,7 @@ competency_descriptions = {
         "Basic": {},
         "Intermediate": {},
         "Advanced": {},
-        "Superior" {}
+        "Superior": {}
         },
 
     "Carpentry Skill":
