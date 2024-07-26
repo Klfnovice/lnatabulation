@@ -2,8 +2,73 @@ import os
 import pandas as pd
 import sqlite3
 import streamlit as st
-# from fpdf import FPDF
-# import webbrowser
+from fpdf import FPDF
+import webbrowser
+
+# Function to make labels bold
+def bold_label(label):
+    return f"<div style='font-weight: bold;'>{label}</div>"
+
+# Function to save data to the database
+def save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level):
+    with conn:
+        c.execute('''
+        INSERT INTO elearning_preferences (
+            full_name, current_position, position_level, device, learning_mode, select_competency, competency_level
+        ) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
+        (full_name, current_position, position_level, device, learning_mode, select_competency, competency_level))
+        conn.commit()
+
+# Function to generate PDF report
+def generate_pdf(data, filename):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+
+    pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
+    pdf.ln(10)
+
+    for row in data:
+        pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
+        pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
+        pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
+        pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
+        pdf.cell(200, 10, txt=f"Learning Mode: {row[5]}", ln=True)
+        pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
+        pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
+        pdf.ln(10)
+
+    pdf_output_path = os.path.join(os.getcwd(), filename)
+    pdf.output(pdf_output_path)
+    return pdf_output_path
+
+# Function to generate a marksheet PDF for a specific user
+def generate_marksheet(user_data):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    
+    pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
+    pdf.ln(10)
+    
+    pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
+    pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
+    pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
+    pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
+    pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln=True)
+    pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
+    pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
+    pdf.ln(10)
+
+    pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
+    pdf.output(pdf_output_path)
+    return pdf_output_path
+
+# Function to delete data from the database
+def delete_data(full_name):
+    with conn:
+        c.execute('DELETE FROM elearning_preferences WHERE full_name = ?', (full_name,))
+        conn.commit()
 
 # Competency descriptions
 competency_descriptions = {
@@ -144,27 +209,24 @@ if st.session_state.logged_in:
         if 'survey_started' not in st.session_state:
             st.session_state.survey_started = False
 
-        if not st.session_state.survey_started:
-            if st.button('Start Survey'):
-                st.session_state.survey_started = True
-                st.experimental_rerun()
-
-        if st.session_state.survey_started:
+        if st.session_state.survey_started or st.button('Start LNA'):
+            st.session_state.survey_started = True
+            
             # Inputs with bold labels
-            st.markdown(('Full Name'), unsafe_allow_html=True)
+            st.markdown(bold_label('Full Name'), unsafe_allow_html=True)
             full_name = st.text_input(' ', key='full_name')  # Use a unique key to avoid conflicts
-            st.markdown(('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
+            st.markdown(bold_label('Current Position (Write in full including parenthetical, if any)'), unsafe_allow_html=True)
             current_position = st.text_input(' ', key='current_position')
-            st.markdown(('Position Level'), unsafe_allow_html=True)
+            st.markdown(bold_label('Position Level'), unsafe_allow_html=True)
             position_level = st.selectbox(' ', ['1st Level', '2nd Level Non-Supervisory', 'Supervisory', 'Managerial'], key='position_level')
-            st.markdown(('Device Used for e-Learning'), unsafe_allow_html=True)
+            st.markdown(bold_label('Device Used for e-Learning'), unsafe_allow_html=True)
             device = st.selectbox(' ', ['Computer/Laptop', 'Tablet', 'Smartphone'], key='device')
-            st.markdown(('Preferred Learning Mode'), unsafe_allow_html=True)
+            st.markdown(bold_label('Preferred Learning Mode'), unsafe_allow_html=True)
             learning_mode = st.selectbox(' ', ['Synchronous Face-to-Face', 'Asynchronous', 'Blended'], key='learning_mode')
-            st.markdown(('Select Competency'), unsafe_allow_html=True)
+            st.markdown(bold_label('Select Competency'), unsafe_allow_html=True)
             select_competency = st.selectbox(' ', ['Select Competency'] + list(competency_descriptions.keys()), key='select_competency')
             
-            st.markdown(('My Level for this Competency'), unsafe_allow_html=True)
+            st.markdown(bold_label('My Level for this Competency'), unsafe_allow_html=True)
             competency_level = st.selectbox(' ', ['Basic', 'Intermediate', 'Advanced', 'Superior', 'Not yet acquired'], key='competency_level')
 
             col1, col2 = st.columns([1, 1])
@@ -187,68 +249,3 @@ if st.session_state.logged_in:
 
 else:
     st.warning('This site is currently under construction, please stand by.')
-
-# Function to make labels bold
-# def bold_label(label):
-#     return f"<div style='font-weight: bold;'>{label}</div>"
-
-# Function to save data to the database
-def save_data(full_name, current_position, position_level, device, learning_mode, select_competency, competency_level):
-    with conn:
-        c.execute('''
-        INSERT INTO elearning_preferences (
-            full_name, current_position, position_level, device, learning_mode, select_competency, competency_level
-        ) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
-        (full_name, current_position, position_level, device, learning_mode, select_competency, competency_level))
-        conn.commit()
-
-# Function to generate PDF report
-# def generate_pdf(data, filename):
-#     pdf = FPDF()
-#     pdf.add_page()
-#     pdf.set_font("Arial", size=12)
-
-#     pdf.cell(200, 10, txt="e-Learning Preferences Report", ln=True, align='C')
-#     pdf.ln(10)
-
-#     for row in data:
-#         pdf.cell(200, 10, txt=f"Full Name: {row[1]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Current Position: {row[2]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Position Level: {row[3]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Device: {row[4]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Learning Mode: {row[5]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Competency: {row[6]}", ln=True)
-#         pdf.cell(200, 10, txt=f"Competency Level: {row[7]}", ln=True)
-#         pdf.ln(10)
-
-#     pdf_output_path = os.path.join(os.getcwd(), filename)
-#     pdf.output(pdf_output_path)
-#     return pdf_output_path
-
-# Function to generate a marksheet PDF for a specific user
-# def generate_marksheet(user_data):
-#     pdf = FPDF()
-#     pdf.add_page()
-#     pdf.set_font("Arial", size=12)
-    
-#     pdf.cell(200, 10, txt="Marksheet", ln=True, align='C')
-#     pdf.ln(10)
-    
-#     pdf.cell(200, 10, txt=f"Full Name: {user_data[1]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Current Position: {user_data[2]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Position Level: {user_data[3]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Device: {user_data[4]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Learning Mode: {user_data[5]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Competency: {user_data[6]}", ln=True)
-#     pdf.cell(200, 10, txt=f"Competency Level: {user_data[7]}", ln=True)
-#     pdf.ln(10)
-
-#     pdf_output_path = os.path.join(os.getcwd(), f"{user_data[1]}_marksheet.pdf")
-#     pdf.output(pdf_output_path)
-#     return pdf_output_path
-
-# Function to delete data from the database
-def delete_data(full_name):
-    with conn:
-        c.execute('DELETE FROM elearning_preferences WHERE full_name = ?', (full_name,))
-        conn.commit()
