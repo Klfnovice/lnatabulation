@@ -92,7 +92,7 @@ competency_descriptions = {
         "Basic": [],
         "Intermediate": [],
         "Advanced": [],
-        "Superior":
+        "Superior": []
         },
 
     "Applying Internal Control Functions":
