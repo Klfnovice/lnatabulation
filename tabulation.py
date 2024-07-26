@@ -71,48 +71,313 @@ competency_descriptions = {
     "Accounting": 
         {
         "Description": "The ability to record, analyze, classify, summarize and interprets financial transactions to be able to prepare for a sound financial report and manage the accounts of the organization.",
-        "Basic": [],
-        "Intermediate": [],
-        "Advanced": [],
-        "Superior": []
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
         },
     
     "Accounting Reconciliation": 
         {
         "Description": "The ability to carry out timely and accurate reconciliation of accounting control statements, including bank reconciliations, control accounts, revenue reconciliations, advances, and deposits.",
-        "Basic": [],
-        "Intermediate": [],
-        "Advanced": [],
-        "Superior": []
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
         },
     
     "Air-Conditioning Servicing":
         {
         "Description": "Explain basic principles of electrical and mechanical aspects of the Air-Conditioning Unit to safely install, commission, service and maintain air conditioning system.",
-        "Basic": [],
-        "Intermediate": [],
-        "Advanced": [],
-        "Superior": []
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
         },
 
     "Applying Internal Control Functions":
         {
         "Description": "Has the ability to integrate effective design and develop financial management system that address issues related to financial management and operations to safeguard government assets, check the accuracy and reliability of accounting data, adhere to management policies, comply with laws and regulations and ensure efficient, ethical and economical operations.",
-        "Basic": [],
-        "Intermediate": [],
-        "Advanced": [],
-        "Superior": []
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
         },
     
     "AutoCAD":
         {
         "Description": "The ability to operate software programs to create technical two-dimensional (2D) and three-dimensional (3D) designs.",
-        "Basic": [],
-        "Intermediate": [],
-        "Advanced": [],
-        "Superior": []
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
         },
+    
+    "Automotive Servicing":
+        {
+        "Description": "Effectively achieve to inspect, clean and repair mechanical or electrical parts, components, assemblies and sub-assemblies of light and heavy-duty automotive vehicle with diesel or gas engine in accordance with manufacturer’s specification. It also covers servicing of engine mechanical components such as cooling and lubricating system and underchassis servicing and repair.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Benifits, Compensation and Welfare Management":
+        {
+        "Description": "The ability to develop, implement, evaluate and enhance policies and programs on benefits, compensation, rewards, incentives, health and wellness to improve employee welfare.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },    
+
+    "Budget Management":
+        {
+        "Description": "Effective preparation of budget plans using the latest budgeting techniques, and preparation of budget submissions by agency based on policies.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior" {}
+        },
+
+    "Carpentry Skill":
+        {
+        "Description": "Has the ability to perform stake-out building lines, fabricate formworks, install/strip form works, install framing works, install architectural ceiling/wall sheats/panels and floor finishes and fabricate/install door/window jambs and panels.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Cash Management":
+        {
+        "Description": "The ability to collect and manage assessment and usage of cash flow to ensure the financial stability and solvency of an organization.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Chlorine Handling Skills":
+        {
+        "Description": "Has the fundamental knowledge to be able to safely use and handle chlorine and other chemical solutions in the District’s water treatment facilities.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Computer Skills":
+        {
+        "Description": "Able to adopt audit methodology that is consistent with international standards on public sector audit for selecting a process for audit, planning an audit assignment, documenting a process, assessing risks and controls in a process, assessing the performance of processes, identifying control gaps, conducting audit tests, and accurately recording audit work.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Conduct Audit Assignments":
+        {
+        "Description": "Using an audit methodology that is consistent with international standards on public sector audit for selecting a process for audit, planning an audit assignment, documenting a process, assessing risks and controls in a process, assessing the performance of processes, identifying control gaps, conducting audit tests, and accurately recording audit work.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Customer Complaints Management":
+        {
+        "Desription": "Has the ability to use proper channels to deal with customer complaints effectively to improve customer retention.",
+        "Basic": {},
+        "Intermediate", {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Data Collection from Utility Meters":
+        {
+        "Description": "Demonstrate proficiency in using handheld devices and conduct accurate records of reading meters.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Data Management":
+        {
+        "Description": "The ability to analyze statistics and other data by interpreting and evaluating the results to be able to formulate a report and/or presentation as reference for decision making.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Delivering Service Excellence":
+        {
+        "Description": "The ability to provide proactive, responsive, accessible, courteous and effective public service to attain the highest level customer satisfaction.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Digital Media and Visualisation":
+        {
+        "Description": "The ability to convey ideas and information in forms such audio, text, pictures, diagrams, video, photos, maps and 3D models.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+        
+    "Drafting Construction Drawings":
+        {
+        "Description": "The ability to draft precise and detailed planning design for building and infrastructure project within the criteria set in conformance with the structural codes and standards.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Drafting Electrical Layouts":
+        {
+        "Description": "The ability to draft precise and detailed electrical layout plan for the electrical wiring within the criteria set in conformance with the electrical codes and standards.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },      
+
+    "Driving":
+        {
+        "Description": "Capable to operate motor vehicles classified under LTO Restriction with compliance to local traffic rules and regulations and perform minor vehicle repairs and other minor servicing.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+        
+    "Electrical Installation"
+        {
+        "Description": "Has the capability to install and maintain electrical wiring, lighting and related equipment and systems where the voltage does not exceed the required voltage in building establishment.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Electronics and Electrical Equipment Servicing":
+        {
+        "Description": "Has the ability to conduct maintenance and repair of electronic products and service appliances.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Environmental Compliance":
+        {
+        "Description": "Has the ability to identify, define, develop, evaluate and improve systems, processes and procedures that ensures constant compliance of the project proponents, local government and its partner agencies/organizations in the implementation of projects, programs and activities related to and/or has adverse impact directly or indirectly to environment and natural resources.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Facilities Management":
+        {
+        "Description": "Has the ability to maintain and improve office facilities or properties in order to ensure minimal disruption of business operations.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Heavy Equipment Operational Skill": 
+        {
+        "Description": "Demonstrate competency on operating heavy equipment according to procedures, specifications and manual of instruction.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Housekeeping":
+        {
+        "Description": "Has the ability to maintain cleanliness of public areas, equipment and promote workplace hygiene procedures in providing housekeeping services.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },    
+    
+    "Information Technology Management":
+        {
+        "Description": "Demonstrate skills and working knowledge in Information Technology Management. Applies technical skills and demonstrates knowledge of emerging technology (e.g. IT processes, methodologies, etc.).",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Inventory Management and Stock Control":
+        {
+        "Description": "Has the ability to record and manage inventory which typically covers the receipt and custody of items procured, ensuring just-in-time distribution when needed, safe maintenance of stocks, monitoring of re-order point and disposal of unnecessary stocks.",
+        "Description": "Demonstrate skills and working knowledge in Information Technology Management. Applies technical skills and demonstrates knowledge of emerging technology (e.g. IT processes, methodologies, etc.).",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Learning and Development Planning":
+        {
+        "Description": "The ability to translate training/learning needs results into interventions and prioritize them for implementation.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Learning Measurement and Evaluation":
+        {
+        "Description": "The ability to determine training/learning needs and evaluate its effectiveness.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Legal Management":
+        {
+        "Description": "The ability to provide legal assistance and oversee all legal matters within the organization.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+    "Liquidity, Debts and Investment Managment":
+        {
+        "Description": "Has the ability to develop strategies in ensuring liquidity, debt and investment management to cover payments against all vouchers, and undertake investment programs in times of cash surplus.",
+        "Basic": {},
+        "Intermediate": {},
+        "Advanced": {},
+        "Superior": {}
+        },
+
+
+
 }
+
+
+
+
+
+
+
+
+
 
 # Database connection
 conn = sqlite3.connect('elearning_preferences.db')
