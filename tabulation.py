@@ -169,7 +169,7 @@ competency_descriptions = {
 
     "Computer Skills":
         {
-        "Description": "Able to adopt audit methodology that is consistent with international standards on public sector audit for selecting a process for audit, planning an audit assignment, documenting a process, assessing risks and controls in a process, assessing the performance of processes, identifying control gaps, conducting audit tests, and accurately recording audit work.",
+        "Description": "The ability to operate standard personal computer and use available computer software, applications and technology.",
         "Basic": {},
         "Intermediate": {},
         "Advanced": {},
