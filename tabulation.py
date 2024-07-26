@@ -106,8 +106,12 @@ competency_descriptions = {
     
     "AutoCAD":
         {
-    
-    },
+        "The ability to operate software programs to create technical two-dimensional (2D) and three-dimensional (3D) designs.""",
+        "Basic":
+        "Intermediate":
+        "Advanced":
+        "Superior"
+        },
 }
 
 # Database connection
