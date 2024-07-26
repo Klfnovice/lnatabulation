@@ -101,7 +101,7 @@ competency_descriptions = {
         "Basic": [],
         "Intermediate": [],
         "Advanced": [],
-        "Superior":
+        "Superior": []
         },
     
     "AutoCAD":
@@ -110,7 +110,7 @@ competency_descriptions = {
         "Basic": [],
         "Intermediate": [],
         "Advanced": [],
-        "Superior":
+        "Superior": []
         },
 }
 
