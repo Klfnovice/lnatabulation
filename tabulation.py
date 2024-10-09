@@ -112,7 +112,7 @@ def display_data_and_chart(uploaded_data, competency_type):
         st.write("Tabulation Table:")
         st.write(uploaded_data)
         selected_columns = st.multiselect("Select level of competency to display in chart", uploaded_data.columns)
-        selected_columns = st.multiselect("Select the level of competency to display in chart", uploaded_data.columns)
+        # selected_columns = st.multiselect("Select the level of competency to display in chart", uploaded_data.columns)
         if selected_columns:
             selected_data = uploaded_data[selected_columns]
             if st.button("Show Chart"):
