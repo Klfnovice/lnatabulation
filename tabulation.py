@@ -18,14 +18,14 @@ def display_logo_and_title():
 
 # Set sidebar background color
 def set_sidebar_style():
-st.markdown("""
-       <style>
-       .sidebar .sidebar-content {
-           background: #000080;
-           color: blue;
-       }
-       </style>
-   """, unsafe_allow_html=True)
+    st.markdown("""
+           <style>
+           .sidebar .sidebar-content {
+               background: #000080;
+               color: blue;
+           }
+           </style>
+       """, unsafe_allow_html=True)
 
 # Define usernames and passwords
 users = {
