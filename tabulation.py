@@ -28,9 +28,7 @@ def set_sidebar_style():
 
 # Define usernames and passwords
 users = {
-    "admin": "pass123",
-    "dmantiado": "hrlcwd2024",
-    "user1": "password1"
+    host': os.getenv('DB_HOST', 'localhost')
 }
 # User authentication
 def authenticate(username, password):
